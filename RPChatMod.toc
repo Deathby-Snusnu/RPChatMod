@@ -1,0 +1,19 @@
+## Interface: 16001
+## Title: RP Chat Mod
+## Notes: Rassen- und klassenabhängige RP-Emotes
+## Author: Hannes
+## Version: 0.1.0
+
+config/Settings.lua
+
+data/General.lua
+data/Races.lua
+data/Classes.lua
+data/RaceClass.lua
+
+core/Random.lua
+core/Cooldown.lua
+core/Chat.lua
+core/Emotes.lua
+
+RPChatMod.lua
