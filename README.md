@@ -46,9 +46,10 @@ werden in folgender Reihenfolge gesucht:
 3. Rasse
 4. allgemeine Texte
 
-Die Nachricht wird standardmäßig im Sagen-Kanal außerhalb einer Gruppe, im
-Gruppenkanal in einer Gruppe oder im Instanzgruppenkanal in einer
-Instanzgruppe gesendet.
+Die Nachricht wird im Sagen-Kanal gesendet, wenn der Charakter nicht in einer
+Gruppe oder Instanz ist, im Gruppenkanal bei einer Gruppe und im
+Instanzgruppenkanal, wenn der Charakter in einer Instanz ist oder einer
+Instanzgruppe angehört.
 
 ## Einstellungen
 
@@ -59,7 +60,7 @@ Die Standardwerte stehen in `config/Settings.lua`:
 | `textChance` | `40` | Prozentuale Chance (1–100), dass ein RP-Text gesendet wird. |
 | `cooldown` | `10` | Mindestabstand in Sekunden zwischen gesendeten RP-Texten. |
 | `emoteDelay` | `0.3` | Verzögerung in Sekunden vor dem Abspielen der Animation. |
-| `chatChannel` | `"AUTO"` | `"AUTO"` wählt den Kanal anhand des Gruppenstatus; ein anderer Wert wird als Chatkanal verwendet. |
+| `chatChannel` | `"AUTO"` | Wird derzeit beim Senden nicht ausgewertet. Der Chatkanal wird automatisch anhand des Gruppen- und Instanzstatus gewählt (siehe oben). |
 
 Der Cooldown wird nach einem gesendeten RP-Text gestartet. Eine nicht
 ausgelöste Textchance oder ein fehlender Textpool startet ihn nicht.
@@ -82,6 +83,7 @@ RPChatMod/
 │   ├── Races.lua
 │   ├── Classes.lua
 │   └── RaceClass.lua
+├── LICENSE
 ├── CHANGELOG.md
 └── README.md
 ```
@@ -95,3 +97,8 @@ und zuletzt den Einstiegspunkt mit dem `/rc`-Befehl.
 - Nicht jeder Textpool muss für jedes Emote, jede Rasse oder jede Klasse
   Einträge enthalten; in diesem Fall greift die beschriebene Fallback-Reihenfolge.
 - Änderungen an den Lua-Dateien werden nach einem `/reload` wirksam.
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Den vollständigen Lizenztext findest
+du in der Datei [LICENSE](LICENSE).

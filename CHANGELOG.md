@@ -13,4 +13,6 @@ vorhandenen Quellstand fest und behauptet keinen veröffentlichten Release.
   allgemeinen Textpools ausgewählt und können abhängig von Ziel und Gruppe
   variieren.
 - Einstellungen für Textchance, Abklingzeit, Animationsverzögerung und
-  Chatkanal sind dokumentiert.
+  Chatkanal sind dokumentiert. `chatChannel` wird derzeit beim Senden nicht
+  ausgewertet; der Chatkanal wird automatisch anhand des Gruppen- und
+  Instanzstatus gewählt.
