@@ -1,10 +1,105 @@
 -- Addon entry point.
+
 -- ==========================================
 -- RP CHAT MOD
 -- HAUPTDATEI
 -- ==========================================
 
 local ADDON_NAME = "RPChatMod"
+
+
+-- ==========================================
+-- VOLKSSPRACHEN
+-- ==========================================
+
+local RPChatMod_RacialLanguages = {
+    ["Human"]    = "Gemeinsprache",
+    ["Dwarf"]    = "Zwergisch",
+    ["Gnome"]    = "Gnomisch",
+    ["NightElf"] = "Darnassisch",
+
+    ["Orc"]      = "Orcisch",
+    ["Troll"]    = "Trollisch",
+    ["Tauren"]   = "Taurahe",
+    ["Scourge"]  = "Gossensprache",
+    ["BloodElf"] = "Thalassisch",
+}
+
+
+-- ==========================================
+-- VOLKSSPRACHE ERMITTELN
+-- ==========================================
+
+local function RPChatMod_GetRacialLanguageID()
+
+    local _, race = UnitRace("player")
+
+    local languageName =
+        RPChatMod_RacialLanguages[race]
+
+    if not languageName then
+        return nil
+    end
+
+    for i = 1, GetNumLanguages() do
+
+        local language, languageID =
+            GetLanguageByIndex(i)
+
+        if language == languageName then
+            return languageID
+        end
+    end
+
+    return nil
+end
+
+
+-- ==========================================
+-- CHATKANAL ERMITTELN
+-- ==========================================
+
+local function RPChatMod_GetChatChannel()
+
+    if IsInGroup(LE_PARTY_CATEGORY_INSTANCE)
+        or IsInInstance() then
+
+        return "INSTANCE_CHAT"
+    end
+
+    if IsInGroup() then
+        return "PARTY"
+    end
+
+    return "SAY"
+end
+
+
+-- ==========================================
+-- TEXT SENDEN
+-- ==========================================
+
+function RPChatMod_SendText(text)
+
+    local chatChannel =
+        RPChatMod_GetChatChannel()
+
+    -- Volkssprache nur bei SAY/YELL verwenden.
+    local languageID = nil
+
+    if chatChannel == "SAY"
+        or chatChannel == "YELL" then
+
+        languageID =
+            RPChatMod_GetRacialLanguageID()
+    end
+
+    C_ChatInfo.SendChatMessage(
+        text,
+        chatChannel,
+        languageID
+    )
+end
 
 
 -- ==========================================
@@ -125,7 +220,11 @@ local function RPChatMod_DoEmote(emote)
     emote = string.upper(emote or "")
 
     if emote == "" then
-        print("|cffffd100RP Chat Mod:|r Kein Emote angegeben.")
+        print(
+            "|cffffd100RP Chat Mod:|r " ..
+            "Kein Emote angegeben."
+        )
+
         return
     end
 
@@ -188,6 +287,7 @@ local function RPChatMod_DoEmote(emote)
         GetText(emote)
 
     if not text then
+
         print(
             "|cffff0000RP Chat Mod:|r " ..
             "Kein Text für " ..
@@ -218,7 +318,10 @@ SLASH_RPCHATMOD1 = "/rc"
 SlashCmdList["RPCHATMOD"] = function(message)
 
     local emote =
-        string.match(message or "", "^%s*(%S+)")
+        string.match(
+            message or "",
+            "^%s*(%S+)"
+        )
 
     if not emote then
 
