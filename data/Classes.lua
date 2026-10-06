@@ -19,6 +19,7 @@ RPChatMod_ClassTexts = {
                 "Ein Kriegergruß an Euch, %s.",
                 "Möge Euer Arm stark sein.",
                 "Bereit für die nächste Schlacht, %s?",
+                "Möge Euer Schild Euch stets schützen, %s.",
             },
 
             gruppe = {
@@ -28,6 +29,7 @@ RPChatMod_ClassTexts = {
                 "Stärke und Ehre!",
                 "Lasst uns sehen, was vor uns liegt.",
                 "Die Schlacht wartet!",
+                "Schild an Schild stehen wir!",
             },
         },
 
@@ -39,6 +41,7 @@ RPChatMod_ClassTexts = {
                 "Möge Euer Stahl niemals brechen.",
                 "Stärke sei mit Euch.",
                 "Ehre Eurem Mut, %s.",
+                "Möge Euer Name für Mut stehen, %s.",
             },
 
             gruppe = {
@@ -48,6 +51,7 @@ RPChatMod_ClassTexts = {
                 "Stärke unseren Reihen!",
                 "Krieger, seid gegrüßt!",
                 "Die Waffen hoch!",
+                "Auf Mut, Standhaftigkeit und starke Arme!",
             },
         },
 
@@ -59,6 +63,7 @@ RPChatMod_ClassTexts = {
                 "Respekt, %s.",
                 "Euer Ruf eilt Euch voraus.",
                 "Ehre und Stärke.",
+                "Euer Mut verdient meine Anerkennung, %s.",
             },
 
             gruppe = {
@@ -68,6 +73,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Stärke!",
                 "Respekt den Kämpfern!",
                 "Möge unser Mut uns führen.",
+                "Vor wahrer Tapferkeit verneige ich mich.",
             },
         },
 
@@ -79,6 +85,7 @@ RPChatMod_ClassTexts = {
                 "Ha! Der war nicht schlecht.",
                 "Das hat gesessen!",
                 "Herrlich!",
+                "Bei meiner Klinge, der war gut, %s!",
             },
 
             gruppe = {
@@ -88,6 +95,7 @@ RPChatMod_ClassTexts = {
                 "Ich habe schon schlechter gelacht.",
                 "Weiter so!",
                 "Das hebt die Moral!",
+                "Das war besser als ein Hieb ins Schwarze!",
             },
         },
 
@@ -99,6 +107,7 @@ RPChatMod_ClassTexts = {
                 "Heute wird nicht gekämpft.",
                 "Das Schwert ruht. Die Füße übernehmen.",
                 "Kampfhaltung verlassen. Tanzhaltung einnehmen.",
+                "Selbst ein Schildwall braucht einmal Rhythmus, %s.",
             },
 
             gruppe = {
@@ -108,6 +117,7 @@ RPChatMod_ClassTexts = {
                 "Zeit für einen Kriegertanz!",
                 "Auch Krieger können tanzen.",
                 "Lasst die Rüstung klappern!",
+                "Die Rüstung klappert im Takt!",
             },
         },
 
@@ -119,6 +129,7 @@ RPChatMod_ClassTexts = {
                 "Setzt Euch, %s.",
                 "Zeit, die Waffen ruhen zu lassen.",
                 "Ein wenig Erholung kann nicht schaden.",
+                "Auch der stärkste Arm braucht eine Pause, %s.",
             },
 
             gruppe = {
@@ -128,6 +139,7 @@ RPChatMod_ClassTexts = {
                 "Lasst uns kurz verschnaufen.",
                 "Der Kampf kann warten.",
                 "Beine hoch, Waffen runter.",
+                "Ein Atemzug, dann stehen wir wieder.",
             },
         },
 
@@ -139,6 +151,7 @@ RPChatMod_ClassTexts = {
                 "Möge Euer Schlaf ruhig sein.",
                 "Erholt Euch, %s.",
                 "Der nächste Kampf kommt bestimmt.",
+                "Möge Euer Mut Euch durch die Nacht begleiten, %s.",
             },
 
             gruppe = {
@@ -148,6 +161,7 @@ RPChatMod_ClassTexts = {
                 "Ruht Euch aus, Krieger.",
                 "Genug gekämpft für heute.",
                 "Möge die Nacht uns stärken.",
+                "Schlaft fest; morgen halten wir wieder stand.",
             },
         },
     },
@@ -167,6 +181,7 @@ RPChatMod_ClassTexts = {
                 "Möge das Licht über Euch wachen.",
                 "Ein gesegneter Gruß an Euch, %s.",
                 "Friede und Licht seien mit Euch.",
+                "Möge Euer Weg von Hoffnung erhellt sein, %s.",
             },
 
             gruppe = {
@@ -176,6 +191,7 @@ RPChatMod_ClassTexts = {
                 "Das Licht wache über uns.",
                 "Möge unsere Sache gerecht sein.",
                 "Ehre, Pflicht und Licht!",
+                "Möge Hoffnung unsere Schritte lenken.",
             },
         },
 
@@ -187,6 +203,7 @@ RPChatMod_ClassTexts = {
                 "Das Licht erkenne Euren Weg.",
                 "Möge Eure Pflicht Euch niemals schwach machen.",
                 "Ehre dem Licht und Euch.",
+                "Eure Hingabe verdient Achtung, %s.",
             },
 
             gruppe = {
@@ -196,6 +213,7 @@ RPChatMod_ClassTexts = {
                 "Möge unsere Sache gerecht sein.",
                 "Seid gegrüßt, Diener des Lichts.",
                 "Das Licht wache über uns alle.",
+                "In Pflicht und Mitgefühl liegt wahre Stärke.",
             },
         },
 
@@ -207,6 +225,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Licht, %s.",
                 "Möge das Licht Euren Weg segnen.",
                 "Meine Achtung gilt Euch.",
+                "Mit aufrichtigem Respekt verneige ich mich vor Euch, %s.",
             },
 
             gruppe = {
@@ -216,6 +235,7 @@ RPChatMod_ClassTexts = {
                 "Möge das Licht uns führen.",
                 "Eine Verbeugung vor meinen Gefährten.",
                 "Das Licht sei mit Euch.",
+                "Möge unser gemeinsamer Weg gerecht sein.",
             },
         },
 
@@ -227,6 +247,7 @@ RPChatMod_ClassTexts = {
                 "Bei allem Licht!",
                 "Das hätte ich nicht erwartet.",
                 "Herrlich!",
+                "Das bringt selbst einen Streiter des Lichts zum Lachen, %s!",
             },
 
             gruppe = {
@@ -236,6 +257,7 @@ RPChatMod_ClassTexts = {
                 "Selbst Paladine dürfen lachen.",
                 "Herrlich!",
                 "Das hebt die Moral!",
+                "Ein wenig Heiterkeit stärkt auch den Glauben!",
             },
         },
 
@@ -247,6 +269,7 @@ RPChatMod_ClassTexts = {
                 "Heute wird gefeiert, %s!",
                 "Der Hammer ruht. Die Füße tanzen.",
                 "Für das Licht und den guten Rhythmus!",
+                "Lasst uns feiern, solange das Licht scheint, %s!",
             },
 
             gruppe = {
@@ -256,6 +279,7 @@ RPChatMod_ClassTexts = {
                 "Auch Paladine können tanzen.",
                 "Das Licht möge unseren Tanz segnen.",
                 "Zeit für eine kleine Feier.",
+                "Ein froher Tanz erfüllt auch die Halle mit Licht!",
             },
         },
 
@@ -267,6 +291,7 @@ RPChatMod_ClassTexts = {
                 "Setzt Euch, %s.",
                 "Zeit, den Hammer ruhen zu lassen.",
                 "Eine kleine Pause sei uns vergönnt.",
+                "Lasst uns innehalten und neue Kraft schöpfen, %s.",
             },
 
             gruppe = {
@@ -276,6 +301,7 @@ RPChatMod_ClassTexts = {
                 "Eine kurze Pause sei uns vergönnt.",
                 "Auch Diener des Lichts brauchen Ruhe.",
                 "Lasst uns verschnaufen.",
+                "In der Ruhe finden wir neue Kraft.",
             },
         },
 
@@ -287,6 +313,7 @@ RPChatMod_ClassTexts = {
                 "Schlaft in Frieden.",
                 "Möge die Nacht Euch Kraft schenken.",
                 "Erholt Euch, %s.",
+                "Möge ein sanfter Segen Euren Schlaf behüten, %s.",
             },
 
             gruppe = {
@@ -296,6 +323,7 @@ RPChatMod_ClassTexts = {
                 "Genug für heute.",
                 "Ruht Euch aus, Gefährten.",
                 "Morgen wartet die Pflicht.",
+                "Möge der Morgen uns gestärkt finden.",
             },
         },
     },
@@ -315,6 +343,7 @@ RPChatMod_ClassTexts = {
                 "Möge Euer Weg sicher sein.",
                 "Die Jagd ruft, aber ein Gruß muss sein.",
                 "Seid willkommen, %s.",
+                "Möge Euer Pfad frei von Gefahren sein, %s.",
             },
 
             gruppe = {
@@ -324,6 +353,7 @@ RPChatMod_ClassTexts = {
                 "Die Spuren sind frisch!",
                 "Willkommen, Wanderer.",
                 "Möge die Natur uns führen.",
+                "Gute Wege und klare Spuren Euch allen!",
             },
         },
 
@@ -335,6 +365,7 @@ RPChatMod_ClassTexts = {
                 "Möge Eure Spur sicher sein.",
                 "Eine gute Jagd sei Euch beschieden.",
                 "Die Natur grüßt Euch.",
+                "Ein scharfes Auge und ruhige Hand, %s.",
             },
 
             gruppe = {
@@ -344,6 +375,7 @@ RPChatMod_ClassTexts = {
                 "Möge unsere Spur sicher sein.",
                 "Die Natur führt unseren Weg.",
                 "Jäger, seid gegrüßt!",
+                "Auf scharfe Augen und sichere Hände!",
             },
         },
 
@@ -355,6 +387,7 @@ RPChatMod_ClassTexts = {
                 "Möge Euer Auge scharf bleiben.",
                 "Respekt vor einem erfahrenen Jäger.",
                 "Die Natur sei Euch gewogen.",
+                "Ihr kennt die Zeichen der Wildnis, %s. Mein Respekt.",
             },
 
             gruppe = {
@@ -364,6 +397,7 @@ RPChatMod_ClassTexts = {
                 "Die Natur sei uns gewogen.",
                 "Waidmannsheil!",
                 "Ehre den Jägern.",
+                "Respekt vor allen, die die Wildnis verstehen.",
             },
         },
 
@@ -375,6 +409,7 @@ RPChatMod_ClassTexts = {
                 "Das war gut.",
                 "Ha! Den hätte selbst mein Pet bemerkt.",
                 "Sehr amüsant.",
+                "Der Witz traf sicherer als mancher Pfeil, %s!",
             },
 
             gruppe = {
@@ -384,6 +419,7 @@ RPChatMod_ClassTexts = {
                 "Das Pet würde jetzt bellen.",
                 "Sehr amüsant.",
                 "Gut getroffen!",
+                "Das war ein Volltreffer ins Zwerchfell!",
             },
         },
 
@@ -395,6 +431,7 @@ RPChatMod_ClassTexts = {
                 "Kommt, %s!",
                 "Heute wird nicht gejagt.",
                 "Selbst Jäger brauchen Unterhaltung.",
+                "Selbst auf der Jagd darf man einmal den Takt verlieren, %s.",
             },
 
             gruppe = {
@@ -404,6 +441,7 @@ RPChatMod_ClassTexts = {
                 "Das Pet schaut schon komisch.",
                 "Ein Tanz vor der nächsten Jagd.",
                 "Lasst uns feiern!",
+                "Heute folgen wir nicht den Spuren, sondern dem Rhythmus!",
             },
         },
 
@@ -415,6 +453,7 @@ RPChatMod_ClassTexts = {
                 "Die Jagd kann warten.",
                 "Ein Jäger muss seine Kräfte einteilen.",
                 "Kurz verschnaufen.",
+                "Lasst uns rasten und die Umgebung im Blick behalten, %s.",
             },
 
             gruppe = {
@@ -424,6 +463,7 @@ RPChatMod_ClassTexts = {
                 "Kurz verschnaufen.",
                 "Ein Jäger braucht Geduld.",
                 "Lasst uns das Lager genießen.",
+                "Rastet, aber behaltet die Umgebung im Auge.",
             },
         },
 
@@ -435,6 +475,7 @@ RPChatMod_ClassTexts = {
                 "Die Nacht gehört den Jägern.",
                 "Ruht Euch aus.",
                 "Morgen geht die Jagd weiter.",
+                "Möge Euer Lager sicher und Euer Schlaf tief sein, %s.",
             },
 
             gruppe = {
@@ -444,6 +485,7 @@ RPChatMod_ClassTexts = {
                 "Ruht Euch aus.",
                 "Die Nacht gehört den Jägern.",
                 "Genug für heute.",
+                "Die Wache steht; ruht Euch aus.",
             },
         },
     },
@@ -463,6 +505,7 @@ RPChatMod_ClassTexts = {
                 "Schön, Euch zu sehen.",
                 "Keine Sorge, ich bin heute harmlos.",
                 "Seid willkommen.",
+                "Ein unauffälliger Gruß, den nur Ihr bemerkt, %s.",
             },
 
             gruppe = {
@@ -472,6 +515,7 @@ RPChatMod_ClassTexts = {
                 "Ein diskreter Gruß an alle.",
                 "Schön, Euch zu sehen.",
                 "Niemand hat mich kommen sehen.",
+                "Ein Gruß, kaum sichtbar und doch ehrlich.",
             },
         },
 
@@ -483,6 +527,7 @@ RPChatMod_ClassTexts = {
                 "Ihr habt meine Aufmerksamkeit.",
                 "Ehre und Diskretion.",
                 "Gut Euch zu sehen.",
+                "Ihr habt Euch meinen Respekt verdient, %s.",
             },
 
             gruppe = {
@@ -492,6 +537,7 @@ RPChatMod_ClassTexts = {
                 "Ich behalte Euch im Auge.",
                 "Niemand hat mich gesehen.",
                 "Gut gemacht, Gefährten.",
+                "Respekt muss man nicht laut verkünden.",
             },
         },
 
@@ -503,6 +549,7 @@ RPChatMod_ClassTexts = {
                 "Ihr habt meinen Respekt.",
                 "Eine Verbeugung ohne großes Aufsehen.",
                 "Ehre Euch.",
+                "Eine Verbeugung, gerade auffällig genug, %s.",
             },
 
             gruppe = {
@@ -512,6 +559,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Diskretion.",
                 "Wir haben uns nie gesehen.",
                 "Ganz unauffällig.",
+                "Meine Verbeugung bleibt diskret.",
             },
         },
 
@@ -523,6 +571,7 @@ RPChatMod_ClassTexts = {
                 "Ich musste einfach lachen.",
                 "Das war elegant.",
                 "Herrlich.",
+                "Den muss ich mir merken, %s. Wirklich gut.",
             },
 
             gruppe = {
@@ -532,6 +581,7 @@ RPChatMod_ClassTexts = {
                 "Ich musste einfach lachen.",
                 "Nicht schlecht.",
                 "Das war beinahe perfekt.",
+                "Ein guter Witz ist der beste Trick des Abends.",
             },
         },
 
@@ -543,6 +593,7 @@ RPChatMod_ClassTexts = {
                 "Heute bleibt der Dolch stecken.",
                 "Zeit für etwas Bewegung.",
                 "Man muss auch einmal feiern.",
+                "Ich verspreche, diesmal nicht einfach zu verschwinden, %s.",
             },
 
             gruppe = {
@@ -552,6 +603,7 @@ RPChatMod_ClassTexts = {
                 "Niemand hat mich tanzen sehen.",
                 "Ein diskreter Tanz.",
                 "Feiern wir, solange niemand zusieht.",
+                "Tanzen wir, bevor jemand merkt, dass wir da sind.",
             },
         },
 
@@ -563,6 +615,7 @@ RPChatMod_ClassTexts = {
                 "Eine kurze Pause.",
                 "Ich beobachte lieber im Sitzen.",
                 "Keine Sorge, ich passe auf.",
+                "Von hier aus habe ich alles im Blick, %s.",
             },
 
             gruppe = {
@@ -572,6 +625,7 @@ RPChatMod_ClassTexts = {
                 "Setzen wir uns.",
                 "Ein Moment der Ruhe.",
                 "Niemand kommt an uns vorbei.",
+                "Eine Pause, aber keine unbewachte.",
             },
         },
 
@@ -583,6 +637,7 @@ RPChatMod_ClassTexts = {
                 "Ruht Euch aus.",
                 "Die Nacht gehört uns.",
                 "Keine Sorge. Ich wache.",
+                "Schlaft ruhig, %s. Ich passe auf die Schatten auf.",
             },
 
             gruppe = {
@@ -592,6 +647,7 @@ RPChatMod_ClassTexts = {
                 "Ruht Euch aus.",
                 "Ich halte Wache.",
                 "Schlaft ruhig.",
+                "Die Nacht ist still. Ich halte dennoch Wache.",
             },
         },
     },
@@ -611,6 +667,7 @@ RPChatMod_ClassTexts = {
                 "Das Licht sei mit Euch.",
                 "Möge Euer Geist stark sein.",
                 "Seid willkommen.",
+                "Friede und Zuversicht seien mit Euch, %s.",
             },
 
             gruppe = {
@@ -620,6 +677,7 @@ RPChatMod_ClassTexts = {
                 "Das Licht wache über uns.",
                 "Möge unser Glaube uns stärken.",
                 "Seid willkommen, Freunde.",
+                "Möge Zuversicht unsere Herzen stärken.",
             },
         },
 
@@ -631,6 +689,7 @@ RPChatMod_ClassTexts = {
                 "Seid gesegnet.",
                 "Friede sei mit Euch.",
                 "Möge das Licht Euren Weg erhellen.",
+                "Euer Mitgefühl verdient Achtung, %s.",
             },
 
             gruppe = {
@@ -640,6 +699,7 @@ RPChatMod_ClassTexts = {
                 "Friede sei mit Euch.",
                 "Seid gesegnet.",
                 "Möge das Licht unseren Weg erhellen.",
+                "Ehre allen, die anderen Hoffnung schenken.",
             },
         },
 
@@ -651,6 +711,7 @@ RPChatMod_ClassTexts = {
                 "Seid meiner Achtung gewiss.",
                 "Frieden und Segen, %s.",
                 "Möge Euer Geist stark bleiben.",
+                "Mit Demut und Achtung grüße ich Euch, %s.",
             },
 
             gruppe = {
@@ -660,6 +721,7 @@ RPChatMod_ClassTexts = {
                 "Eine Verbeugung vor meinen Gefährten.",
                 "Seid meiner Achtung gewiss.",
                 "Segen über Euch alle.",
+                "In Demut verneige ich mich vor Euch allen.",
             },
         },
 
@@ -671,6 +733,7 @@ RPChatMod_ClassTexts = {
                 "Herrlich.",
                 "Das hat meine Stimmung verbessert.",
                 "Ich musste einfach lachen.",
+                "So viel Freude tut der Seele gut, %s!",
             },
 
             gruppe = {
@@ -680,6 +743,7 @@ RPChatMod_ClassTexts = {
                 "Das Licht möge uns den Humor erhalten.",
                 "Ich musste einfach lachen.",
                 "Das hebt die Stimmung.",
+                "Ein herzliches Lachen bringt Frieden in den Tag.",
             },
         },
 
@@ -691,6 +755,7 @@ RPChatMod_ClassTexts = {
                 "Auch Priester dürfen tanzen.",
                 "Möge der Rhythmus uns führen.",
                 "Ein wenig Freude sei uns vergönnt.",
+                "Lasst uns die Freude miteinander teilen, %s.",
             },
 
             gruppe = {
@@ -700,6 +765,7 @@ RPChatMod_ClassTexts = {
                 "Möge der Rhythmus uns führen.",
                 "Das Licht möge unseren Tanz segnen.",
                 "Zeit für Freude!",
+                "Heute feiern wir das Leben und die Gemeinschaft!",
             },
         },
 
@@ -711,6 +777,7 @@ RPChatMod_ClassTexts = {
                 "Der Geist braucht Erholung.",
                 "Lasst uns einen Moment innehalten.",
                 "Ruht Euch aus.",
+                "Nehmt Euch einen Augenblick für Euch selbst, %s.",
             },
 
             gruppe = {
@@ -720,6 +787,7 @@ RPChatMod_ClassTexts = {
                 "Der Geist braucht Erholung.",
                 "Ruht Euch aus.",
                 "Ein Moment des Friedens.",
+                "Ein stiller Augenblick kann Wunder wirken.",
             },
         },
 
@@ -731,6 +799,7 @@ RPChatMod_ClassTexts = {
                 "Schlaft gesegnet.",
                 "Das Licht wache über Euch.",
                 "Erholt Euch gut.",
+                "Möge Euch friedvolle Ruhe zuteilwerden, %s.",
             },
 
             gruppe = {
@@ -740,6 +809,7 @@ RPChatMod_ClassTexts = {
                 "Das Licht wache über uns.",
                 "Schlaft gut, Gefährten.",
                 "Morgen wartet ein neuer Tag.",
+                "Möge Frieden unsere Träume begleiten.",
             },
         },
     },
@@ -759,6 +829,7 @@ RPChatMod_ClassTexts = {
                 "Möge der Wind Euch führen.",
                 "Seid gegrüßt, %s.",
                 "Die Elemente sind Euch gewogen.",
+                "Möge das Gleichgewicht Euch begleiten, %s.",
             },
 
             gruppe = {
@@ -768,6 +839,7 @@ RPChatMod_ClassTexts = {
                 "Die Geister wachen über uns.",
                 "Seid gegrüßt, Gefährten.",
                 "Die Elemente sind uns gewogen.",
+                "Möge das Gleichgewicht unter uns bestehen.",
             },
         },
 
@@ -779,6 +851,7 @@ RPChatMod_ClassTexts = {
                 "Die Geister seien Euch gewogen.",
                 "Respekt, %s.",
                 "Möge das Feuer Euren Mut stärken.",
+                "Die Geister erkennen Euren starken Willen, %s.",
             },
 
             gruppe = {
@@ -788,6 +861,7 @@ RPChatMod_ClassTexts = {
                 "Die Geister wachen über uns.",
                 "Feuer, Wasser, Erde und Luft!",
                 "Stärke aus den Elementen!",
+                "Ehre den Geistern und ihren Wegen!",
             },
         },
 
@@ -799,6 +873,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Elementargeister.",
                 "Möge der Wind Euren Weg begleiten.",
                 "Respekt, Gefährte.",
+                "Mein Respekt gilt Eurem Einklang mit den Elementen, %s.",
             },
 
             gruppe = {
@@ -808,6 +883,7 @@ RPChatMod_ClassTexts = {
                 "Die Elemente seien mit uns.",
                 "Eine Verbeugung vor den Gefährten.",
                 "Ehre und Stärke.",
+                "In Ehrfurcht vor den Elementen verneige ich mich.",
             },
         },
 
@@ -819,6 +895,7 @@ RPChatMod_ClassTexts = {
                 "Ein guter Witz ist wie ein guter Windstoß.",
                 "Das hat gesessen!",
                 "Sehr amüsant, %s.",
+                "Sogar der Donner klingt heute heiter, %s!",
             },
 
             gruppe = {
@@ -828,6 +905,7 @@ RPChatMod_ClassTexts = {
                 "Ha! Gut war der!",
                 "Das hebt die Stimmung.",
                 "Sehr amüsant.",
+                "Ein Lachen, lauter als der Donner!",
             },
         },
 
@@ -839,6 +917,7 @@ RPChatMod_ClassTexts = {
                 "Die Elemente verlangen Bewegung.",
                 "Heute tanzt der Wind.",
                 "Kommt, %s!",
+                "Lasst uns tanzen, bis selbst der Wind innehält, %s!",
             },
 
             gruppe = {
@@ -848,6 +927,7 @@ RPChatMod_ClassTexts = {
                 "Lasst uns feiern.",
                 "Ein Tanz für die Geister!",
                 "Feuer, Wasser, Erde und Tanz!",
+                "Der Wind trägt unseren Tanz durch die Nacht!",
             },
         },
 
@@ -859,6 +939,7 @@ RPChatMod_ClassTexts = {
                 "Zeit, den Geist zu sammeln.",
                 "Eine kleine Rast.",
                 "Die Erde trägt uns auch im Sitzen.",
+                "Lauscht einen Moment auf die Stimme der Erde, %s.",
             },
 
             gruppe = {
@@ -868,6 +949,7 @@ RPChatMod_ClassTexts = {
                 "Die Elemente können warten.",
                 "Sammelt Eure Kräfte.",
                 "Die Erde trägt uns.",
+                "Sammelt Euch; die Erde trägt uns.",
             },
         },
 
@@ -879,6 +961,7 @@ RPChatMod_ClassTexts = {
                 "Möge der Wind Eure Träume tragen.",
                 "Erholt Euch.",
                 "Die Elemente wachen.",
+                "Mögen die Geister Eure Träume behüten, %s.",
             },
 
             gruppe = {
@@ -888,6 +971,7 @@ RPChatMod_ClassTexts = {
                 "Zeit für Erholung.",
                 "Die Elemente wachen.",
                 "Ruht Euch aus, Gefährten.",
+                "Möge die Erde uns sanft ruhen lassen.",
             },
         },
     },
@@ -907,6 +991,7 @@ RPChatMod_ClassTexts = {
                 "Ein magischer Gruß an Euch.",
                 "Seid willkommen, %s.",
                 "Die Leylinien grüßen Euch.",
+                "Ein Gruß durch die arkanen Winde, %s.",
             },
 
             gruppe = {
@@ -916,6 +1001,7 @@ RPChatMod_ClassTexts = {
                 "Die Leylinien sind ruhig.",
                 "Ein magischer Gruß an alle.",
                 "Die Magie wartet.",
+                "Die arkanen Winde tragen unsere Grüße.",
             },
         },
 
@@ -927,6 +1013,7 @@ RPChatMod_ClassTexts = {
                 "Seid gegrüßt, %s.",
                 "Möge Euer Geist scharf bleiben.",
                 "Ehre und Arkana.",
+                "Euer Wissen verdient höchste Anerkennung, %s.",
             },
 
             gruppe = {
@@ -936,6 +1023,7 @@ RPChatMod_ClassTexts = {
                 "Respekt, Gefährten.",
                 "Möge unser Wissen wachsen.",
                 "Die Leylinien seien uns gewogen.",
+                "Ehre dem Wissen und seiner verantwortungsvollen Macht!",
             },
         },
 
@@ -947,6 +1035,7 @@ RPChatMod_ClassTexts = {
                 "Möge Eure Magie niemals versagen.",
                 "Ihr habt meinen Respekt.",
                 "Eine angemessene Verbeugung.",
+                "Vor Eurer Meisterschaft verneige ich mich, %s.",
             },
 
             gruppe = {
@@ -956,6 +1045,7 @@ RPChatMod_ClassTexts = {
                 "Eine Verbeugung vor meinen Gefährten.",
                 "Ehre und Wissen!",
                 "Möge die Magie uns führen.",
+                "Eine wohlüberlegte Verbeugung vor Euch allen.",
             },
         },
 
@@ -967,6 +1057,7 @@ RPChatMod_ClassTexts = {
                 "Sehr amüsant.",
                 "Das war unerwartet.",
                 "Ein ausgezeichnetes Ergebnis.",
+                "Das war eine überraschend gelungene Formel, %s!",
             },
 
             gruppe = {
@@ -976,6 +1067,7 @@ RPChatMod_ClassTexts = {
                 "Ich muss mir das merken.",
                 "Ein ausgezeichnetes Ergebnis!",
                 "Die Magie hat Humor.",
+                "Ein seltener Zauber: ein Lachen für alle!",
             },
         },
 
@@ -987,6 +1079,7 @@ RPChatMod_ClassTexts = {
                 "Heute wird nicht teleportiert.",
                 "Kommt, %s!",
                 "Ein wenig Bewegung schadet keinem Magier.",
+                "Ich könnte den Takt verzaubern, doch Ihr macht das schon, %s.",
             },
 
             gruppe = {
@@ -996,6 +1089,7 @@ RPChatMod_ClassTexts = {
                 "Ein wenig Bewegung!",
                 "Wer braucht schon Arkane Explosion?",
                 "Lasst uns feiern!",
+                "Kein Zauber nötig – der Rhythmus stimmt!",
             },
         },
 
@@ -1007,6 +1101,7 @@ RPChatMod_ClassTexts = {
                 "Die Magie läuft nicht davon.",
                 "Zeit für eine Pause.",
                 "Ein wenig Ruhe vor dem nächsten Zauber.",
+                "Zeit, die Gedanken zu ordnen, %s.",
             },
 
             gruppe = {
@@ -1016,6 +1111,7 @@ RPChatMod_ClassTexts = {
                 "Ein wenig Ruhe.",
                 "Lasst uns verschnaufen.",
                 "Der nächste Zauber kann warten.",
+                "Auch arkane Energien müssen sich sammeln.",
             },
         },
 
@@ -1027,6 +1123,7 @@ RPChatMod_ClassTexts = {
                 "Zeit, den Geist zu erholen.",
                 "Möge Euer Schlaf ruhig sein.",
                 "Erholt Euch.",
+                "Mögen die Leylinien Eure Ruhe nicht stören, %s.",
             },
 
             gruppe = {
@@ -1036,6 +1133,7 @@ RPChatMod_ClassTexts = {
                 "Schlaft gut, Gefährten.",
                 "Morgen wird wieder gezaubert.",
                 "Ruht Euch aus.",
+                "Lasst die Magie ruhen; morgen wartet neues Wissen.",
             },
         },
     },
@@ -1055,6 +1153,7 @@ RPChatMod_ClassTexts = {
                 "Ein interessanter Anblick, %s.",
                 "Seid willkommen.",
                 "Möge Euer Glück Euch erhalten bleiben.",
+                "Die Schatten kennen Euren Namen, %s.",
             },
 
             gruppe = {
@@ -1064,6 +1163,7 @@ RPChatMod_ClassTexts = {
                 "Die Dämonen sind heute gut erzogen.",
                 "Willkommen, Gefährten.",
                 "Alles ist vollkommen unter Kontrolle.",
+                "Ein Gruß aus den Schatten an Euch alle.",
             },
         },
 
@@ -1075,6 +1175,7 @@ RPChatMod_ClassTexts = {
                 "Ein Gruß aus den dunkleren Künsten.",
                 "Ehre und Schatten.",
                 "Möge Euer Wille stark sein.",
+                "Euer Wille ist stärker, als viele glauben, %s.",
             },
 
             gruppe = {
@@ -1084,6 +1185,7 @@ RPChatMod_ClassTexts = {
                 "Respekt, Gefährten.",
                 "Die dunklen Künste ruhen.",
                 "Die Dämonen warten.",
+                "Achtung denen, die ihren Willen behaupten.",
             },
         },
 
@@ -1095,6 +1197,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Schatten.",
                 "Möge Euer Wille niemals brechen.",
                 "Eine angemessene Verbeugung.",
+                "Selbst in den Schatten ist Platz für Respekt, %s.",
             },
 
             gruppe = {
@@ -1104,6 +1207,7 @@ RPChatMod_ClassTexts = {
                 "Eine Verbeugung vor meinen Gefährten.",
                 "Respekt vor den Mutigen.",
                 "Die Schatten beobachten.",
+                "Eine Verbeugung – ganz ohne finstere Absicht.",
             },
         },
 
@@ -1115,6 +1219,7 @@ RPChatMod_ClassTexts = {
                 "Mein Dämon hätte darüber gelacht.",
                 "Das war gut.",
                 "Ich wusste, dass Ihr Humor habt.",
+                "Das war beinahe so finster wie mein Humor, %s.",
             },
 
             gruppe = {
@@ -1124,6 +1229,7 @@ RPChatMod_ClassTexts = {
                 "Sehr amüsant.",
                 "Das war gut.",
                 "Selbst die Schatten lachen.",
+                "Selbst die Dämonen konnten sich ein Lachen nicht verkneifen.",
             },
         },
 
@@ -1135,6 +1241,7 @@ RPChatMod_ClassTexts = {
                 "Zeit für ein wenig Bewegung.",
                 "Die Schatten haben Rhythmus.",
                 "Kommt, %s!",
+                "Die Schatten verlangen nach einem Tanz, %s.",
             },
 
             gruppe = {
@@ -1144,6 +1251,7 @@ RPChatMod_ClassTexts = {
                 "Zeit für eine dunkle Feier.",
                 "Ein Tanz mit den Schatten!",
                 "Lasst uns feiern.",
+                "Für eine Weile weichen die Schatten dem Feiern.",
             },
         },
 
@@ -1155,6 +1263,7 @@ RPChatMod_ClassTexts = {
                 "Zeit, die Kräfte zu sammeln.",
                 "Die Schatten können warten.",
                 "Eine kleine Pause.",
+                "Die dunklen Künste laufen nicht davon, %s.",
             },
 
             gruppe = {
@@ -1164,6 +1273,7 @@ RPChatMod_ClassTexts = {
                 "Sammelt Eure Kräfte.",
                 "Die Dämonen laufen nicht davon.",
                 "Lasst uns kurz verschnaufen.",
+                "Eine kurze Rast; die Schatten warten.",
             },
         },
 
@@ -1175,6 +1285,7 @@ RPChatMod_ClassTexts = {
                 "Ruht Euch aus.",
                 "Die Nacht gehört uns.",
                 "Erholt Euch.",
+                "Möge Euch in der Nacht kein Dämon heimsuchen, %s.",
             },
 
             gruppe = {
@@ -1184,6 +1295,7 @@ RPChatMod_ClassTexts = {
                 "Die Nacht gehört uns.",
                 "Ruht Euch aus.",
                 "Morgen gibt es wieder Arbeit.",
+                "Die Schatten halten Wache, während wir ruhen.",
             },
         },
     },
@@ -1203,6 +1315,7 @@ RPChatMod_ClassTexts = {
                 "Die Geister der Natur seien mit Euch.",
                 "Möge das Gleichgewicht Euch führen.",
                 "Die Wildnis ist Euch gewogen.",
+                "Möge der Hain Euch willkommen heißen, %s.",
             },
 
             gruppe = {
@@ -1212,6 +1325,7 @@ RPChatMod_ClassTexts = {
                 "Das Gleichgewicht bleibt gewahrt.",
                 "Möge die Wildnis uns führen.",
                 "Die Geister der Natur wachen über uns.",
+                "Der Hain heißt Euch alle willkommen.",
             },
         },
 
@@ -1223,6 +1337,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Gleichgewicht.",
                 "Möge die Wildnis Euch führen.",
                 "Die Natur erkenne Euren Weg.",
+                "Euer Einsatz für das Gleichgewicht verdient Ehre, %s.",
             },
 
             gruppe = {
@@ -1232,6 +1347,7 @@ RPChatMod_ClassTexts = {
                 "Die Geister wachen über uns.",
                 "Das Gleichgewicht bleibt gewahrt.",
                 "Möge die Wildnis uns führen.",
+                "Ehre allen, die das Gleichgewicht bewahren.",
             },
         },
 
@@ -1243,6 +1359,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Gleichgewicht.",
                 "Die Natur sei Euch gewogen.",
                 "Respekt, %s.",
+                "Die Natur erkennt Euren Weg, %s. Mein Respekt.",
             },
 
             gruppe = {
@@ -1252,6 +1369,7 @@ RPChatMod_ClassTexts = {
                 "Eine Verbeugung vor meinen Gefährten.",
                 "Möge der Hain uns schützen.",
                 "Respekt vor allen Pfaden.",
+                "Eine Verbeugung vor allen Freunden des Hains.",
             },
         },
 
@@ -1263,6 +1381,7 @@ RPChatMod_ClassTexts = {
                 "Das war herrlich.",
                 "Die Geister finden das bestimmt auch lustig.",
                 "Sehr amüsant.",
+                "Selbst die Eulen scheinen darüber zu lachen, %s!",
             },
 
             gruppe = {
@@ -1272,6 +1391,7 @@ RPChatMod_ClassTexts = {
                 "Sehr amüsant.",
                 "Die Geister lachen bestimmt mit.",
                 "Herrlich!",
+                "Ein fröhlicher Ruf hallt durch den Hain!",
             },
         },
 
@@ -1283,6 +1403,7 @@ RPChatMod_ClassTexts = {
                 "Die Blätter bewegen sich. Ich auch.",
                 "Kommt, %s!",
                 "Das Gleichgewicht verlangt Bewegung.",
+                "Lasst uns tanzen, wie Blätter im Sommerwind, %s.",
             },
 
             gruppe = {
@@ -1292,6 +1413,7 @@ RPChatMod_ClassTexts = {
                 "Heute bleiben die Pfoten nicht ruhig.",
                 "Ein Tanz für die Wildnis!",
                 "Lasst uns feiern.",
+                "Der Hain bewegt sich im Rhythmus mit uns.",
             },
         },
 
@@ -1303,6 +1425,7 @@ RPChatMod_ClassTexts = {
                 "Zeit, das Gleichgewicht zu finden.",
                 "Eine kleine Meditation.",
                 "Ruht Euch aus, %s.",
+                "Lasst uns ruhen und dem Hain lauschen, %s.",
             },
 
             gruppe = {
@@ -1312,6 +1435,7 @@ RPChatMod_ClassTexts = {
                 "Findet Euer Gleichgewicht.",
                 "Eine kurze Meditation.",
                 "Ruht Euch aus.",
+                "Ein stiller Platz unter den Bäumen wartet auf uns.",
             },
         },
 
@@ -1323,6 +1447,7 @@ RPChatMod_ClassTexts = {
                 "Schlaft gut, %s.",
                 "Möge das Gleichgewicht Euch Ruhe schenken.",
                 "Erholt Euch.",
+                "Möge der Hain Euch in seine Ruhe hüllen, %s.",
             },
 
             gruppe = {
@@ -1332,6 +1457,7 @@ RPChatMod_ClassTexts = {
                 "Möge das Gleichgewicht uns Ruhe schenken.",
                 "Zeit für Erholung.",
                 "Schlaft gut, Gefährten.",
+                "Möge der Hain über unseren Schlaf wachen.",
             },
         },
     },
