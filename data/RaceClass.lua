@@ -14,9 +14,23 @@ RPChatMod_RaceClassTexts = {
 
         ["PALADIN"] = {
 
+            HELLO = {
+                ziel = {
+                    "Bei meiner Axt, gut Euch zu sehen, %s! Das Licht führt Euch sicher hierher.",
+                    "Seid willkommen, Streiter des Lichts. Ein Krug wartet, %s.",
+                    "Ein Freund der Zwerge und des Lichts! Gut, Euch zu sehen, %s.",
+                },
+
+                gruppe = {
+                    "Bei meiner Axt! Das Licht führt gute Gefährten zusammen.",
+                    "Seid willkommen, Streiter des Lichts. Ein Krug wartet.",
+                    "Freunde der Zwerge und des Lichts, tretet näher!",
+                },
+            },
+
             WAVE = {
                 ziel = {
-                    "Bei meiner Axt, %s! Das Licht sei mit Euch.",
+                    "Bei meiner Axt, gut Euch zu sehen, %s! Das Licht sei mit Euch.",
                     "Möge das Licht Euren Hammer führen, %s.",
                     "Ein Zwergengruß und der Segen des Lichts!",
                     "Seid gegrüßt, %s. Stein, Stahl und Licht!",
@@ -82,6 +96,20 @@ RPChatMod_RaceClassTexts = {
 
         ["SHAMAN"] = {
 
+            HELLO = {
+                ziel = {
+                    "Bei Stein und Stahl, %s! Die Elemente heißen Euch willkommen.",
+                    "Möge die Erde Euch tragen und der Wind Euch grüßen, %s.",
+                    "Ein Freund der Berge und der Geister! Seid willkommen, %s.",
+                },
+
+                gruppe = {
+                    "Stein, Stahl und Elementargeister heißen Euch willkommen!",
+                    "Möge die Erde uns tragen und der Wind uns grüßen.",
+                    "Freunde der Berge und der Geister, tretet näher!",
+                },
+            },
+
             WAVE = {
                 ziel = {
                     "Bei Stein und Stahl, %s! Die Elemente grüßen Euch.",
@@ -132,6 +160,20 @@ RPChatMod_RaceClassTexts = {
     ["Orc"] = {
 
         ["MAGE"] = {
+
+            HELLO = {
+                ziel = {
+                    "Lok'tar, %s. Möge Eure arkane Macht der Horde dienen.",
+                    "Seid willkommen, Zauberwirker. Die Elemente beobachten Euch, %s.",
+                    "Stärke und Arkana, %s! Gut, Euch zu treffen.",
+                },
+
+                gruppe = {
+                    "Lok'tar! Möge die arkane Macht der Horde dienen.",
+                    "Seid willkommen, Zauberwirker. Die Elemente beobachten uns.",
+                    "Stärke und Arkana! Gut, Euch zu treffen.",
+                },
+            },
 
             WAVE = {
                 ziel = {
@@ -184,11 +226,25 @@ RPChatMod_RaceClassTexts = {
 
         ["PALADIN"] = {
 
+            HELLO = {
+                ziel = {
+                    "Seid willkommen, %s. Das Licht findet wahrlich seltsame Wege.",
+                    "Ein Diener des Lichts unter den Verlassenen. Seid gegrüßt, %s.",
+                    "Das Licht sei mit Euch, auch wenn die Schatten zusehen, %s.",
+                },
+
+                gruppe = {
+                    "Seid willkommen. Das Licht findet wahrlich seltsame Wege.",
+                    "Ein Diener des Lichts unter den Verlassenen. Seid gegrüßt.",
+                    "Das Licht sei mit Euch, auch wenn die Schatten zusehen.",
+                },
+            },
+
             WAVE = {
                 ziel = {
                     "Das Licht sei... mit Euch, %s.",
                     "Ein Paladin unter den Untoten. Interessant.",
-                    "Seid gegrüßt, %s. Das Licht hat Humor.",
+                    "Seid gegrüßt, %s. Das Licht besitzt offenbar einen eigenwilligen Sinn für Ironie.",
                     "Die Schatten und das Licht grüßen Euch.",
                     "Möge das Licht Euch nicht blenden.",
                     "Ein ungewöhnlicher Diener des Lichts.",
@@ -196,7 +252,7 @@ RPChatMod_RaceClassTexts = {
 
                 gruppe = {
                     "Das Licht... ist überraschend hartnäckig.",
-                    "Untote und Paladine. Warum eigentlich nicht?",
+                    "Untote und Paladine. Das Licht geht seltsame Wege.",
                     "Die Schatten treffen auf das Licht.",
                     "Das Licht möge uns vergeben.",
                     "Heute sind die Gegensätze besonders zahlreich.",
@@ -217,7 +273,7 @@ RPChatMod_RaceClassTexts = {
                 gruppe = {
                     "Ehre und Licht!",
                     "Tod und Licht. Eine interessante Allianz.",
-                    "Das Licht hat Humor.",
+                    "Das Licht besitzt offenbar einen eigenwilligen Sinn für Ironie.",
                     "Möge das Licht uns vergeben.",
                     "Respekt vor den Dienern des Lichts.",
                     "Die Schatten beobachten Euch.",
@@ -235,11 +291,25 @@ RPChatMod_RaceClassTexts = {
 
         ["PRIEST"] = {
 
+            HELLO = {
+                ziel = {
+                    "Seid willkommen, %s. Glaube und Wissenschaft grüßen Euch.",
+                    "Das Licht sei mit Euch. Ich habe Eure Ankunft beinahe berechnet, %s.",
+                    "Hallo, %s! Euer geistiger Zustand scheint ausgezeichnet.",
+                },
+
+                gruppe = {
+                    "Seid willkommen. Glaube und Wissenschaft grüßen Euch.",
+                    "Das Licht sei mit Euch. Eure Ankunft war beinahe berechenbar.",
+                    "Hallo zusammen! Euer geistiger Zustand scheint ausgezeichnet.",
+                },
+            },
+
             WAVE = {
                 ziel = {
                     "Das Licht sei mit Euch, %s! Wissenschaftlich bestätigt.",
                     "Seid gesegnet! Ich habe das natürlich dokumentiert.",
-                    "Hallo %s! Möge Euer Geist stabil bleiben.",
+                    "Hallo, %s! Möge Euer Geist stabil bleiben.",
                     "Ein heiliger Gruß mit technisch einwandfreier Präzision.",
                     "Das Licht grüßt Euch!",
                     "Willkommen! Keine Sorge, der Segen ist getestet.",
@@ -248,10 +318,10 @@ RPChatMod_RaceClassTexts = {
                 gruppe = {
                     "Das Licht sei mit uns! Alles wissenschaftlich überprüft.",
                     "Seid gesegnet, Freunde!",
-                    "Glaube und Wissenschaft können koexistieren.",
-                    "Die geistige Stabilität ist ausgezeichnet.",
+                    "Glaube und Erkenntnis schließen einander nicht aus.",
+                    "Die geistige Stabilität liegt im erwarteten Bereich.",
                     "Ein gesegneter Gruß!",
-                    "Keine Panik. Das Licht funktioniert.",
+                    "Keine Sorge. Der Segen wurde gewissenhaft geprüft.",
                 },
             },
 
@@ -285,6 +355,20 @@ RPChatMod_RaceClassTexts = {
     ["Troll"] = {
 
         ["WARLOCK"] = {
+
+            HELLO = {
+                ziel = {
+                    "Da Mojo heißt Euch willkommen, %s. Die Geister sind neugierig.",
+                    "Seid gegrüßt, %s. Da Schatten haben Euren Besuch bemerkt.",
+                    "Willkommen, Hexenmeister. Möge da Mojo mit Euch sein, %s.",
+                },
+
+                gruppe = {
+                    "Da Mojo heißt Euch willkommen. Die Geister sind neugierig.",
+                    "Seid gegrüßt. Da Schatten haben Euren Besuch bemerkt.",
+                    "Willkommen, Hexenmeister. Möge da Mojo mit uns sein.",
+                },
+            },
 
             WAVE = {
                 ziel = {
@@ -337,6 +421,20 @@ RPChatMod_RaceClassTexts = {
 
         ["HUNTER"] = {
 
+            HELLO = {
+                ziel = {
+                    "Seid willkommen, %s. Die Wildnis hat Euch sicher hergeführt.",
+                    "Waidmannsheil! Sturmwind grüßt Euch, %s.",
+                    "Ein Jäger erkennt den Schritt eines anderen. Seid gegrüßt, %s.",
+                },
+
+                gruppe = {
+                    "Seid willkommen. Die Wildnis hat Euch sicher hergeführt.",
+                    "Waidmannsheil! Sturmwind grüßt Euch.",
+                    "Ein Jäger erkennt den Schritt eines anderen. Seid gegrüßt!",
+                },
+            },
+
             WAVE = {
                 ziel = {
                     "Seid gegrüßt, %s! Die Wildnis grüßt Euch.",
@@ -361,7 +459,7 @@ RPChatMod_RaceClassTexts = {
                 ziel = {
                     "Waidmannsheil, %s.",
                     "Ehre und Jagd!",
-                    "Mein Respekt, Jäger.",
+                    "Mein Waidmannsheil. Mein Respekt gilt Euch.",
                     "Für König und Allianz.",
                     "Möge Euer Auge scharf bleiben.",
                     "Die Allianz grüßt Euch.",

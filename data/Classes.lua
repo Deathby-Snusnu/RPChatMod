@@ -11,6 +11,20 @@ RPChatMod_ClassTexts = {
 
     ["WARRIOR"] = {
 
+        HELLO = {
+            ziel = {
+                "Seid gegrüßt, %s.",
+                "Willkommen, %s. Hoffentlich bringt Ihr gute Nachrichten.",
+                "Gut, Euch zu sehen, %s. Die Waffen sind bereit.",
+            },
+
+            gruppe = {
+                "Gruß an Euch, Kameraden.",
+                "Willkommen! Hoffentlich bringt Ihr gute Nachrichten.",
+                "Gut, Euch zu sehen. Die Waffen sind bereit.",
+            },
+        },
+
         WAVE = {
             ziel = {
                 "Seid gegrüßt, %s!",
@@ -48,7 +62,7 @@ RPChatMod_ClassTexts = {
                 "Ehre und Stärke!",
                 "Möge unser Stahl niemals brechen.",
                 "Für Ruhm und Ehre!",
-                "Stärke unseren Reihen!",
+                "Stärke für unsere Reihen!",
                 "Krieger, seid gegrüßt!",
                 "Die Waffen hoch!",
                 "Auf Mut, Standhaftigkeit und starke Arme!",
@@ -57,7 +71,7 @@ RPChatMod_ClassTexts = {
 
         BOW = {
             ziel = {
-                "Mein Respekt gilt einem tapferen Krieger.",
+                "Mein Respekt gilt einem tapferen Kämpfer.",
                 "Ehre Eurem Mut, %s.",
                 "Vor einem würdigen Kämpfer verbeuge ich mich.",
                 "Respekt, %s.",
@@ -67,7 +81,7 @@ RPChatMod_ClassTexts = {
             },
 
             gruppe = {
-                "Ehre allen tapferen Kriegern!",
+                "Ehre allen tapferen Kämpfern!",
                 "Mein Respekt gilt Euch.",
                 "Vor solchem Mut verneige ich mich.",
                 "Ehre und Stärke!",
@@ -173,6 +187,20 @@ RPChatMod_ClassTexts = {
 
     ["PALADIN"] = {
 
+        HELLO = {
+            ziel = {
+                "Das Licht sei mit Euch, %s. Seid willkommen.",
+                "Möge das Licht Euren Weg erhellen, %s.",
+                "Es ist mir eine Freude, Euch zu begegnen, %s.",
+            },
+
+            gruppe = {
+                "Das Licht sei mit Euch. Seid willkommen!",
+                "Möge das Licht unsere Wege erhellen.",
+                "Es ist mir eine Freude, Euch zu begegnen.",
+            },
+        },
+
         WAVE = {
             ziel = {
                 "Das Licht sei mit Euch, %s.",
@@ -200,8 +228,8 @@ RPChatMod_ClassTexts = {
                 "Ehre und Licht, %s.",
                 "Möge das Licht über Euch wachen.",
                 "Seid gesegnet, %s.",
-                "Das Licht erkenne Euren Weg.",
-                "Möge Eure Pflicht Euch niemals schwach machen.",
+                "Das Licht erhelle Euren Weg.",
+                "Möge Euch Eure Pflicht niemals wanken lassen.",
                 "Ehre dem Licht und Euch.",
                 "Eure Hingabe verdient Achtung, %s.",
             },
@@ -241,7 +269,7 @@ RPChatMod_ClassTexts = {
 
         LAUGH = {
             ziel = {
-                "Das Licht verzeihe mir, aber das war gut!",
+                "Das Licht verzeihe mir, aber der war gut!",
                 "Ha! Selbst das Licht hat Humor.",
                 "Das war köstlich, %s.",
                 "Bei allem Licht!",
@@ -263,9 +291,9 @@ RPChatMod_ClassTexts = {
 
         DANCE = {
             ziel = {
-                "Auch das Licht verlangt gelegentlich einen Tanz.",
-                "Ein Tänzchen, bevor wir wieder die Welt retten?",
-                "Das Licht möge meinen Rhythmus vergeben.",
+                "Auch ein Streiter des Lichts darf einmal tanzen.",
+                "Ein Tanz, bevor die Pflicht wieder ruft?",
+                "Das Licht möge über meinen Rhythmus hinwegsehen.",
                 "Heute wird gefeiert, %s!",
                 "Der Hammer ruht. Die Füße tanzen.",
                 "Für das Licht und den guten Rhythmus!",
@@ -335,9 +363,23 @@ RPChatMod_ClassTexts = {
 
     ["HUNTER"] = {
 
+        HELLO = {
+            ziel = {
+                "Seid gegrüßt, %s. Die Wildnis hat Euch sicher hergeführt.",
+                "Willkommen, %s. Seid Ihr auf der Jagd?",
+                "Gut, Euch zu treffen. Möge Euer Pfad sicher sein, %s.",
+            },
+
+            gruppe = {
+                "Seid gegrüßt. Die Wildnis hat Euch sicher hergeführt.",
+                "Willkommen! Seid Ihr auf der Jagd?",
+                "Gut, Euch zu treffen. Möge unser Pfad sicher sein.",
+            },
+        },
+
         WAVE = {
             ziel = {
-                "Die Wildnis grüßt Euch, %s.",
+                "Seid gegrüßt, %s. Die Wildnis war Euch offenbar gewogen.",
                 "Seid gegrüßt, %s.",
                 "Gut Euch zu sehen.",
                 "Möge Euer Weg sicher sein.",
@@ -361,7 +403,7 @@ RPChatMod_ClassTexts = {
             ziel = {
                 "Waidmannsheil, %s.",
                 "Die Wildnis sei mit Euch.",
-                "Respekt, Jäger.",
+                "Waidmannsheil. Mein Respekt gilt Euch.",
                 "Möge Eure Spur sicher sein.",
                 "Eine gute Jagd sei Euch beschieden.",
                 "Die Natur grüßt Euch.",
@@ -396,7 +438,7 @@ RPChatMod_ClassTexts = {
                 "Eine gute Jagd Euch allen.",
                 "Die Natur sei uns gewogen.",
                 "Waidmannsheil!",
-                "Ehre den Jägern.",
+                "Ehre denen, die die Wildnis kennen.",
                 "Respekt vor allen, die die Wildnis verstehen.",
             },
         },
@@ -407,7 +449,7 @@ RPChatMod_ClassTexts = {
                 "Das war ein Volltreffer, %s!",
                 "Treffer!",
                 "Das war gut.",
-                "Ha! Den hätte selbst mein Pet bemerkt.",
+                "Ha! Den hätte selbst mein Tiergefährte bemerkt.",
                 "Sehr amüsant.",
                 "Der Witz traf sicherer als mancher Pfeil, %s!",
             },
@@ -415,8 +457,8 @@ RPChatMod_ClassTexts = {
             gruppe = {
                 "Treffer!",
                 "Das war ein Volltreffer!",
-                "Ha! Gute Jagd auf den Humor.",
-                "Das Pet würde jetzt bellen.",
+                "Ha! Der Humor hat heute eine gute Fährte gelegt.",
+                "Mein Tiergefährte würde jetzt wohl zustimmend knurren.",
                 "Sehr amüsant.",
                 "Gut getroffen!",
                 "Das war ein Volltreffer ins Zwerchfell!",
@@ -425,20 +467,20 @@ RPChatMod_ClassTexts = {
 
         DANCE = {
             ziel = {
-                "Das Pet kann warten. Jetzt wird getanzt.",
+                "Mein Tiergefährte kann warten. Jetzt wird getanzt.",
                 "Ein Tanz vor der nächsten Jagd.",
-                "Die Wildnis hat Rhythmus.",
+                "Selbst die Wildnis kennt ihren Rhythmus.",
                 "Kommt, %s!",
-                "Heute wird nicht gejagt.",
+                "Heute ruht die Jagd.",
                 "Selbst Jäger brauchen Unterhaltung.",
                 "Selbst auf der Jagd darf man einmal den Takt verlieren, %s.",
             },
 
             gruppe = {
                 "Heute wird nicht gejagt!",
-                "Die Wildnis hat Rhythmus.",
+                "Selbst die Wildnis kennt ihren Rhythmus.",
                 "Zeit für einen Jägertanz!",
-                "Das Pet schaut schon komisch.",
+                "Mein Tiergefährte schaut schon fragend.",
                 "Ein Tanz vor der nächsten Jagd.",
                 "Lasst uns feiern!",
                 "Heute folgen wir nicht den Spuren, sondern dem Rhythmus!",
@@ -496,6 +538,20 @@ RPChatMod_ClassTexts = {
     -- ======================================
 
     ["ROGUE"] = {
+
+        HELLO = {
+            ziel = {
+                "Psst, %s. Ich wollte Euch schon begrüßen, bevor Ihr mich bemerkt.",
+                "Seid willkommen, %s. Keine Sorge, ich bin nur zu Besuch.",
+                "Schön, Euch zu treffen, %s. Ganz ohne Hintergedanken.",
+            },
+
+            gruppe = {
+                "Psst. Ich wollte Euch schon begrüßen, bevor Ihr mich bemerkt.",
+                "Seid willkommen. Keine Sorge, ich bin nur zu Besuch.",
+                "Schön, Euch zu treffen. Ganz ohne Hintergedanken.",
+            },
+        },
 
         WAVE = {
             ziel = {
@@ -659,6 +715,20 @@ RPChatMod_ClassTexts = {
 
     ["PRIEST"] = {
 
+        HELLO = {
+            ziel = {
+                "Seid willkommen, %s. Möge Euch innerer Frieden begleiten.",
+                "Das Licht sei mit Euch, %s. Wie geht es Eurem Geist?",
+                "Es freut mich, Euch zu treffen, %s. Seid gesegnet.",
+            },
+
+            gruppe = {
+                "Seid willkommen. Möge uns innerer Frieden begleiten.",
+                "Das Licht sei mit Euch. Wie geht es Eurem Geist?",
+                "Es freut mich, Euch zu treffen. Seid gesegnet.",
+            },
+        },
+
         WAVE = {
             ziel = {
                 "Möge das Licht Euch führen, %s.",
@@ -820,6 +890,20 @@ RPChatMod_ClassTexts = {
     -- ======================================
 
     ["SHAMAN"] = {
+
+        HELLO = {
+            ziel = {
+                "Die Elemente grüßen Euch, %s.",
+                "Seid willkommen, %s. Mögen die Geister Euch leiten.",
+                "Gut, Euch zu begegnen. Erde und Wind seien Euch gewogen, %s.",
+            },
+
+            gruppe = {
+                "Die Elemente grüßen Euch!",
+                "Seid willkommen. Mögen die Geister uns leiten.",
+                "Erde und Wind seien uns gewogen.",
+            },
+        },
 
         WAVE = {
             ziel = {
@@ -983,6 +1067,20 @@ RPChatMod_ClassTexts = {
 
     ["MAGE"] = {
 
+        HELLO = {
+            ziel = {
+                "Seid gegrüßt, %s. Möge die Magie Euch wohl dienen.",
+                "Willkommen, %s. Eine interessante Aura habt Ihr.",
+                "Die arkanen Künste führen uns zusammen, %s.",
+            },
+
+            gruppe = {
+                "Seid gegrüßt. Möge die Magie Euch wohl dienen.",
+                "Willkommen. Eine interessante Aura liegt in der Luft.",
+                "Die arkanen Künste führen uns zusammen.",
+            },
+        },
+
         WAVE = {
             ziel = {
                 "Seid gegrüßt, %s.",
@@ -1145,6 +1243,20 @@ RPChatMod_ClassTexts = {
 
     ["WARLOCK"] = {
 
+        HELLO = {
+            ziel = {
+                "Seid willkommen, %s. Die Schatten haben Euch angekündigt.",
+                "Ein interessanter Besuch, %s. Fürchtet Euch nicht.",
+                "Mögen Eure Geheimnisse gut gehütet bleiben, %s.",
+            },
+
+            gruppe = {
+                "Seid willkommen. Die Schatten haben Euch angekündigt.",
+                "Ein interessanter Besuch. Fürchtet Euch nicht.",
+                "Mögen Eure Geheimnisse gut gehütet bleiben.",
+            },
+        },
+
         WAVE = {
             ziel = {
                 "Seid gegrüßt, %s.",
@@ -1306,6 +1418,20 @@ RPChatMod_ClassTexts = {
     -- ======================================
 
     ["DRUID"] = {
+
+        HELLO = {
+            ziel = {
+                "Seid willkommen, %s. Die Natur freut sich über Eure Anwesenheit.",
+                "Möge der Wald Euch Frieden schenken, %s.",
+                "Es ist schön, Euch unter freiem Himmel zu treffen, %s.",
+            },
+
+            gruppe = {
+                "Seid willkommen. Die Natur freut sich über Eure Anwesenheit.",
+                "Möge der Wald uns Frieden schenken.",
+                "Es ist schön, Euch unter freiem Himmel zu treffen.",
+            },
+        },
 
         WAVE = {
             ziel = {

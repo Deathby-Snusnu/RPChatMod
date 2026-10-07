@@ -22,6 +22,7 @@ Der Befehl `/rc` gefolgt von einem Emote-Namen spielt die zugehörige WoW-
 Animation ab und versucht, zusätzlich einen RP-Text im Chat auszugeben:
 
 ```text
+/rc hello
 /rc wave
 /rc salute
 /rc bow
@@ -29,6 +30,7 @@ Animation ab und versucht, zusätzlich einen RP-Text im Chat auszugeben:
 /rc dance
 /rc sit
 /rc sleep
+/rc thank
 ```
 
 Der Emote-Name wird ohne Beachtung der Groß-/Kleinschreibung verarbeitet.

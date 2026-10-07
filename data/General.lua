@@ -4,9 +4,27 @@
 
 RPChatMod_GeneralTexts = {
 
+    HELLO = {
+        ziel = {
+            "Hallo, %s!",
+            "Seid willkommen, %s.",
+            "Schön, Euch kennenzulernen, %s.",
+            "Guten Tag, %s. Wie geht es Euch?",
+            "Es freut mich, Euch zu treffen, %s.",
+        },
+
+        gruppe = {
+            "Hallo zusammen!",
+            "Seid willkommen, Gefährten.",
+            "Schön, Euch kennenzulernen!",
+            "Guten Tag allerseits.",
+            "Es freut mich, Euch alle zu treffen.",
+        },
+    },
+
     WAVE = {
         ziel = {
-            "Hallo %s! Schön Euch zu sehen.",
+            "Hallo, %s! Schön, Euch zu sehen.",
             "Seid gegrüßt, %s!",
             "Grüße, %s. Wie geht es Euch?",
             "Freut mich, Euch zu sehen, %s.",
@@ -15,12 +33,12 @@ RPChatMod_GeneralTexts = {
         },
 
         gruppe = {
-            "Seid gegrüßt, zusammen!",
+            "Seid gegrüßt, Gefährten!",
             "Grüße an alle!",
             "Schön, Euch alle zu sehen.",
             "Seid willkommen, Gefährten.",
             "Einen guten Tag Euch allen.",
-            "Grüße an die versammelte Mannschaft!",
+            "Grüße an die versammelten Gefährten!",
         },
     },
 
@@ -49,7 +67,7 @@ RPChatMod_GeneralTexts = {
             "Mein Respekt sei Euch gewiss, %s.",
             "Ehre und Respekt, %s.",
             "Ich erweise Euch die Ehre, %s.",
-            "Mein Gruß und Respekt gilt Euch, %s.",
+            "Mein Gruß und Respekt gelten Euch, %s.",
             "Es ist mir eine Ehre, %s.",
             "Respekt vor Euch, %s.",
         },
@@ -69,7 +87,7 @@ RPChatMod_GeneralTexts = {
             "Das ist köstlich, %s!",
             "Herrlich, %s!",
             "Das war gut, %s!",
-            "Bei allen Göttern, %s!",
+            "Bei allen Mächten, %s!",
             "Ihr bringt mich noch zum Lachen, %s.",
             "Das war wirklich gut!",
         },
@@ -79,7 +97,7 @@ RPChatMod_GeneralTexts = {
             "Herrlich!",
             "Das war gut!",
             "Ich kann nicht mehr!",
-            "Bei allen Göttern!",
+            "Bei allen Mächten!",
             "Das wird noch lange erzählt werden.",
         },
     },
@@ -141,6 +159,24 @@ RPChatMod_GeneralTexts = {
             "Genug für heute.",
             "Zeit, die Waffen niederzulegen.",
             "Ruht Euch aus, Gefährten.",
+        },
+    },
+
+    THANK = {
+        ziel = {
+            "Habt Dank für Eure Hilfe, %s.",
+            "Ich danke Euch, %s.",
+            "Ihr habt meinen Dank, %s.",
+            "Das werde ich Euch nicht vergessen, %s.",
+            "Vielen Dank, %s. Ihr habt mir sehr geholfen.",
+        },
+
+        gruppe = {
+            "Habt Dank für Eure Hilfe!",
+            "Mein Dank gilt Euch allen.",
+            "Vielen Dank, Gefährten.",
+            "Ich weiß Eure Unterstützung zu schätzen.",
+            "Ihr habt meinen Dank.",
         },
     },
 }

@@ -8,10 +8,11 @@ vorhandenen Quellstand fest und behauptet keinen veröffentlichten Release.
 
 - Dokumentation der vorhandenen Add-on-Funktionen in der README ergänzt.
 - Der `/rc`-Befehl unterstützt die Emotes `wave`, `salute`, `bow`, `laugh`,
-  `dance`, `sit` und `sleep`.
+  `dance`, `sit`, `sleep`, `thank` und `hello`.
 - RP-Texte werden zufällig aus rassen-, klassen-, rassen-/klassen- oder
   allgemeinen Textpools ausgewählt und können abhängig von Ziel und Gruppe
-  variieren.
+  variieren. Für alle neun unterstützten Emotes gibt es nun Texte für die fünf
+  in `data/Races.lua` aufgeführten Rassen.
 - Einstellungen für Textchance, Abklingzeit, Animationsverzögerung und
   Chatkanal sind dokumentiert. `chatChannel` wird derzeit beim Senden nicht
   ausgewertet; der Chatkanal wird automatisch anhand des Gruppen- und

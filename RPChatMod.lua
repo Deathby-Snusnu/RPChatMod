@@ -326,6 +326,7 @@ SlashCmdList["RPCHATMOD"] = function(message)
     if not emote then
 
         print("|cffc79c6eRP Chat Mod|r")
+        print("/rc hello")
         print("/rc wave")
         print("/rc salute")
         print("/rc bow")
@@ -333,6 +334,7 @@ SlashCmdList["RPCHATMOD"] = function(message)
         print("/rc dance")
         print("/rc sit")
         print("/rc sleep")
+        print("/rc thank")
 
         return
     end
