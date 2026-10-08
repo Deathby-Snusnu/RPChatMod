@@ -3,6 +3,7 @@
 ## Notes: Rassen- und klassenabhängige RP-Emotes
 ## Author: Hannes
 ## Version: 0.1.0
+## SavedVariablesPerCharacter: RPChatMod_CharacterDB
 
 config/Settings.lua
 

@@ -7,6 +7,24 @@
 
 local ADDON_NAME = "RPChatMod"
 
+RPChatMod_CharacterDB = RPChatMod_CharacterDB or {}
+
+if RPChatMod_CharacterDB.textChance == nil then
+    RPChatMod_CharacterDB.textChance =
+        RPChatMod_Settings.textChance
+end
+
+if RPChatMod_CharacterDB.cooldown == nil then
+    RPChatMod_CharacterDB.cooldown =
+        RPChatMod_Settings.cooldown
+end
+
+RPChatMod_Settings.textChance =
+    RPChatMod_CharacterDB.textChance
+
+RPChatMod_Settings.cooldown =
+    RPChatMod_CharacterDB.cooldown
+
 
 -- ==========================================
 -- VOLKSSPRACHEN
@@ -317,13 +335,13 @@ SLASH_RPCHATMOD1 = "/rc"
 
 SlashCmdList["RPCHATMOD"] = function(message)
 
-    local emote =
+    local command, argument =
         string.match(
             message or "",
-            "^%s*(%S+)"
+            "^%s*(%S+)%s*(.-)%s*$"
         )
 
-    if not emote then
+    if not command then
 
         print("|cffc79c6eRP Chat Mod|r")
         print("/rc hello")
@@ -335,11 +353,60 @@ SlashCmdList["RPCHATMOD"] = function(message)
         print("/rc sit")
         print("/rc sleep")
         print("/rc thank")
+        print("/rc chance 30")
+        print("/rc cooldown 20")
 
         return
     end
 
-    RPChatMod_DoEmote(emote)
+    command = string.lower(command)
+
+    if command == "chance" then
+
+        if not string.match(argument, "^%d+$") then
+            print("Benutzung: /rc chance 0-100")
+            return
+        end
+
+        local value = tonumber(argument)
+        value = math.max(0, math.min(100, value))
+
+        RPChatMod_CharacterDB.textChance = value
+        RPChatMod_Settings.textChance = value
+
+        print(
+            string.format(
+                "|cffc79c6eRP Chat Mod:|r Textchance: %d%%",
+                value
+            )
+        )
+
+        return
+    end
+
+    if command == "cooldown" then
+
+        if not string.match(argument, "^%d+$") then
+            print("Benutzung: /rc cooldown <Sekunden>")
+            return
+        end
+
+        local value = tonumber(argument)
+
+        RPChatMod_CharacterDB.cooldown = value
+        RPChatMod_Settings.cooldown = value
+
+        print(
+            string.format(
+                "|cffc79c6eRP Chat Mod:|r Cooldown: %d Sekunden",
+                value
+            )
+        )
+
+        return
+    end
+
+    RPChatMod_DoEmote(command)
 end
 
 

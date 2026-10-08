@@ -4,6 +4,12 @@
 Änderungshistorie liegt nicht vor; der folgende Abschnitt hält daher den
 vorhandenen Quellstand fest und behauptet keinen veröffentlichten Release.
 
+## Unveröffentlicht
+
+- `/rc chance <0-100>` und `/rc cooldown <Sekunden>` konfigurieren die
+  Textwahrscheinlichkeit und Abklingzeit im Spiel. Beide Einstellungen werden
+  pro Charakter gespeichert.
+
 ## Ausgangsstand (Versionsnummer in der TOC: 0.1.0)
 
 - Dokumentation der vorhandenen Add-on-Funktionen in der README ergänzt.
