@@ -8,10 +8,10 @@ RPChatMod_Settings = {
 
     -- Wahrscheinlichkeit, dass zusätzlich zum Emote
     -- ein Text ausgegeben wird.
-    textChance = 40,
+    textChance = 30,
 
     -- Mindestabstand zwischen zwei Textnachrichten.
-    cooldown = 10,
+    cooldown = 20,
 
     -- Verzögerung zwischen Chatnachricht und Animation.
     emoteDelay = 0.3,
