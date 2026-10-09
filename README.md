@@ -143,6 +143,10 @@ Die Module erhalten über `local _, addon = ...` die private Addon-Tabelle.
 Die Hauptdatei registriert `/rc`, exportiert die öffentliche API und
 initialisiert die DB beim Login. Textbestände und Auswahlprioritäten bleiben
 AddOn-spezifisch.
+Die gemeinsamen Kernfunktionen heißen `BuildText`, `SendText`,
+`CooldownReady` und `StartCooldown`. `GetText` und `UpdateCooldown` bleiben
+als interne Aliase erhalten; die dokumentierten globalen
+`RPChatMod_*`-Integrationswrapper bleiben unverändert.
 
 ### Bestehende Integrationsschnittstellen
 

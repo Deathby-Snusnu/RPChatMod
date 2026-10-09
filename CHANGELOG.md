@@ -7,6 +7,9 @@ Eine frühere Release-Historie liegt nicht vor und wird nicht rekonstruiert.
 
 ### Geändert
 
+- Textaufbau und Cooldownstart verwenden dieselben Kernfunktionsnamen wie die
+  Klassen-AddOns (`BuildText`, `StartCooldown`); bisherige Kernnamen und
+  globale Integrationswrapper bleiben erhalten.
 - Private Addon-Tabelle für interne Funktionen, Einstellungen und Textdaten
   eingeführt; bestehende globale Funktionen als dünne Wrapper erhalten.
   Globale Einstellungen und Texttabellen entfallen.

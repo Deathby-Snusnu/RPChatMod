@@ -1,8 +1,4 @@
--- Cooldown functionality.
--- ==========================================
--- COOLDOWN
--- ==========================================
-
+-- Gemeinsame Abklingzeit fuer alle Rollenspieltexte dieser AddOn-Instanz.
 local _, addon = ...
 local lastTextTime
 
@@ -17,9 +13,11 @@ function addon.GetRemainingCooldown()
     return math.max(0, addon.db.cooldown - (GetTime() - lastTextTime))
 end
 
-function addon.UpdateCooldown()
+function addon.StartCooldown()
     lastTextTime = GetTime()
 end
+
+addon.UpdateCooldown = addon.StartCooldown
 
 function RPChatMod_CooldownReady()
     return addon.CooldownReady()

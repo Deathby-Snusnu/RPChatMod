@@ -41,7 +41,7 @@ local function ChooseText(pool, targetName)
     return (text:gsub("%%s", function() return targetName end))
 end
 
-function addon.GetText(emote)
+function addon.BuildText(emote)
     local pool = addon.GetTextPool(emote)
     if type(pool) ~= "table" then
         return nil
@@ -52,3 +52,5 @@ function addon.GetText(emote)
     end
     return ChooseText(pool.gruppe, targetName)
 end
+
+addon.GetText = addon.BuildText

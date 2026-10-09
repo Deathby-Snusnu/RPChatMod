@@ -1,8 +1,3 @@
--- Randomization functionality.
--- ==========================================
--- ZUFALLSFUNKTIONEN
--- ==========================================
-
 local _, addon = ...
 
 function addon.GetRandom(list)

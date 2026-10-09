@@ -1,13 +1,6 @@
--- Addon settings.
--- ==========================================
--- RP CHAT MOD
--- EINSTELLUNGEN
--- ==========================================
-
 local _, addon = ...
 
 addon.defaults = {
-
     -- Wahrscheinlichkeit, dass zusätzlich zum Emote
     -- ein Text ausgegeben wird.
     textChance = 30,

@@ -45,7 +45,7 @@ function addon.DoEmote(emote)
     if not IsTextAllowed() then
         return false
     end
-    local text = addon.GetText(emote)
+    local text = addon.BuildText(emote)
     if not text then
         print("|cffff0000RP Chat Mod:|r Kein Text für " .. emote .. " vorhanden.")
         return false
@@ -53,7 +53,7 @@ function addon.DoEmote(emote)
     if not addon.SendText(text) then
         return false
     end
-    addon.UpdateCooldown()
+    addon.StartCooldown()
     return true
 end
 
