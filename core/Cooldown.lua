@@ -3,24 +3,32 @@
 -- COOLDOWN
 -- ==========================================
 
-local letzterTextZeit = 0
+local _, addon = ...
+local lastTextTime
+
+function addon.CooldownReady()
+    return not lastTextTime or GetTime() - lastTextTime >= addon.db.cooldown
+end
+
+function addon.GetRemainingCooldown()
+    if not lastTextTime then
+        return 0
+    end
+    return math.max(0, addon.db.cooldown - (GetTime() - lastTextTime))
+end
+
+function addon.UpdateCooldown()
+    lastTextTime = GetTime()
+end
 
 function RPChatMod_CooldownReady()
-    local aktuelleZeit = GetTime()
-
-    return (aktuelleZeit - letzterTextZeit)
-        >= RPChatMod_Settings.cooldown
+    return addon.CooldownReady()
 end
 
 function RPChatMod_GetRemainingCooldown()
-    local aktuelleZeit = GetTime()
-    local verbleibend =
-        RPChatMod_Settings.cooldown
-        - (aktuelleZeit - letzterTextZeit)
-
-    return math.max(0, verbleibend)
+    return addon.GetRemainingCooldown()
 end
 
 function RPChatMod_UpdateCooldown()
-    letzterTextZeit = GetTime()
+    return addon.UpdateCooldown()
 end

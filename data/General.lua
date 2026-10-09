@@ -2,7 +2,9 @@
 -- ALLGEMEINE RP-TEXTE
 -- ==========================================
 
-RPChatMod_GeneralTexts = {
+local _, addon = ...
+
+addon.generalTexts = {
 
     HELLO = {
         ziel = {

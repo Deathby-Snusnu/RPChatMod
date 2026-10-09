@@ -17,6 +17,7 @@
     "Lua.diagnostics.globals": [
         "SlashCmdList",
         "UIErrorsFrame",
-        "LE_PARTY_CATEGORY_INSTANCE"
+        "LE_PARTY_CATEGORY_INSTANCE",
+        "_VERSION"
     ]
 }

@@ -5,16 +5,19 @@
 ## Version: 0.1.0
 ## SavedVariablesPerCharacter: RPChatMod_CharacterDB
 
-config/Settings.lua
+config\Settings.lua
 
-data/General.lua
-data/Races.lua
-data/Classes.lua
-data/RaceClass.lua
+data\General.lua
+data\Races.lua
+data\Classes.lua
+data\RaceClass.lua
 
-core/Random.lua
-core/Cooldown.lua
-core/Chat.lua
-core/Emotes.lua
+core\Random.lua
+core\Database.lua
+core\Cooldown.lua
+core\Chat.lua
+core\Text.lua
+core\Emotes.lua
+core\Commands.lua
 
 RPChatMod.lua

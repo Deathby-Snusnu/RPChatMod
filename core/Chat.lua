@@ -1,65 +1,100 @@
--- Chat functionality.
--- ==========================================
--- CHAT
--- ==========================================
+-- Kanalauswahl und zentraler Versand.
+local _, addon = ...
 
-function RPChatMod_GetChatChannel()
-    local channel = RPChatMod_Settings.chatChannel
+addon.channels = {
+    SAY = true, GROUP = true, PARTY = true, RAID = true, INSTANCE_CHAT = true, AUTO = true,
+}
+local racialLanguageIDs = {
+    Human = 7, Dwarf = 6, Gnome = 13, NightElf = 2, Draenei = 35,
+    Orc = 1, Troll = 14, Tauren = 3, Scourge = 33, Undead = 33, BloodElf = 10,
+}
 
-    if channel == "SAY" then
-        return "SAY"
+local function GetRacialLanguageID()
+    local _, race = UnitRace("player")
+    local wanted = racialLanguageIDs[race]
+    if not wanted then
+        return nil
     end
-
-    if channel == "INSTANCE_CHAT" then
-        if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
-            return "INSTANCE_CHAT"
+    for index = 1, GetNumLanguages() do
+        local _, languageID = GetLanguageByIndex(index)
+        if languageID == wanted then
+            return languageID
         end
-
-        return "SAY"
     end
-
-    if channel == "GROUP" then
-        if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
-            return "INSTANCE_CHAT"
-        end
-
-        if IsInRaid() then
-            return "RAID"
-        end
-
-        if IsInGroup() then
-            return "PARTY"
-        end
-
-        return "SAY"
-    end
-
-    if channel == "AUTO"
-        and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
-        return "INSTANCE_CHAT"
-    end
-
-    if channel == "AUTO" and IsInRaid() then
-        return "RAID"
-    end
-
-    if channel == "AUTO" and IsInGroup() then
-        return "PARTY"
-    end
-
-    return "SAY"
+    return nil
 end
 
+local function GetGroupChannel()
+    if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+        return "INSTANCE_CHAT"
+    end
+    if IsInRaid() then
+        return "RAID"
+    end
+    if IsInGroup() then
+        return "PARTY"
+    end
+    return nil
+end
+
+function addon.GetChatChannel()
+    if not addon.ready then
+        addon.Notify("Noch nicht geladen. Bitte wartet auf PLAYER_LOGIN.")
+        return nil
+    end
+    local channel = addon.db.chatChannel
+    if not addon.channels[channel] then
+        addon.Notify("Ungültiger Chatkanal. Nutzt /rc channel.")
+        return nil
+    end
+    if channel == "AUTO" then
+        return GetGroupChannel() or "SAY"
+    end
+    if channel == "GROUP" then
+        local groupChannel = GetGroupChannel()
+        if groupChannel then
+            return groupChannel
+        end
+    elseif channel == "SAY" then
+        return channel
+    elseif channel == "PARTY" and IsInGroup()
+        or channel == "RAID" and IsInRaid()
+        or channel == "INSTANCE_CHAT" and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+        return channel
+    end
+    addon.Notify("Der eingestellte Chatkanal ist hier nicht verfügbar. Nutzt /rc channel auto.")
+    return nil
+end
+
+function addon.SendText(text)
+    if type(text) ~= "string" or text == "" then
+        addon.Notify("Kein nutzbarer Text vorhanden.")
+        return false
+    end
+    if #text > 255 or text:find("[\r\n]") or text:find("|", 1, true) then
+        addon.Notify("Text nicht gesendet: maximal 255 Bytes, keine Zeilenumbrüche oder Chat-Markierungen.")
+        return false
+    end
+    local channel = addon.GetChatChannel()
+    if not channel then
+        return false
+    end
+    if not C_ChatInfo or type(C_ChatInfo.SendChatMessage) ~= "function" then
+        addon.Notify("Dieser Client stellt keine unterstützte Chat-API bereit.")
+        return false
+    end
+    local languageID = nil
+    if channel == "SAY" or channel == "YELL" then
+        languageID = GetRacialLanguageID()
+    end
+    C_ChatInfo.SendChatMessage(text, channel, languageID)
+    return true
+end
+
+function RPChatMod_GetChatChannel()
+    return addon.GetChatChannel()
+end
 
 function RPChatMod_SendText(text)
-    if not text then
-        return
-    end
-
-    local channel = RPChatMod_GetChatChannel()
-
-    C_ChatInfo.SendChatMessage(
-        text,
-        channel
-    )
+    return addon.SendText(text)
 end

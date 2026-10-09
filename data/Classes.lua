@@ -3,7 +3,9 @@
 -- KLASSENSPEZIFISCHE RP-TEXTE
 -- ==========================================
 
-RPChatMod_ClassTexts = {
+local _, addon = ...
+
+addon.classTexts = {
 
     -- ======================================
     -- WARRIOR

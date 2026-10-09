@@ -4,7 +4,9 @@
 -- EINSTELLUNGEN
 -- ==========================================
 
-RPChatMod_Settings = {
+local _, addon = ...
+
+addon.defaults = {
 
     -- Wahrscheinlichkeit, dass zusätzlich zum Emote
     -- ein Text ausgegeben wird.
@@ -16,6 +18,6 @@ RPChatMod_Settings = {
     -- Verzögerung zwischen Chatnachricht und Animation.
     emoteDelay = 0.3,
 
-    -- SAY, GROUP, INSTANCE_CHAT oder AUTO.
+    -- SAY, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO.
     chatChannel = "SAY",
 }

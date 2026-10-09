@@ -3,7 +3,9 @@
 -- RASSENSPEZIFISCHE RP-TEXTE
 -- ==========================================
 
-RPChatMod_RaceTexts = {
+local _, addon = ...
+
+addon.raceTexts = {
 
     ["Dwarf"] = {
 

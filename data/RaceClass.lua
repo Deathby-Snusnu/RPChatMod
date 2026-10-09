@@ -4,7 +4,9 @@
 -- BESONDERE KOMBINATIONEN
 -- ==========================================
 
-RPChatMod_RaceClassTexts = {
+local _, addon = ...
+
+addon.raceClassTexts = {
 
     -- ======================================
     -- ZWERG + PALADIN
