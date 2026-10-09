@@ -19,11 +19,19 @@ if RPChatMod_CharacterDB.cooldown == nil then
         RPChatMod_Settings.cooldown
 end
 
+if RPChatMod_CharacterDB.chatChannel == nil then
+    RPChatMod_CharacterDB.chatChannel =
+        RPChatMod_Settings.chatChannel
+end
+
 RPChatMod_Settings.textChance =
     RPChatMod_CharacterDB.textChance
 
 RPChatMod_Settings.cooldown =
     RPChatMod_CharacterDB.cooldown
+
+RPChatMod_Settings.chatChannel =
+    RPChatMod_CharacterDB.chatChannel
 
 
 -- ==========================================
@@ -70,26 +78,6 @@ local function RPChatMod_GetRacialLanguageID()
     end
 
     return nil
-end
-
-
--- ==========================================
--- CHATKANAL ERMITTELN
--- ==========================================
-
-local function RPChatMod_GetChatChannel()
-
-    if IsInGroup(LE_PARTY_CATEGORY_INSTANCE)
-        or IsInInstance() then
-
-        return "INSTANCE_CHAT"
-    end
-
-    if IsInGroup() then
-        return "PARTY"
-    end
-
-    return "SAY"
 end
 
 
@@ -355,6 +343,7 @@ SlashCmdList["RPCHATMOD"] = function(message)
         print("/rc thank")
         print("/rc chance 30")
         print("/rc cooldown 20")
+        print("/rc channel say|group|instance|auto")
 
         return
     end
@@ -400,6 +389,33 @@ SlashCmdList["RPCHATMOD"] = function(message)
             string.format(
                 "|cffc79c6eRP Chat Mod:|r Cooldown: %d Sekunden",
                 value
+            )
+        )
+
+        return
+    end
+
+    if command == "channel" then
+        local channels = {
+            say = "SAY",
+            group = "GROUP",
+            instance = "INSTANCE_CHAT",
+            auto = "AUTO",
+        }
+        local channel = channels[string.lower(argument or "")]
+
+        if not channel then
+            print("Benutzung: /rc channel say|group|instance|auto")
+            return
+        end
+
+        RPChatMod_CharacterDB.chatChannel = channel
+        RPChatMod_Settings.chatChannel = channel
+
+        print(
+            string.format(
+                "|cffc79c6eRP Chat Mod:|r Chatkanal: %s",
+                string.lower(argument)
             )
         )
 

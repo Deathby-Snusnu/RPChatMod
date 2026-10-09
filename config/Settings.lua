@@ -16,9 +16,6 @@ RPChatMod_Settings = {
     -- Verzögerung zwischen Chatnachricht und Animation.
     emoteDelay = 0.3,
 
-    -- Automatische Wahl des Chatkanals.
-    -- SAY -> außerhalb Gruppe
-    -- PARTY -> Gruppe
-    -- INSTANCE_CHAT -> Instanzgruppe
-    chatChannel = "AUTO",
+    -- SAY, GROUP, INSTANCE_CHAT oder AUTO.
+    chatChannel = "SAY",
 }

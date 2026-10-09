@@ -60,10 +60,23 @@ werden in folgender Reihenfolge gesucht:
 3. Rasse
 4. allgemeine Texte
 
-Die Nachricht wird im Sagen-Kanal gesendet, wenn der Charakter nicht in einer
-Gruppe oder Instanz ist, im Gruppenkanal bei einer Gruppe und im
-Instanzgruppenkanal, wenn der Charakter in einer Instanz ist oder einer
-Instanzgruppe angehört.
+Standardmäßig wird die Nachricht immer im Sagen-Kanal gesendet, auch wenn der
+Charakter in einer Gruppe, einem Schlachtzug oder einer Instanzgruppe ist. Der
+Kanal lässt sich im Spiel auswählen:
+
+```text
+/rc channel say
+/rc channel group
+/rc channel instance
+/rc channel auto
+```
+
+`group` verwendet den Gruppenkanal beziehungsweise im Schlachtzug den
+Schlachtzugskanal. `instance` verwendet den Instanzgruppenkanal. Ist der
+gewählte Gruppenkanal gerade nicht verfügbar, wird stattdessen `SAY` verwendet.
+`auto` wählt automatisch den Instanzgruppen-, Schlachtzugs- oder Gruppenkanal
+und fällt andernfalls auf `SAY` zurück. Die Auswahl wird pro Charakter
+gespeichert.
 
 ## Einstellungen
 
@@ -74,7 +87,7 @@ Die Standardwerte stehen in `config/Settings.lua`:
 | `textChance` | `30` | Prozentuale Chance (0–100), dass ein RP-Text gesendet wird. Ingame änderbar mit `/rc chance <0-100>`. |
 | `cooldown` | `20` | Mindestabstand in Sekunden zwischen gesendeten RP-Texten. Ingame änderbar mit `/rc cooldown <Sekunden>`. |
 | `emoteDelay` | `0.3` | Verzögerung in Sekunden vor dem Abspielen der Animation. |
-| `chatChannel` | `"AUTO"` | Wird derzeit beim Senden nicht ausgewertet. Der Chatkanal wird automatisch anhand des Gruppen- und Instanzstatus gewählt (siehe oben). |
+| `chatChannel` | `"SAY"` | Ausgabeziel: `SAY`, `GROUP`, `INSTANCE_CHAT` oder `AUTO`; im Spiel mit `/rc channel say|group|instance|auto` änderbar. |
 
 Der Cooldown wird nach einem gesendeten RP-Text gestartet. Eine nicht
 ausgelöste Textchance oder ein fehlender Textpool startet ihn nicht.

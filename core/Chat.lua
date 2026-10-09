@@ -4,15 +4,46 @@
 -- ==========================================
 
 function RPChatMod_GetChatChannel()
-    if RPChatMod_Settings.chatChannel ~= "AUTO" then
-        return RPChatMod_Settings.chatChannel
+    local channel = RPChatMod_Settings.chatChannel
+
+    if channel == "SAY" then
+        return "SAY"
     end
 
-    if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+    if channel == "INSTANCE_CHAT" then
+        if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+            return "INSTANCE_CHAT"
+        end
+
+        return "SAY"
+    end
+
+    if channel == "GROUP" then
+        if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+            return "INSTANCE_CHAT"
+        end
+
+        if IsInRaid() then
+            return "RAID"
+        end
+
+        if IsInGroup() then
+            return "PARTY"
+        end
+
+        return "SAY"
+    end
+
+    if channel == "AUTO"
+        and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
         return "INSTANCE_CHAT"
     end
 
-    if IsInGroup() then
+    if channel == "AUTO" and IsInRaid() then
+        return "RAID"
+    end
+
+    if channel == "AUTO" and IsInGroup() then
         return "PARTY"
     end
 

@@ -6,6 +6,9 @@ vorhandenen Quellstand fest und behauptet keinen veröffentlichten Release.
 
 ## Unveröffentlicht
 
+- RP-Texte werden standardmäßig immer im Sagen-Kanal ausgegeben. Der Kanal ist
+  pro Charakter über `/rc channel say|group|instance|auto` konfigurierbar;
+  Gruppenmodus berücksichtigt auch Schlachtzüge.
 - `/rc chance <0-100>` und `/rc cooldown <Sekunden>` konfigurieren die
   Textwahrscheinlichkeit und Abklingzeit im Spiel. Beide Einstellungen werden
   pro Charakter gespeichert.
@@ -20,6 +23,5 @@ vorhandenen Quellstand fest und behauptet keinen veröffentlichten Release.
   variieren. Für alle neun unterstützten Emotes gibt es nun Texte für die fünf
   in `data/Races.lua` aufgeführten Rassen.
 - Einstellungen für Textchance, Abklingzeit, Animationsverzögerung und
-  Chatkanal sind dokumentiert. `chatChannel` wird derzeit beim Senden nicht
-  ausgewertet; der Chatkanal wird automatisch anhand des Gruppen- und
-  Instanzstatus gewählt.
+  Chatkanal sind dokumentiert. Der Chatkanal ist pro Charakter konfigurierbar
+  und standardmäßig auf `SAY` gesetzt.
