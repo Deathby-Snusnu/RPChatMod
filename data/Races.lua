@@ -1277,4 +1277,156 @@ addon.raceTexts = {
         },
     },
 
+
+    -- ======================================
+    -- HIMMELSGEBORENE / SKYBORNE
+    -- ======================================
+
+    ["Skyborne"] = {
+        HELLO = {
+            ziel = {
+                "Der Wind hat Euch zu mir getragen, %s. Seid willkommen.",
+                "Seid gegruesst, %s. Moege der Himmel Euren Weg weit halten.",
+                "Ein freier Himmel und gute Gesellschaft. Willkommen, %s.",
+                "Zephras gruesst Euch durch jeden Luftzug, %s.",
+                "Zwischen Himmel und Erde ist Platz fuer neue Begegnungen, %s.",
+            },
+            gruppe = {
+                "Der Wind hat gute Gesellschaft zusammengetragen.",
+                "Seid gegruesst. Moege der Himmel unsere Wege weit halten.",
+                "Ein freier Himmel und gute Gesellschaft. Willkommen.",
+                "Zephras gruesst uns durch jeden Luftzug.",
+                "Zwischen Himmel und Erde ist Platz fuer neue Begegnungen.",
+            },
+        },
+        WAVE = {
+            ziel = {
+                "Ein Gruss aus luftiger Hoehe, %s!",
+                "Der Wind trage meinen Gruss zu Euch, %s.",
+                "Seid gegruesst, %s. Die Stroemung ist heute freundlich.",
+                "Ein leichter Wind und ein ehrlicher Gruss fuer Euch, %s.",
+                "Moege Euch stets ein guter Aufwind begleiten, %s.",
+            },
+            gruppe = {
+                "Ein Gruss aus luftiger Hoehe!",
+                "Der Wind trage meinen Gruss zu Euch allen.",
+                "Seid gegruesst. Die Stroemung ist heute freundlich.",
+                "Ein leichter Wind und ein ehrlicher Gruss fuer alle.",
+                "Moege uns stets ein guter Aufwind begleiten.",
+            },
+        },
+        SALUTE = {
+            ziel = {
+                "Freier Himmel ueber Euch, %s. Mein Respekt.",
+                "Moege Euer Blick weit und Euer Schritt sicher bleiben, %s.",
+                "Wind und Weite, %s. Ihr habt meinen Respekt.",
+                "Ein klarer Himmel fuer einen wuerdigen Weg, %s.",
+                "Zephras sei Euch gewogen, %s.",
+            },
+            gruppe = {
+                "Freier Himmel ueber uns. Mein Respekt gilt Euch.",
+                "Moege unser Blick weit und unser Schritt sicher bleiben.",
+                "Wind und Weite. Ihr habt meinen Respekt.",
+                "Ein klarer Himmel fuer wuerdige Wege.",
+                "Zephras sei uns gewogen.",
+            },
+        },
+        BOW = {
+            ziel = {
+                "Vor einem guten Weg verneigt man sich ebenso wie vor der Hoehe. Mein Respekt, %s.",
+                "Ich neige den Kopf vor Euch, %s. Moege der Wind Euch tragen.",
+                "Mein Respekt gilt Euch und Eurem Weg, %s.",
+                "Zwischen Wolken und Erde begegnen wir uns auf Augenhoehe, %s.",
+                "Ehre Eurem Weg unter offenem Himmel, %s.",
+            },
+            gruppe = {
+                "Mein Respekt gilt Euch und Euren Wegen.",
+                "Moege der Wind uns alle sicher tragen.",
+                "Zwischen Wolken und Erde begegnen wir uns auf Augenhoehe.",
+                "Ehre allen Wegen unter offenem Himmel.",
+                "Ein weiter Blick verdient einen offenen Gruss.",
+            },
+        },
+        LAUGH = {
+            ziel = {
+                "Ha! Das war leichter als Rueckenwind, %s!",
+                "Ihr bringt selbst den Wind zum Kichern, %s.",
+                "Gut getroffen, %s. Den merke ich mir.",
+                "Bei Zephras, der war gut, %s!",
+                "So klingt ein Tag mit gutem Aufwind, %s.",
+            },
+            gruppe = {
+                "Ha! Das war leichter als Rueckenwind!",
+                "Ihr bringt selbst den Wind zum Kichern.",
+                "Gut getroffen. Den merke ich mir.",
+                "Bei Zephras, der war gut!",
+                "So klingt ein Tag mit gutem Aufwind.",
+            },
+        },
+        DANCE = {
+            ziel = {
+                "Kommt, %s. Der Wind gibt schon den Takt vor.",
+                "Ein Schritt mit der Stroemung, einer gegen sie. Tanzt Ihr mit, %s?",
+                "Wer fliegen kann, sollte auch tanzen koennen, %s.",
+                "Lasst uns sehen, ob Eure Schritte mit dem Wind mithalten, %s.",
+                "Zephras schickt den Rhythmus, wir erledigen den Rest, %s.",
+            },
+            gruppe = {
+                "Der Wind gibt schon den Takt vor.",
+                "Ein Schritt mit der Stroemung, einer gegen sie.",
+                "Wer fliegen kann, sollte auch tanzen koennen.",
+                "Mal sehen, ob unsere Schritte mit dem Wind mithalten.",
+                "Zephras schickt den Rhythmus, wir erledigen den Rest.",
+            },
+        },
+        SIT = {
+            ziel = {
+                "Setzt Euch, %s. Auch der Wind legt sich gelegentlich.",
+                "Eine Rast, %s. Der Horizont laeuft uns nicht davon.",
+                "Kommt zur Ruhe, %s. Ein klarer Blick braucht manchmal Stillstand.",
+                "Ein Augenblick zwischen zwei Aufwinden, %s.",
+                "Ruht Euch aus, %s. Danach wartet wieder der offene Himmel.",
+            },
+            gruppe = {
+                "Auch der Wind legt sich gelegentlich. Zeit fuer eine Rast.",
+                "Der Horizont laeuft uns nicht davon.",
+                "Ein klarer Blick braucht manchmal Stillstand.",
+                "Ein Augenblick zwischen zwei Aufwinden.",
+                "Ruht Euch aus. Danach wartet wieder der offene Himmel.",
+            },
+        },
+        SLEEP = {
+            ziel = {
+                "Schlaft gut, %s. Moege der Wind Eure Traeume sanft tragen.",
+                "Ruht unter weitem Himmel, %s.",
+                "Moege die Nacht ruhig und der Morgen voller Aufwind sein, %s.",
+                "Zephras wache ueber Euren Schlaf, %s.",
+                "Der Himmel bleibt offen, auch wenn Ihr die Augen schliesst, %s.",
+            },
+            gruppe = {
+                "Moege der Wind unsere Traeume sanft tragen.",
+                "Ruht unter weitem Himmel.",
+                "Moege die Nacht ruhig und der Morgen voller Aufwind sein.",
+                "Zephras wache ueber unseren Schlaf.",
+                "Der Himmel bleibt offen, auch wenn wir die Augen schliessen.",
+            },
+        },
+        THANK = {
+            ziel = {
+                "Habt Dank, %s. Der Wind soll Euch den Gefallen eines Tages zuruecktragen.",
+                "Eure Hilfe war ein willkommener Aufwind, %s.",
+                "Mein Dank begleitet Euch, %s.",
+                "Ihr habt meinen Weg leichter gemacht, %s. Danke.",
+                "Zephras schenke Euch guten Wind fuer Eure Hilfe, %s.",
+            },
+            gruppe = {
+                "Habt Dank. Ihr wart ein willkommener Aufwind.",
+                "Mein Dank begleitet Euch.",
+                "Ihr habt den Weg leichter gemacht. Danke.",
+                "Zephras schenke Euch guten Wind fuer Eure Hilfe.",
+                "Gute Gefaehrten tragen weiter als jeder Aufwind.",
+            },
+        },
+    },
+
 }

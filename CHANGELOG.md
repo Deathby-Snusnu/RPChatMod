@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-10 – Skyborne-Unterstuetzung
+
+- Himmelsgeborene/Skyborne als eigene Rasse mit vollstaendigem RP-Textpool ergaenzt.
+- Eigener Textpool fuer Himmelsgeborene Druiden hinzugefuegt, damit keine fremden Rassenmotive verwendet werden.
+- Rassenerkennung fuer Forever-Custom-Rassen robust gegen Legacy-Tokens gemacht.
+- Himmelsgeborene verwenden bei /say die darnassische Sprach-ID, sofern im Client verfuegbar.
+
+
 Dieses Dokument beschreibt die Änderungen am vorhandenen Quellstand.
 Eine frühere Release-Historie liegt nicht vor und wird nicht rekonstruiert.
 

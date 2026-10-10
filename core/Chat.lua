@@ -5,12 +5,12 @@ addon.channels = {
     SAY = true, GROUP = true, PARTY = true, RAID = true, INSTANCE_CHAT = true, AUTO = true,
 }
 local racialLanguageIDs = {
-    Human = 7, Dwarf = 6, Gnome = 13, NightElf = 2, Draenei = 35,
+    Human = 7, Dwarf = 6, Gnome = 13, NightElf = 2, Skyborne = 2, Draenei = 35,
     Orc = 1, Troll = 14, Tauren = 3, Scourge = 33, Undead = 33, BloodElf = 10,
 }
 
 local function GetRacialLanguageID()
-    local _, race = UnitRace("player")
+    local race = addon.GetPlayerRaceToken()
     local wanted = racialLanguageIDs[race]
     if not wanted then
         return nil

@@ -2,10 +2,7 @@
 local _, addon = ...
 
 function addon.GetTextPool(emote)
-    local _, race = UnitRace("player")
-    if race == "Scourge" then
-        race = "Undead"
-    end
+    local race = addon.GetPlayerRaceToken()
     local _, class = UnitClass("player")
     local raceClasses = addon.raceClassTexts[race]
     local raceClass = raceClasses and raceClasses[class]

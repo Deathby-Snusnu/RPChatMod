@@ -478,4 +478,140 @@ addon.raceClassTexts = {
             },
         },
     },
+
+    -- ======================================
+    -- HIMMELSGEBORENE + DRUID
+    -- ======================================
+
+    ["Skyborne"] = {
+        ["DRUID"] = {
+            HELLO = {
+                ziel = {
+                    "Wind und Wildnis haben Euch hergefuehrt, %s. Seid willkommen.",
+                    "Seid gegruesst, %s. Wurzeln geben Halt, der Himmel gibt Weite.",
+                    "Zwischen Wolken und Blaetterdach ist immer Platz fuer gute Gesellschaft, %s.",
+                    "Der Atem von Zephras und die Ruhe der Wildnis seien mit Euch, %s.",
+                },
+                gruppe = {
+                    "Wind und Wildnis haben uns zusammengefuehrt. Seid willkommen.",
+                    "Wurzeln geben Halt, der Himmel gibt Weite.",
+                    "Zwischen Wolken und Blaetterdach ist Platz fuer gute Gesellschaft.",
+                    "Der Atem von Zephras und die Ruhe der Wildnis seien mit uns.",
+                },
+            },
+            WAVE = {
+                ziel = {
+                    "Der Wind trage den Gruss der Wildnis zu Euch, %s.",
+                    "Seid gegruesst, %s. Moege Euer Pfad zwischen Himmel und Erde sicher sein.",
+                    "Ein Gruss aus Wind, Blatt und weitem Himmel, %s.",
+                    "Zephras und die Wildnis seien Euch freundlich gesinnt, %s.",
+                },
+                gruppe = {
+                    "Der Wind trage den Gruss der Wildnis zu Euch.",
+                    "Moege unser Pfad zwischen Himmel und Erde sicher sein.",
+                    "Ein Gruss aus Wind, Blatt und weitem Himmel.",
+                    "Zephras und die Wildnis seien uns freundlich gesinnt.",
+                },
+            },
+            SALUTE = {
+                ziel = {
+                    "Weitsicht, Gleichgewicht und mein Respekt, %s.",
+                    "Moege Euer Blick so klar bleiben wie der Himmel nach dem Sturm, %s.",
+                    "Ehre Eurem Weg zwischen Wurzeln und Wolken, %s.",
+                    "Wind und Wildnis erkennen einen standhaften Weg, %s.",
+                },
+                gruppe = {
+                    "Weitsicht, Gleichgewicht und mein Respekt.",
+                    "Moege unser Blick klar bleiben wie der Himmel nach dem Sturm.",
+                    "Ehre allen Wegen zwischen Wurzeln und Wolken.",
+                    "Wind und Wildnis erkennen standhafte Wege.",
+                },
+            },
+            BOW = {
+                ziel = {
+                    "Ich neige den Kopf vor Eurem Weg, %s. Kein Baum waechst ohne Himmel.",
+                    "Mein Respekt, %s. Zwischen Wurzel und Wind liegt das Gleichgewicht.",
+                    "Die Wildnis lehrt Demut, die Hoehe Weitsicht. Beides gebuehrt Euch, %s.",
+                    "Ehre Eurem Platz im grossen Kreislauf, %s.",
+                },
+                gruppe = {
+                    "Kein Baum waechst ohne Himmel. Mein Respekt gilt Euch.",
+                    "Zwischen Wurzel und Wind liegt das Gleichgewicht.",
+                    "Die Wildnis lehrt Demut, die Hoehe Weitsicht.",
+                    "Ehre unserem Platz im grossen Kreislauf.",
+                },
+            },
+            LAUGH = {
+                ziel = {
+                    "Ha! Selbst die Blaetter zittern vor Lachen, %s.",
+                    "Bei Zephras, %s, den hat der Wind genau richtig getragen!",
+                    "Selbst ein Druide braucht gelegentlich guten Aufwind fuer die Laune, %s.",
+                    "Der war gut, %s. Den erzaehlt der Wind weiter.",
+                },
+                gruppe = {
+                    "Ha! Selbst die Blaetter zittern vor Lachen.",
+                    "Bei Zephras, den hat der Wind genau richtig getragen!",
+                    "Auch Druiden brauchen gelegentlich guten Aufwind fuer die Laune.",
+                    "Der war gut. Den erzaehlt der Wind weiter.",
+                },
+            },
+            DANCE = {
+                ziel = {
+                    "Tanzt mit, %s. Der Wind bewegt die Blaetter, wir den Rest.",
+                    "Ein Schritt wie ein Blatt im Aufwind, %s?",
+                    "Die Wildnis kennt viele Rhythmen. Der Himmel liefert heute einen davon, %s.",
+                    "Kommt, %s. Gleichgewicht darf sich auch bewegen.",
+                },
+                gruppe = {
+                    "Der Wind bewegt die Blaetter, wir den Rest.",
+                    "Ein Schritt wie ein Blatt im Aufwind.",
+                    "Die Wildnis kennt viele Rhythmen. Der Himmel liefert heute einen davon.",
+                    "Gleichgewicht darf sich auch bewegen.",
+                },
+            },
+            SIT = {
+                ziel = {
+                    "Setzt Euch, %s. Wurzeln wachsen nicht im Flug.",
+                    "Ein Augenblick Ruhe zwischen Himmel und Erde, %s.",
+                    "Lauscht mit mir dem Wind, %s. Er spricht leiser, wenn man still wird.",
+                    "Ruht Euch aus, %s. Auch ein weiter Blick braucht einen festen Stand.",
+                },
+                gruppe = {
+                    "Wurzeln wachsen nicht im Flug. Zeit fuer eine Rast.",
+                    "Ein Augenblick Ruhe zwischen Himmel und Erde.",
+                    "Lauschen wir dem Wind. Er spricht leiser, wenn man still wird.",
+                    "Auch ein weiter Blick braucht einen festen Stand.",
+                },
+            },
+            SLEEP = {
+                ziel = {
+                    "Schlaft gut, %s. Moege der Wind in den Zweigen ueber Euch wachen.",
+                    "Ruht, %s. Wurzel, Wind und Stern halten die Nacht im Gleichgewicht.",
+                    "Moege Euch der Himmel weite Traeume und die Erde sicheren Schlaf schenken, %s.",
+                    "Zephras trage Eure Traeume sanft durch die Nacht, %s.",
+                },
+                gruppe = {
+                    "Moege der Wind in den Zweigen ueber uns wachen.",
+                    "Wurzel, Wind und Stern halten die Nacht im Gleichgewicht.",
+                    "Der Himmel schenke weite Traeume, die Erde sicheren Schlaf.",
+                    "Zephras trage unsere Traeume sanft durch die Nacht.",
+                },
+            },
+            THANK = {
+                ziel = {
+                    "Habt Dank, %s. Wind und Wildnis sollen Eure Hilfe erwidern.",
+                    "Ihr wart der Aufwind, den dieser Weg gebraucht hat, %s.",
+                    "Mein Dank, %s. Moege Euer Weg leicht und Euer Stand fest sein.",
+                    "Die Wildnis vergisst Hilfe nicht, und ich ebenso wenig, %s.",
+                },
+                gruppe = {
+                    "Habt Dank. Wind und Wildnis sollen Eure Hilfe erwidern.",
+                    "Ihr wart der Aufwind, den dieser Weg gebraucht hat.",
+                    "Moege Euer Weg leicht und Euer Stand fest sein.",
+                    "Die Wildnis vergisst Hilfe nicht, und ich ebenso wenig.",
+                },
+            },
+        },
+    },
+
 }
