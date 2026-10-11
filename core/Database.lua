@@ -42,6 +42,12 @@ function addon.InitializeDatabase()
     RPChatMod_CharacterDB = RPChatMod_CharacterDB or {}
     addon.db = RPChatMod_CharacterDB
     local db = addon.db
+    if db.outputLanguage ~= nil and not addon.outputLanguages[db.outputLanguage] then
+        addon.Notify("Ungueltige Ausgabesprache; Deutsch wird verwendet.")
+        db.outputLanguage = nil
+    end
+    db.outputLanguage = db.outputLanguage or addon.defaults.outputLanguage
+    addon.runtimeOutputLanguage = db.outputLanguage
     for _, key in ipairs({ "textChance", "cooldown" }) do
         local maximum = key == "textChance" and 100 or 3600
         if db[key] ~= nil and not addon.ValidNumber(db[key], maximum) then

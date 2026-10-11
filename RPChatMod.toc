@@ -7,10 +7,20 @@
 
 config\Settings.lua
 
-data\General.lua
-data\Races.lua
-data\Classes.lua
-data\RaceClass.lua
+locales\Init.lua
+locales\deDE\General.lua
+locales\deDE\Races.lua
+locales\deDE\Classes.lua
+locales\deDE\RaceClass.lua
+locales\enUS\General.lua
+locales\enUS\Races.lua
+locales\enUS\Classes.lua
+locales\enUS\RaceClass.lua
+locales\frFR\General.lua
+locales\frFR\Races.lua
+locales\frFR\Classes.lua
+locales\frFR\RaceClass.lua
+locales\Finalize.lua
 
 core\Random.lua
 core\Database.lua

@@ -22,6 +22,8 @@ local function ShowHelp()
     print("/rc cooldown 20")
     print("/rc help | list | status")
     print("/rc channel say|group|party|raid|instance|auto")
+    print("/rc language deDE|enUS|frFR")
+    print("/rc langdebug")
 end
 
 local function SetChance(argument)
@@ -61,11 +63,51 @@ local function SetChannel(argument)
     ))
 end
 
+local function HandleLanguage(argument)
+    if argument == "" then
+        addon.Notify("Ausgabesprache: " .. addon.GetOutputLanguage() .. " (deDE, enUS, frFR)")
+        return
+    end
+    local aliases = { de = "deDE", dede = "deDE", deDE = "deDE", en = "enUS", enus = "enUS", enUS = "enUS", fr = "frFR", frfr = "frFR", frFR = "frFR" }
+    local language = aliases[argument] or aliases[string.lower(argument or "")]
+    if not language or not addon.outputLanguages[language] then
+        addon.Notify("Sprachen: deDE, enUS, frFR")
+        return
+    end
+    local ok, reason = addon.SetOutputLanguage(language)
+    if not ok then
+        if reason == "not_loaded" then
+            addon.Notify("Sprachdateien fuer " .. language .. " wurden nicht geladen. Bitte AddOn-Dateien/TOC pruefen.")
+        else
+            addon.Notify("Sprache konnte nicht aktiviert werden.")
+        end
+        return
+    end
+    addon.Notify("Ausgabesprache: " .. language .. " (" .. addon.outputLanguageNames[language] .. ")")
+end
+
+local function ShowLanguageDebug()
+    local selected = addon.db and addon.db.outputLanguage or "<nil>"
+    local active = addon.GetOutputLanguage()
+    addon.Notify("Sprach-Debug: gespeichert=" .. tostring(selected) .. " | aktiv=" .. tostring(active))
+    for _, lang in ipairs({ "deDE", "enUS", "frFR" }) do
+        local loaded = addon.IsLocaleLoaded(lang) and "ja" or "nein"
+        local thank = addon.GetLocalePoolExact(lang, "generalTexts", "THANK") and "ja" or "nein"
+        addon.Notify(lang .. ": geladen=" .. loaded .. " | General.THANK=" .. thank)
+    end
+end
+
 local commandHandlers = {
+    language = HandleLanguage,
+    lang = HandleLanguage,
+    langdebug = ShowLanguageDebug,
     chance = SetChance,
     cooldown = SetCooldown,
     channel = SetChannel,
 }
+
+
+
 
 function addon.HandleCommand(message)
     if not addon.ready then
@@ -89,8 +131,8 @@ function addon.HandleCommand(message)
         return
     end
     if command == "status" and argument == "" then
-        addon.Notify(string.format("Chance: %g%% | Cooldown: %gs | Kanal: %s",
-            addon.db.textChance, addon.db.cooldown, addon.db.chatChannel))
+        addon.Notify(string.format("Chance: %g%% | Cooldown: %gs | Kanal: %s | Sprache: %s",
+            addon.db.textChance, addon.db.cooldown, addon.db.chatChannel, addon.GetOutputLanguage()))
         return
     end
     local handler = commandHandlers[command]

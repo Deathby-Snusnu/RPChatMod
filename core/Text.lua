@@ -1,29 +1,11 @@
 -- Poolpriorität und zielabhängige Textauswahl.
 local _, addon = ...
 
-function addon.GetTextPool(emote)
-    local race = addon.GetPlayerRaceToken()
-    local _, class = UnitClass("player")
-    local raceClasses = addon.raceClassTexts[race]
-    local raceClass = raceClasses and raceClasses[class]
-    if raceClass and raceClass[emote] then
-        return raceClass[emote]
-    end
-    local classTexts = addon.classTexts[class]
-    if classTexts and classTexts[emote] then
-        return classTexts[emote]
-    end
-    local raceTexts = addon.raceTexts[race]
-    if raceTexts and raceTexts[emote] then
-        return raceTexts[emote]
-    end
-    return addon.generalTexts[emote] or nil
-end
-
 local function ChooseText(pool, targetName)
     if type(pool) ~= "table" or #pool == 0 then
         return nil
     end
+
     local usable = {}
     for _, text in ipairs(pool) do
         if type(text) == "string" and text ~= ""
@@ -31,11 +13,26 @@ local function ChooseText(pool, targetName)
             usable[#usable + 1] = text
         end
     end
+
     if #usable == 0 then
         return nil
     end
-    local text = addon.GetRandom(usable)
+
+    local text = usable[math.random(#usable)]
     return (text:gsub("%%s", function() return targetName end))
+end
+
+function addon.GetTextPool(emote)
+    local race = addon.GetPlayerRaceToken()
+    local _, class = UnitClass("player")
+    local lang = addon.GetOutputLanguage()
+    local function Find(language)
+        return addon.GetLocalePoolExact(language, "raceClassTexts", race, class, emote)
+            or addon.GetLocalePoolExact(language, "classTexts", class, emote)
+            or addon.GetLocalePoolExact(language, "raceTexts", race, emote)
+            or addon.GetLocalePoolExact(language, "generalTexts", emote)
+    end
+    return Find(lang) or Find("deDE")
 end
 
 function addon.BuildText(emote)

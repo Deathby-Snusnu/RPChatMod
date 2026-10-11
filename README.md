@@ -213,3 +213,7 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 MIT-Lizenz, Copyright (c) 2026 Hannes. Siehe [LICENSE](LICENSE).
 Änderungen werden im [CHANGELOG](CHANGELOG.md) dokumentiert.
+
+## RP-Ausgabesprache
+
+Die RP-Texte koennen pro Charakter auf `deDE`, `enUS` oder `frFR` gestellt werden. Beispiel: `/rc language frFR`. Fehlende Alt-Texpools fallen sicher auf Deutsch zurueck.
