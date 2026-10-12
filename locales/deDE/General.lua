@@ -181,4 +181,17 @@ addon.localeData.deDE.generalTexts = {
             "Ihr habt meinen Dank.",
         },
     },
+    FLIRT = {
+        ziel = {
+            "Ihr habt meine Aufmerksamkeit, %s.",
+            "Eure Gesellschaft ist ausgesprochen angenehm, %s.",
+            "Darf ich Euch ein Kompliment machen, %s?",
+        },
+        gruppe = {
+            "Ein wenig Charme darf sein.",
+            "Gute Gesellschaft macht jeden Weg angenehmer.",
+            "Heute liegt etwas Besonderes in der Luft.",
+        },
+    },
+
 }

@@ -63,6 +63,17 @@ function addon.InitializeDatabase()
         db.chatChannel = nil
     end
     db.chatChannel = db.chatChannel or addon.defaults.chatChannel
+    -- Migration: ältere Versionen hatten native WoW-Emotes standardmäßig aktiv.
+    -- Ein geänderter Default überschreibt bereits gespeicherte SavedVariables nicht,
+    -- daher schalten wir sie für bestehende Charaktere genau einmal explizit aus.
+    if not db.nativeEmotesMigration1 then
+        db.nativeEmotes = false
+        db.nativeEmotesMigration1 = true
+    elseif db.nativeEmotes == nil then
+        db.nativeEmotes = addon.defaults.nativeEmotes
+    else
+        db.nativeEmotes = db.nativeEmotes and true or false
+    end
 end
 
 function addon.SetSetting(key, value)

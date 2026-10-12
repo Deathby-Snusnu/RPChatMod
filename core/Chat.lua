@@ -2,14 +2,14 @@
 local _, addon = ...
 
 addon.channels = {
-    SAY = true, GROUP = true, PARTY = true, RAID = true, INSTANCE_CHAT = true, AUTO = true,
+    SAY = true, YELL = true, GROUP = true, PARTY = true, RAID = true, INSTANCE_CHAT = true, AUTO = true,
 }
 local racialLanguageIDs = {
     Human = 7, Dwarf = 6, Gnome = 13, NightElf = 2, Skyborne = 2, Draenei = 35,
     Orc = 1, Troll = 14, Tauren = 3, Scourge = 33, Undead = 33, BloodElf = 10,
 }
 
-local function GetRacialLanguageID()
+function addon.GetRacialLanguageID()
     local race = addon.GetPlayerRaceToken()
     local wanted = racialLanguageIDs[race]
     if not wanted then
@@ -22,6 +22,20 @@ local function GetRacialLanguageID()
         end
     end
     return nil
+end
+
+function addon.GetRacialLanguageName()
+    local wanted = addon.GetRacialLanguageID()
+    if not wanted then
+        return "Standard"
+    end
+    for index = 1, GetNumLanguages() do
+        local name, languageID = GetLanguageByIndex(index)
+        if languageID == wanted then
+            return name or tostring(languageID)
+        end
+    end
+    return tostring(wanted)
 end
 
 local function GetGroupChannel()
@@ -55,7 +69,7 @@ function addon.GetChatChannel()
         if groupChannel then
             return groupChannel
         end
-    elseif channel == "SAY" then
+    elseif channel == "SAY" or channel == "YELL" then
         return channel
     elseif channel == "PARTY" and IsInGroup()
         or channel == "RAID" and IsInRaid()
@@ -85,7 +99,7 @@ function addon.SendText(text)
     end
     local languageID = nil
     if channel == "SAY" or channel == "YELL" then
-        languageID = GetRacialLanguageID()
+        languageID = addon.GetRacialLanguageID()
     end
     C_ChatInfo.SendChatMessage(text, channel, languageID)
     return true

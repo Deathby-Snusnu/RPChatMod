@@ -12,6 +12,10 @@ addon.defaults = {
     -- Verzögerung zwischen Chatnachricht und Animation.
     emoteDelay = 0.3,
 
-    -- SAY, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO.
+    -- SAY, YELL, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO.
     chatChannel = "SAY",
+
+    -- Native WoW-Emotes erzeugen zusaetzlich eigene Standardtexte.
+    -- Standardmaessig aus, damit nur RPChatMod-Texte erscheinen.
+    nativeEmotes = false,
 }

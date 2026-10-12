@@ -2,6 +2,7 @@ local _, addon = ...
 
 local channelAliases = {
     say = "SAY",
+    yell = "YELL",
     group = "GROUP",
     instance = "INSTANCE_CHAT",
     auto = "AUTO",
@@ -14,15 +15,16 @@ local function ShowHelp()
     print("|cffc79c6eRP Chat Mod|r")
     for _, emote in ipairs({
         "hello", "wave", "salute", "bow", "laugh",
-        "dance", "sit", "sleep", "thank",
+        "dance", "sit", "sleep", "thank", "flirt",
     }) do
         print("/rc " .. emote)
     end
     print("/rc chance 30")
     print("/rc cooldown 20")
     print("/rc help | list | status")
-    print("/rc channel say|group|party|raid|instance|auto")
+    print("/rc channel say|yell|group|party|raid|instance|auto")
     print("/rc language deDE|enUS|frFR")
+    print("/rc native on|off")
     print("/rc langdebug")
 end
 
@@ -53,7 +55,7 @@ local function SetChannel(argument)
     end
     local channel = channelAliases[string.lower(argument or "")]
     if not channel then
-        print("Benutzung: /rc channel say|group|party|raid|instance|auto")
+        print("Benutzung: /rc channel say|yell|group|party|raid|instance|auto")
         return
     end
     addon.SetSetting("chatChannel", channel)
@@ -97,6 +99,20 @@ local function ShowLanguageDebug()
     end
 end
 
+
+local function SetNativeEmotes(argument)
+    local value = string.lower(argument or "")
+    if value == "on" then
+        addon.SetSetting("nativeEmotes", true)
+        addon.Notify("Native WoW-Emotes: an")
+    elseif value == "off" then
+        addon.SetSetting("nativeEmotes", false)
+        addon.Notify("Native WoW-Emotes: aus")
+    else
+        addon.Notify("Native WoW-Emotes: " .. (addon.db.nativeEmotes and "an" or "aus") .. ". Benutzung: /rc native on|off")
+    end
+end
+
 local commandHandlers = {
     language = HandleLanguage,
     lang = HandleLanguage,
@@ -104,6 +120,7 @@ local commandHandlers = {
     chance = SetChance,
     cooldown = SetCooldown,
     channel = SetChannel,
+    native = SetNativeEmotes,
 }
 
 
@@ -131,8 +148,10 @@ function addon.HandleCommand(message)
         return
     end
     if command == "status" and argument == "" then
-        addon.Notify(string.format("Chance: %g%% | Cooldown: %gs | Kanal: %s | Sprache: %s",
+        addon.Notify(string.format("Chance: %g%% | Cooldown: %gs | Kanal: %s | Ausgabe: %s",
             addon.db.textChance, addon.db.cooldown, addon.db.chatChannel, addon.GetOutputLanguage()))
+        addon.Notify("Volkssprache (SAY/YELL): " .. addon.GetRacialLanguageName())
+        addon.Notify("Native WoW-Emotes: " .. (addon.db.nativeEmotes and "an" or "aus"))
         return
     end
     local handler = commandHandlers[command]

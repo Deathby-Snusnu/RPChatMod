@@ -41,7 +41,9 @@ function addon.DoEmote(emote)
         return false
     end
     emote = emote:upper()
-    addon.PlayEmote(emote)
+    if addon.db.nativeEmotes then
+        addon.PlayEmote(emote)
+    end
     if not IsTextAllowed() then
         return false
     end

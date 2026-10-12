@@ -1,3 +1,11 @@
+# 0.2.0 - Rassenspezifische soziale Interaktionen
+
+- FLIRT fuer alle unterstuetzten Voelker in deDE/enUS/frFR ergaenzt.
+- Tauren und Draenei besitzen nun vollstaendige RPChat-Rassenpools.
+- Gnomische Flirts technisch-verspielt statt zwergisch formuliert.
+- Volkssprache bleibt fuer SAY/YELL aktiv und ist von der RP-Ausgabesprache getrennt.
+- YELL als konfigurierbarer RPChat-Kanal ergaenzt.
+
 
 ## 2026-10-11 - Sprachwahl FIX2
 

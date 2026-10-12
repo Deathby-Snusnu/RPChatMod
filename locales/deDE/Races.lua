@@ -159,7 +159,20 @@ addon.localeData.deDE.raceTexts = {
                 "Auf Eure Hilfe trinke ich!",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "Bei meinem Bart, %s, Ihr seid gefährlicher für meine Konzentration als ein leeres Fass.",
+                "Wenn Ihr so weitermacht, %s, muss ich Euch wohl auf einen Krug einladen.",
+                "%s, Ihr habt Euch gerade einen ziemlich langen Blick verdient.",
+            },
+            gruppe = {
+                "Bei meinem Bart, hier wird es plötzlich wärmer.",
+                "Ein guter Abend, gute Gesellschaft... da fehlt eigentlich nur noch ein Krug.",
+                "Manche Schätze findet man eben nicht unter der Erde.",
+            },
+        },
+},
 
     ["Orc"] = {
 
@@ -310,7 +323,20 @@ addon.localeData.deDE.raceTexts = {
                 "Ich werde mich für Eure Hilfe erkenntlich zeigen.",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "Ihr habt Stärke, %s. Das gefällt mir.",
+                "%s, an Eurer Seite würde ich sogar freiwillig in die nächste Schlacht ziehen.",
+                "Keine langen Worte, %s. Ihr seid mir aufgefallen.",
+            },
+            gruppe = {
+                "Stärke erkennt Stärke.",
+                "Manche Blicke brauchen keine großen Reden.",
+                "Heute kämpfe ich vielleicht nicht nur für die Ehre.",
+            },
+        },
+},
 
     ["Human"] = {
 
@@ -461,7 +487,20 @@ addon.localeData.deDE.raceTexts = {
                 "Ihr habt Euch meinen aufrichtigen Dank verdient.",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "Ihr habt ein bemerkenswertes Lächeln, %s.",
+                "Darf ich sagen, %s, dass Eure Gesellschaft diesen Ort deutlich verbessert?",
+                "Wenn Ihr noch etwas näher kommt, %s, könnte ich meine guten Manieren vergessen.",
+            },
+            gruppe = {
+                "Ein wenig Charme hat noch keinem Abend geschadet.",
+                "Gute Gesellschaft ist manchmal die beste Belohnung.",
+                "Heute liegt etwas Angenehmes in der Luft.",
+            },
+        },
+},
 
     ["NightElf"] = {
 
@@ -612,7 +651,20 @@ addon.localeData.deDE.raceTexts = {
                 "Ihr habt Licht in diesen Tag gebracht. Habt Dank.",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "Das Mondlicht steht Euch gut, %s.",
+                "Elune muss heute besonders aufmerksam gewesen sein, %s.",
+                "Eure Gegenwart ist angenehmer als ein stiller Hain im Mondlicht, %s.",
+            },
+            gruppe = {
+                "Unter den Sternen wirken manche Begegnungen bedeutungsvoller.",
+                "Der Mond beleuchtet heute offenbar die richtigen Dinge.",
+                "Selbst ein langer Weg wird mit guter Gesellschaft leichter.",
+            },
+        },
+},
 
     ["BloodElf"] = {
 
@@ -763,7 +815,20 @@ addon.localeData.deDE.raceTexts = {
                 "Ihr habt Euch meinen aufrichtigen Dank verdient.",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "%s, Ihr seid beinahe so faszinierend wie ich. Beinahe.",
+                "Ihr habt Geschmack, %s. Immerhin sprecht Ihr mit mir.",
+                "Diese Haltung, %s... erfreulich kultiviert.",
+            },
+            gruppe = {
+                "Eleganz erkennt Eleganz.",
+                "Ein wenig Schönheit verbessert jede Gesellschaft.",
+                "Man sollte gute Gesellschaft nie unkommentiert lassen.",
+            },
+        },
+},
     -- ======================================
     -- GNOME
     -- ======================================
@@ -933,7 +998,20 @@ addon.localeData.deDE.raceTexts = {
                 "Gnomeregan könnte mehr Leute wie Euch gebrauchen. Habt Dank!",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "Eure Augen haben eine bemerkenswert hohe Leuchtkraft, %s. Rein wissenschaftlich betrachtet natürlich.",
+                "Wenn Ihr ein Experiment wärt, %s, würde ich definitiv eine zweite Messreihe ansetzen.",
+                "Ich glaube, zwischen uns besteht eine gewisse elektrische Spannung, %s.",
+            },
+            gruppe = {
+                "Interessant. Mein Puls liegt außerhalb der erwarteten Parameter.",
+                "Romantik ist vermutlich nur Chemie. Erstaunlich unterhaltsame Chemie.",
+                "Ich sollte das untersuchen. Sehr gründlich.",
+            },
+        },
+},
 
     -- ======================================
     -- UNDEAD
@@ -1104,7 +1182,20 @@ addon.localeData.deDE.raceTexts = {
                 "Gut gemacht. Ich werde mich erkenntlich zeigen.",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "%s, mein Herz würde für Euch schlagen. Wenn es das noch täte.",
+                "Ihr seht erstaunlich lebendig aus, %s. Das meine ich als Kompliment.",
+                "%s, Ihr bringt etwas Wärme in meine ansonsten recht kühle Existenz.",
+            },
+            gruppe = {
+                "Romantik ist nicht tot. Nur gelegentlich untot.",
+                "Wer braucht schon Herzklopfen?",
+                "Selbst der Tod hat offenbar Geschmack.",
+            },
+        },
+},
 
     -- ======================================
     -- TROLL
@@ -1275,7 +1366,20 @@ addon.localeData.deDE.raceTexts = {
                 "Ich schulde Euch was. Und Trolle vergessen so etwas nicht.",
             },
         },
-    },
+    
+        FLIRT = {
+            ziel = {
+                "He, %s, dat Lächeln gefällt mir.",
+                "%s, Ihr habt gutes Mojo. Sehr gutes Mojo.",
+                "Kommt näher, %s. Ich beiß nur, wenn's gut läuft.",
+            },
+            gruppe = {
+                "Da Mojo fühlt sich heute besonders freundlich an.",
+                "Hehe... da könnte was gehen.",
+                "Gutes Mojo erkennt gutes Mojo.",
+            },
+        },
+},
 
 
     -- ======================================
@@ -1427,6 +1531,268 @@ addon.localeData.deDE.raceTexts = {
                 "Gute Gefaehrten tragen weiter als jeder Aufwind.",
             },
         },
+    
+        FLIRT = {
+            ziel = {
+                "Der Wind scheint heute immer wieder zu Euch zu finden, %s. Ich verstehe ihn.",
+                "%s, Ihr macht es schwer, den Blick am Horizont zu halten.",
+                "Wenn Ihr mögt, %s, teile ich den nächsten Aufwind mit Euch.",
+            },
+            gruppe = {
+                "Manche Begegnungen tragen weiter als jeder Wind.",
+                "Der Himmel ist weit, aber gute Gesellschaft findet man selten.",
+                "Heute trägt der Wind einen ausgesprochen angenehmen Gedanken.",
+            },
+        },
+},
+
+    ["Tauren"] = {
+
+        HELLO = {
+            ziel = {
+                "Die Erdenmutter grüße Euch, %s.",
+                "Seid willkommen, %s. Möge Euer Weg ruhig sein.",
+                "Es ist gut, Euch zu sehen, %s.",
+            },
+            gruppe = {
+                "Die Erdenmutter grüße uns alle.",
+                "Seid willkommen. Mögen unsere Wege sicher sein.",
+                "Es ist gut, Gefährten am Feuer zu wissen.",
+            },
+        },
+        WAVE = {
+            ziel = {
+                "Ein ruhiger Gruß, %s.",
+                "Möge der Wind Euch freundlich begegnen, %s.",
+                "Die Erdenmutter begleite Euch, %s.",
+            },
+            gruppe = {
+                "Ein Gruß an alle Gefährten.",
+                "Möge der Wind uns freundlich begegnen.",
+                "Die Erdenmutter begleite unsere Schritte.",
+            },
+        },
+        SALUTE = {
+            ziel = {
+                "Ihr habt meinen Respekt, %s.",
+                "Die Ahnen mögen über Euch wachen, %s.",
+                "Ehre Eurem Weg, %s.",
+            },
+            gruppe = {
+                "Respekt und Ehre.",
+                "Die Ahnen mögen über uns wachen.",
+                "Ehre unseren gemeinsamen Wegen.",
+            },
+        },
+        BOW = {
+            ziel = {
+                "Ich neige mein Haupt vor Euch, %s.",
+                "Mit Respekt, %s.",
+                "Die Erdenmutter lehre uns Demut, %s.",
+            },
+            gruppe = {
+                "Ich neige mein Haupt vor Euch.",
+                "Mit Respekt, Gefährten.",
+                "Die Erdenmutter lehre uns Demut.",
+            },
+        },
+        LAUGH = {
+            ziel = {
+                "Ha! Das tat gut, %s.",
+                "Euer Lachen ist ansteckend, %s.",
+                "Ein leichter Geist trägt weit, %s.",
+            },
+            gruppe = {
+                "Ha! Ein gutes Lachen wärmt das Herz.",
+                "Ein leichter Geist trägt weit.",
+                "Auch ernste Wege brauchen Freude.",
+            },
+        },
+        DANCE = {
+            ziel = {
+                "Kommt, %s. Lasst die Erde unseren Takt tragen.",
+                "Tanzt mit mir, %s.",
+                "Ein wenig Freude ehrt das Leben, %s.",
+            },
+            gruppe = {
+                "Lasst die Erde unseren Takt tragen.",
+                "Tanzt, Gefährten.",
+                "Ein wenig Freude ehrt das Leben.",
+            },
+        },
+        SIT = {
+            ziel = {
+                "Setzt Euch zu mir, %s. Der Weg kann warten.",
+                "Ruht Eure Beine, %s.",
+                "Ein stiller Augenblick tut gut, %s.",
+            },
+            gruppe = {
+                "Setzt Euch. Der Weg kann warten.",
+                "Ruht die Beine, Gefährten.",
+                "Ein stiller Augenblick tut gut.",
+            },
+        },
+        SLEEP = {
+            ziel = {
+                "Ruht wohl, %s. Die Erdenmutter wache über Euren Schlaf.",
+                "Schlaft friedlich, %s.",
+                "Morgen trägt die Erde Eure Schritte erneut, %s.",
+            },
+            gruppe = {
+                "Ruht wohl. Die Erdenmutter wache über uns.",
+                "Schlaft friedlich.",
+                "Morgen trägt die Erde unsere Schritte erneut.",
+            },
+        },
+        THANK = {
+            ziel = {
+                "Habt meinen Dank, %s.",
+                "Die Erdenmutter vergelte Eure Hilfe, %s.",
+                "Ich werde Eure Güte nicht vergessen, %s.",
+            },
+            gruppe = {
+                "Habt meinen Dank.",
+                "Die Erdenmutter vergelte Eure Hilfe.",
+                "Güte wird nicht vergessen.",
+            },
+        },
+        FLIRT = {
+            ziel = {
+                "Die Erdenmutter hat Euch einen ruhigen Blick geschenkt, %s.",
+                "%s, an einem langen Abend würde ich gern einen Platz am Feuer mit Euch teilen.",
+                "Eure Gegenwart bringt Ruhe in meinen Schritt, %s.",
+            },
+            gruppe = {
+                "Gute Gesellschaft wärmt besser als manches Feuer.",
+                "Manche Wege möchte man nicht allein gehen.",
+                "Die Erdenmutter schenkt uns bisweilen sehr angenehme Begegnungen.",
+            },
+        },
     },
+
+    ["Draenei"] = {
+
+        HELLO = {
+            ziel = {
+                "Das Licht grüße Euch, %s.",
+                "Seid willkommen, %s. Mögen die Sterne Euren Weg leiten.",
+                "Es freut mich, Euch zu begegnen, %s.",
+            },
+            gruppe = {
+                "Das Licht grüße Euch alle.",
+                "Seid willkommen. Mögen die Sterne unsere Wege leiten.",
+                "Eine erfreuliche Begegnung.",
+            },
+        },
+        WAVE = {
+            ziel = {
+                "Seid gegrüßt, %s.",
+                "Das Licht sei mit Euch, %s.",
+                "Ein Gruß von einem Reisenden an den anderen, %s.",
+            },
+            gruppe = {
+                "Seid gegrüßt.",
+                "Das Licht sei mit uns.",
+                "Ein Gruß an alle Reisenden.",
+            },
+        },
+        SALUTE = {
+            ziel = {
+                "Ehre und Licht, %s.",
+                "Ihr habt meine Achtung, %s.",
+                "Mögen die Naaru Euren Weg erhellen, %s.",
+            },
+            gruppe = {
+                "Ehre und Licht.",
+                "Meine Achtung gilt Euch.",
+                "Mögen die Naaru unsere Wege erhellen.",
+            },
+        },
+        BOW = {
+            ziel = {
+                "Ich verneige mich vor Euch, %s.",
+                "Mit Achtung, %s.",
+                "Möge Demut unseren Blick klären, %s.",
+            },
+            gruppe = {
+                "Ich verneige mich vor Euch.",
+                "Mit Achtung, Gefährten.",
+                "Möge Demut unseren Blick klären.",
+            },
+        },
+        LAUGH = {
+            ziel = {
+                "Das war erfreulich, %s.",
+                "Ihr bringt selbst einen langen Weg zum Leuchten, %s.",
+                "Ein gutes Lachen ist auf jeder Reise willkommen, %s.",
+            },
+            gruppe = {
+                "Ein gutes Lachen ist auf jeder Reise willkommen.",
+                "Freude macht selbst lange Wege leichter.",
+                "Das Licht kennt auch Heiterkeit.",
+            },
+        },
+        DANCE = {
+            ziel = {
+                "Tanzt mit mir, %s. Auch Reisende dürfen feiern.",
+                "Ein Schritt für die Freude, %s.",
+                "Lasst uns den Sternen etwas zum Ansehen geben, %s.",
+            },
+            gruppe = {
+                "Auch Reisende dürfen feiern.",
+                "Ein Schritt für die Freude.",
+                "Lasst uns den Sternen etwas zum Ansehen geben.",
+            },
+        },
+        SIT = {
+            ziel = {
+                "Setzt Euch, %s. Selbst lange Reisen brauchen Pausen.",
+                "Ruht einen Augenblick, %s.",
+                "Der nächste Schritt kann warten, %s.",
+            },
+            gruppe = {
+                "Setzt Euch. Selbst lange Reisen brauchen Pausen.",
+                "Ruht einen Augenblick.",
+                "Der nächste Schritt kann warten.",
+            },
+        },
+        SLEEP = {
+            ziel = {
+                "Ruht wohl, %s. Mögen die Sterne über Euch wachen.",
+                "Schlaft friedlich, %s.",
+                "Das Licht begleite Eure Träume, %s.",
+            },
+            gruppe = {
+                "Ruht wohl. Mögen die Sterne über uns wachen.",
+                "Schlaft friedlich.",
+                "Das Licht begleite unsere Träume.",
+            },
+        },
+        THANK = {
+            ziel = {
+                "Habt Dank, %s. Das Licht vergelte Eure Güte.",
+                "Eure Hilfe ehrt Euch, %s.",
+                "Ich werde Eure Hilfe auf meiner Reise nicht vergessen, %s.",
+            },
+            gruppe = {
+                "Habt Dank. Das Licht vergelte Eure Güte.",
+                "Eure Hilfe ehrt Euch.",
+                "Solche Hilfe wird auf keiner Reise vergessen.",
+            },
+        },
+        FLIRT = {
+            ziel = {
+                "Das Licht der Sterne steht Euch gut, %s.",
+                "%s, Eure Gegenwart lässt selbst eine lange Reise kürzer erscheinen.",
+                "Wenn die Naaru Schönheit messen würden, %s, hätten sie heute viel zu tun.",
+            },
+            gruppe = {
+                "Auch auf langen Reisen findet man unerwartet schöne Begegnungen.",
+                "Die Sterne leuchten heute bemerkenswert freundlich.",
+                "Manche Begegnungen sind ein kleines Geschenk des Schicksals.",
+            },
+        },
+    },
+
 
 }

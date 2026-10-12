@@ -217,3 +217,16 @@ MIT-Lizenz, Copyright (c) 2026 Hannes. Siehe [LICENSE](LICENSE).
 ## RP-Ausgabesprache
 
 Die RP-Texte koennen pro Charakter auf `deDE`, `enUS` oder `frFR` gestellt werden. Beispiel: `/rc language frFR`. Fehlende Alt-Texpools fallen sicher auf Deutsch zurueck.
+
+## Rassenspezifische soziale Interaktionen
+
+RPChatMod priorisiert weiterhin **Rasse+Klasse -> Klasse -> Rasse -> Allgemein**.
+Die sozialen Interaktionen `HELLO`, `WAVE`, `SALUTE`, `BOW`, `LAUGH`, `DANCE`,
+`SIT`, `SLEEP`, `THANK` und `FLIRT` besitzen Rassenpools. Unterstützt werden
+Menschen, Zwerge, Gnome, Nachtelfen, Himmelsgeborene, Draenei, Orcs, Trolle,
+Tauren, Untote und Blutelfen.
+
+Die konfigurierbare RP-Ausgabesprache (deDE/enUS/frFR) ist von der
+**Volkssprache** getrennt. Bei `SAY` und `YELL` nutzt das Addon die dem Volk
+zugeordnete und auf dem Charakter verfügbare Sprache; Gruppenkanäle erhalten
+keine erzwungene Sprach-ID.
