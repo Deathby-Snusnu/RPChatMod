@@ -1,3 +1,10 @@
+-- SPDX-License-Identifier: CC-BY-SA-4.0
+-- Copyright (c) 2026 Hannes Weichselbaum
+--
+-- Role-playing dialogue, emote, ambient, and translation text in this
+-- file is licensed under the Creative Commons Attribution-ShareAlike
+-- 4.0 International License.
+
 local _, addon = ...
 
 addon.localeData.enUS.generalTexts = {HELLO={ziel={"Greetings, %s.","Good to see you, %s."},gruppe={"Greetings, everyone."}},WAVE={ziel={"A friendly wave to you, %s."},gruppe={"A friendly wave to all."}},SALUTE={ziel={"My respect, %s."},gruppe={"My respect to you all."}},BOW={ziel={"A respectful bow, %s."},gruppe={"A respectful bow to all."}},LAUGH={ziel={"Ha! Well said, %s."},gruppe={"Ha! Well said."}},DANCE={ziel={"Care to dance, %s?"},gruppe={"Come, let us dance!"}},SIT={ziel={"Take a seat, %s."},gruppe={"Time for a short rest."}},SLEEP={ziel={"Sleep well, %s."},gruppe={"Rest well, everyone."}},THANK={ziel={"Thank you, %s."},gruppe={"Thank you all."}},

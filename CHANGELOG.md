@@ -1,87 +1,47 @@
-# 0.2.0 - Rassenspezifische soziale Interaktionen
-
-- FLIRT fuer alle unterstuetzten Voelker in deDE/enUS/frFR ergaenzt.
-- Tauren und Draenei besitzen nun vollstaendige RPChat-Rassenpools.
-- Gnomische Flirts technisch-verspielt statt zwergisch formuliert.
-- Volkssprache bleibt fuer SAY/YELL aktiv und ist von der RP-Ausgabesprache getrennt.
-- YELL als konfigurierbarer RPChat-Kanal ergaenzt.
-
-
-## 2026-10-11 - Sprachwahl FIX2
-
-- Ausgabesprache besitzt nun einen expliziten Laufzeitwert und wird beim Umschalten sofort aktiviert.
-- Locale-Tabellen deDE/enUS/frFR werden robust einzeln initialisiert.
-- Eine Sprache kann nur aktiviert werden, wenn ihre Dateien tatsaechlich geladen wurden.
-# Localization update 2026-10-11
-
-- RP output language can be selected per character: deDE, enUS, frFR.
-- Text data moved into language-specific `locales/<locale>/` files.
-- German is used as a safe fallback for legacy pools not translated yet.
-- Command: `language` / `lang` on the add-on slash command.
-
 # Changelog
 
-## 2026-10-10 – Skyborne-Unterstuetzung
+Aenderungen an RPChatMod. Die TOC weist derzeit Version `0.2.2` aus; fuer
+nicht dokumentierte Zwischenversionen werden keine Eintraege rekonstruiert.
 
-- Himmelsgeborene/Skyborne als eigene Rasse mit vollstaendigem RP-Textpool ergaenzt.
-- Eigener Textpool fuer Himmelsgeborene Druiden hinzugefuegt, damit keine fremden Rassenmotive verwendet werden.
-- Rassenerkennung fuer Forever-Custom-Rassen robust gegen Legacy-Tokens gemacht.
-- Himmelsgeborene verwenden bei /say die darnassische Sprach-ID, sofern im Client verfuegbar.
+## [2026-10-11] Sprachwahl
 
+### Hinzugefuegt
 
-Dieses Dokument beschreibt die Änderungen am vorhandenen Quellstand.
-Eine frühere Release-Historie liegt nicht vor und wird nicht rekonstruiert.
+- RP-Ausgabesprache pro Charakter: `deDE`, `enUS` oder `frFR`.
+- Sprachdateien unter `locales/<locale>/`; Deutsch dient fuer fehlende
+  aeltere Textpools als Fallback.
+- Befehle `language` und `lang` zur Auswahl der RP-Ausgabesprache.
 
-## [Unreleased]
+### Geaendert
 
-### Geändert
+- Locale-Tabellen werden robust einzeln initialisiert.
+- Eine Sprache kann nur aktiviert werden, wenn ihre Dateien geladen wurden.
+- Die Volkssprache bleibt von der RP-Ausgabesprache getrennt.
 
-- Textaufbau und Cooldownstart verwenden dieselben Kernfunktionsnamen wie die
-  Klassen-AddOns (`BuildText`, `StartCooldown`); bisherige Kernnamen und
-  globale Integrationswrapper bleiben erhalten.
-- Private Addon-Tabelle für interne Funktionen, Einstellungen und Textdaten
-  eingeführt; bestehende globale Funktionen als dünne Wrapper erhalten.
-  Globale Einstellungen und Texttabellen entfallen.
-- Standardwerte unter `addon.defaults` von der Charakterdatenbank getrennt;
-  Chance, Cooldown und Kanal direkt aus der Datenbank gelesen.
-- DB-Initialisierung, Textauswahl und Slash-Befehle in eigene Module ausgelagert.
-- Die bisher wirksame Sendefunktion einschließlich Sprachwahl in `core/Chat.lua`
-  zentralisiert; die doppelte Definition entfernt.
-- Emote-Ablauf nach `core/Emotes.lua` verschoben und die Hauptdatei auf
-  Login-Initialisierung, öffentliche API und Slash-Registrierung reduziert.
-- TOC-Ladefolge an die Modulstruktur angepasst.
-- Deutsche Dokumentation mit relativen Links, Integrationsschnittstellen,
-  Testanleitung und ausdrücklich beschriebenen Verhaltensregeln aktualisiert.
-- Strikte ganze Zahlen für Chance (0–100) und Cooldown (0–3600).
-- Beschädigte gespeicherte Werte mit Meldung repariert, gültige Werte erhalten.
-- Nicht verfügbare explizite Gruppenkanäle brechen ab; nur AUTO fällt auf SAY zurück.
-- Erster Text sofort möglich, Cooldown nur nach erfolgreichem Chat-API-Aufruf.
-- Literale `%s`-Ersetzung und Textprüfung: maximal 255 Bytes, keine
-  Zeilenumbrüche oder Chat-Markierungen.
-- Sprachunabhängige Sprach-IDs und Scourge/Undead-Normalisierung.
+## [0.2.0] Rassenspezifische soziale Interaktionen
 
-### Hinzugefügt
+### Hinzugefuegt
 
-- `/rc help`, `/rc list`, `/rc status` und `/rc channel` als Kanalabfrage.
-- Gezielte Kanalwahl über PARTY, RAID und INSTANCE_CHAT zusätzlich zu den
-  bestehenden say/group/instance/auto-Aliasen.
-- Öffentliche `RPChatMod.TryText`-/`DoEmote`-API mit boolescher Rückgabe
-  und sicherer Ablehnung vor `PLAYER_LOGIN`.
-- TOC-gesteuerte Source-only-Regressionstests mit WoW-Mocks und Testloader
-  für Lua 5.1 und Lua 5.4.
+- `FLIRT` fuer alle unterstuetzten Voelker in Deutsch, Englisch und
+  Franzoesisch.
+- Vollstaendige RPChat-Rassenpools fuer Tauren und Draenei.
+- `YELL` als konfigurierbarer RPChat-Kanal.
 
-Textbestände, Poolprioritäten, gültige Charakterwerte und Animation
-unabhängig von Textchance, Cooldown und Textausgabe bleiben erhalten.
+### Geaendert
 
-## Ausgangsstand (Versionsnummer in der TOC: 0.1.0)
+- Gnomische Flirts sind technisch-verspielt statt zwergisch formuliert.
+- Volkssprache bleibt fuer SAY/YELL aktiv und ist von der RP-Ausgabesprache
+  getrennt.
 
-- Dokumentation der vorhandenen Add-on-Funktionen in der README ergänzt.
-- Der `/rc`-Befehl unterstützt die Emotes `wave`, `salute`, `bow`, `laugh`,
-  `dance`, `sit`, `sleep`, `thank` und `hello`.
-- RP-Texte werden zufällig aus rassen-, klassen-, rassen-/klassen- oder
-  allgemeinen Textpools ausgewählt und können abhängig vom Ziel variieren.
-  Für alle neun aufgeführten Emotes gibt es Texte für die fünf in
-  `data/Races.lua` aufgeführten Rassen.
-- Einstellungen für Textchance, Abklingzeit, Animationsverzögerung und
-  Chatkanal sind dokumentiert. Der Chatkanal ist pro Charakter konfigurierbar
-  und standardmäßig auf SAY gesetzt.
+## Ausgangsstand – TOC-Version 0.1.0
+
+### Hinzugefuegt
+
+- Dokumentation der vorhandenen Add-on-Funktionen.
+- `/rc`-Emotes `wave`, `salute`, `bow`, `laugh`, `dance`, `sit`, `sleep`,
+  `thank` und `hello`.
+- Rassen-, Klassen-, Rassen-/Klassen- und allgemeine Textpools mit
+  zielabhaengigen Varianten. Fuer die neun aufgefuehrten Emotes bestanden
+  Textdaten fuer die damals dokumentierten fuenf Rassen.
+- Charaktereinstellungen fuer Textchance, Cooldown, Animationsverzoegerung
+  und Chatkanal; SAY war der Standardkanal.

@@ -2,10 +2,10 @@
 
 ## Beschreibung
 
-RP Chat Mod ergänzt WoW-Emotes um zufällig ausgewählte deutschsprachige
-Rollenspieltexte. Die Auswahl berücksichtigt Rasse, Klasse und ein anvisiertes
-Ziel. Das Add-on ist eigenständig und benötigt keine gemeinsame Abhängigkeit
-mit anderen Add-ons.
+RP Chat Mod ergänzt WoW-Emotes um zufällig ausgewählte Rollenspieltexte.
+Die Ausgabe kann Deutsch, Englisch oder Französisch sein; die Auswahl
+berücksichtigt Rasse, Klasse und ein anvisiertes Ziel. Das Add-on ist
+eigenständig und benötigt keine gemeinsame Abhängigkeit mit anderen Add-ons.
 
 Die Animation wird auch dann geplant, wenn Chance, Cooldown oder ein fehlender
 Textpool die Textausgabe verhindern. Sie startet standardmäßig nach 0,3 Sekunden.
@@ -45,11 +45,14 @@ Charakter gespeichert.
 | `/rc list` | Listet die allgemeinen Emote-Textschlüssel auf. |
 | `/rc status` | Zeigt die aktuellen Einstellungen. |
 | `/rc hello`, `/rc wave`, `/rc salute`, `/rc bow`, `/rc laugh` | Plant die entsprechende Animation und versucht einen RP-Text. |
-| `/rc dance`, `/rc sit`, `/rc sleep`, `/rc thank` | Plant die entsprechende Animation und versucht einen RP-Text. |
+| `/rc dance`, `/rc sit`, `/rc sleep`, `/rc thank`, `/rc flirt` | Plant die entsprechende Animation und versucht einen RP-Text. |
 | `/rc chance <0-100>` | Textchance als ganze Zahl setzen. |
 | `/rc cooldown <0-3600>` | Cooldown in ganzen Sekunden setzen. |
 | `/rc channel` | Aktuellen Kanal anzeigen. |
 | `/rc channel say\|group\|party\|raid\|instance\|auto` | Kanalmodus speichern. |
+| `/rc language [deDE\|enUS\|frFR]` | RP-Ausgabesprache anzeigen oder setzen. |
+| `/rc native on\|off` | Native WoW-Emotes zusätzlich ein- oder ausschalten. |
+| `/rc langdebug` | Diagnose der geladenen Sprachdaten anzeigen. |
 
 Befehle und Emote-Namen unterscheiden nicht zwischen Groß- und Kleinschreibung.
 Unbekannte Befehle werden als Emote-Namen behandelt. Ungültige Zahlen,
@@ -78,10 +81,16 @@ erhalten; beschädigte Werte werden mit einer Meldung repariert.
 
 | Einstellung | Standard | Beschreibung |
 | --- | ---: | --- |
+| `outputLanguage` | `deDE` | RP-Textdaten: `deDE`, `enUS` oder `frFR`; fehlende Pools fallen auf Deutsch zurück. |
 | `textChance` | `30` | Ganze Zahl 0–100; 0 verhindert Text, 100 versucht bei jedem bereiten Emote einen Text. |
 | `cooldown` | `20` | Ganze Zahl 0–3600 Sekunden; 0 deaktiviert die Wartezeit. |
 | `emoteDelay` | `0.3` | Verzögerung bis zur Animation. |
-| `chatChannel` | `"SAY"` | SAY, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO. |
+| `chatChannel` | `SAY` | SAY, YELL, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO. |
+| `nativeEmotes` | `false` | Native WoW-Emote-Ausgaben zusätzlich zu RPChatMod-Texten. |
+
+`/rc language` zeigt die aktive RP-Ausgabesprache, ein Argument wechselt sie.
+Fehlende Pools einer Sprache fallen auf Deutsch zurück. Die Volkssprache für
+SAY/YELL bleibt davon getrennt.
 
 Cooldown wird vor Chance und Textauswahl geprüft. Der erste Text ist sofort
 möglich. Nach einem erfolgreichen Chat-API-Aufruf beginnt der Cooldown;
@@ -91,9 +100,9 @@ keinen Cooldown.
 
 ## Eigene Texte
 
-Bearbeite die vorhandenen Tabellen in [data/General.lua](data/General.lua),
-[data/Races.lua](data/Races.lua), [data/Classes.lua](data/Classes.lua) oder
-[data/RaceClass.lua](data/RaceClass.lua). Es gibt keinen Ingame-Texteditor.
+Bearbeite die passenden Dateien unter `locales/<locale>/`, zum Beispiel
+`General.lua`, `Races.lua`, `Classes.lua` oder `RaceClass.lua`. Es gibt keinen
+Ingame-Texteditor.
 
 Die Suche verwendet den ersten vorhandenen Emote-Pool in dieser Reihenfolge:
 
@@ -120,6 +129,12 @@ RPChatMod/
 ├── RPChatMod.toc
 ├── RPChatMod.lua
 ├── config/Settings.lua
+├── locales/
+│   ├── Init.lua
+│   ├── deDE/ (General.lua, Races.lua, Classes.lua, RaceClass.lua)
+│   ├── enUS/ (General.lua, Races.lua, Classes.lua, RaceClass.lua)
+│   ├── frFR/ (General.lua, Races.lua, Classes.lua, RaceClass.lua)
+│   └── Finalize.lua
 ├── core/
 │   ├── Database.lua
 │   ├── Text.lua
@@ -128,11 +143,6 @@ RPChatMod/
 │   ├── Commands.lua
 │   ├── Emotes.lua
 │   └── Random.lua
-├── data/
-│   ├── General.lua
-│   ├── Races.lua
-│   ├── Classes.lua
-│   └── RaceClass.lua
 ├── tests/test_addon.lua
 ├── CHANGELOG.md
 ├── README.md
@@ -143,6 +153,8 @@ Die Module erhalten über `local _, addon = ...` die private Addon-Tabelle.
 Die Hauptdatei registriert `/rc`, exportiert die öffentliche API und
 initialisiert die DB beim Login. Textbestände und Auswahlprioritäten bleiben
 AddOn-spezifisch.
+Die parallel vorhandenen Dateien unter `data/` sind nicht in der TOC-
+Ladefolge enthalten; die Laufzeittexte liegen in den Locale-Dateien.
 Die gemeinsamen Kernfunktionen heißen `BuildText`, `SendText`,
 `CooldownReady` und `StartCooldown`. `GetText` und `UpdateCooldown` bleiben
 als interne Aliase erhalten; die dokumentierten globalen
@@ -200,7 +212,7 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 ## Kompatibilität
 
-- Die TOC weist `Interface: 16001` und Version `0.1.0` aus. Das ist keine
+- Die TOC weist `Interface: 16001` und Version `0.2.2` aus. Das ist keine
   Zusicherung für andere Clientversionen.
 - Der Add-on-Code bleibt Lua-5.1-kompatibel; der Testloader unterstützt auch 5.4.
 - Versand verwendet `C_ChatInfo.SendChatMessage`, ohne Legacy-Fallback.
@@ -211,13 +223,13 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 ## Lizenz
 
-MIT-Lizenz, Copyright (c) 2026 Hannes. Siehe [LICENSE](LICENSE).
-Änderungen werden im [CHANGELOG](CHANGELOG.md) dokumentiert.
+Dieses AddOn verwendet eine **geteilte Lizenzierung nach Dateityp**:
 
-## RP-Ausgabesprache
+- Programmcode: **Mozilla Public License 2.0 (MPL-2.0)**, siehe [LICENSE](./LICENSE).
+- RP-Dialoge, Emote-/Ambient-Texte und Übersetzungen: **CC BY-SA 4.0**, siehe [LICENSE-TEXTS](./LICENSE-TEXTS).
+- Die verbindliche Zuordnung einer Lua-Datei steht in ihrem `SPDX-License-Identifier`.
 
-Die RP-Texte koennen pro Charakter auf `deDE`, `enUS` oder `frFR` gestellt werden. Beispiel: `/rc language frFR`. Fehlende Alt-Texpools fallen sicher auf Deutsch zurueck.
-
+Weitere Hinweise und der Markenhinweis stehen in [NOTICE](./NOTICE).
 ## Rassenspezifische soziale Interaktionen
 
 RPChatMod priorisiert weiterhin **Rasse+Klasse -> Klasse -> Rasse -> Allgemein**.
