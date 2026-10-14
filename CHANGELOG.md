@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 - 2026-10-15
+- Regression behoben: Mit `*...*` markierte RP-Aktionen werden wieder ueber EMOTE (`/me`) statt ueber SAY/YELL/Gruppenchat gesendet.
+- Sternchen werden vor der Ausgabe entfernt.
+- Fehlerhafte oder leere Emote-Markierungen werden abgefangen.
+
 ## 0.3.0 - 2026-10-14
 - Vereinheitlichte Textprioritaet: Rasse+Klasse -> Rasse -> Klasse -> Allgemein.
 - Robuster ziel/gruppen-Fallback.

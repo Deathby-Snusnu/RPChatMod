@@ -87,16 +87,46 @@ function addon.GetChatChannel()
     return nil
 end
 
+local function PrepareText(text)
+    local startsWithStar = text:sub(1, 1) == "*"
+    local endsWithStar = text:sub(-1) == "*"
+
+    if startsWithStar ~= endsWithStar then
+        addon.Notify("Text nicht gesendet: fehlerhafte Emote-Markierung.")
+        return nil, nil
+    end
+
+    if startsWithStar and endsWithStar then
+        local emoteText = text:sub(2, -2):match("^%s*(.-)%s*$")
+        if not emoteText or emoteText == "" then
+            addon.Notify("Text nicht gesendet: leeres Emote.")
+            return nil, nil
+        end
+        return emoteText, true
+    end
+
+    return text, false
+end
+
 function addon.SendText(text)
     if type(text) ~= "string" or text == "" then
         addon.Notify("Kein nutzbarer Text vorhanden.")
         return false
     end
-    if #text > 255 or text:find("[\r\n]") or text:find("|", 1, true) then
+
+    local message, isEmote = PrepareText(text)
+    if not message then
+        return false
+    end
+
+    if #message > 255 or message:find("[\r\n]") or message:find("|", 1, true) then
         addon.Notify("Text nicht gesendet: maximal 255 Bytes, keine Zeilenumbrüche oder Chat-Markierungen.")
         return false
     end
-    local channel = addon.GetChatChannel()
+
+    -- *...* ist eine beschreibende RP-Aktion und wird immer als /me ausgegeben.
+    -- Nur gesprochene Texte verwenden den konfigurierten Chatkanal/Volkssprache.
+    local channel = isEmote and "EMOTE" or addon.GetChatChannel()
     if not channel then
         return false
     end
@@ -104,11 +134,12 @@ function addon.SendText(text)
         addon.Notify("Dieser Client stellt keine unterstützte Chat-API bereit.")
         return false
     end
+
     local languageID = nil
     if channel == "SAY" or channel == "YELL" then
         languageID = addon.GetRacialLanguageID()
     end
-    C_ChatInfo.SendChatMessage(text, channel, languageID)
+    C_ChatInfo.SendChatMessage(message, channel, languageID)
     return true
 end
 
