@@ -2,7 +2,7 @@
 ## Title: RP Chat Mod
 ## Notes: Rassen- und klassenabhängige RP-Emotes
 ## Author: Hannes
-## Version: 0.2.2
+## Version: 0.3.0
 ## SavedVariablesPerCharacter: RPChatMod_CharacterDB
 
 config\Settings.lua
@@ -12,14 +12,17 @@ locales\deDE\General.lua
 locales\deDE\Races.lua
 locales\deDE\Classes.lua
 locales\deDE\RaceClass.lua
+locales\deDE\Expansion.lua
 locales\enUS\General.lua
 locales\enUS\Races.lua
 locales\enUS\Classes.lua
 locales\enUS\RaceClass.lua
+locales\enUS\Expansion.lua
 locales\frFR\General.lua
 locales\frFR\Races.lua
 locales\frFR\Classes.lua
 locales\frFR\RaceClass.lua
+locales\frFR\Expansion.lua
 locales\Finalize.lua
 
 core\Random.lua

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 - 2026-10-14
+- Vereinheitlichte Textprioritaet: Rasse+Klasse -> Rasse -> Klasse -> Allgemein.
+- Robuster ziel/gruppen-Fallback.
+- Erweiterter DE/EN/FR-Social-Textvorrat.
+
 Aenderungen an RPChatMod. Die TOC weist derzeit Version `0.2.2` aus; fuer
 nicht dokumentierte Zwischenversionen werden keine Eintraege rekonstruiert.
 
