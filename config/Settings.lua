@@ -9,6 +9,12 @@ local _, addon = ...
 
 addon.defaults = {
     outputLanguage = "deDE",
+
+    -- Volkssprache fuer SAY/YELL: auto, on oder off.
+    -- auto nutzt die Sprache nur, wenn der Client sie als bekannt meldet.
+    -- on erzwingt die bekannte Sprach-ID der Rasse auch bei unvollstaendiger Client-Erkennung.
+    -- off verwendet die normale Standardsprache.
+    racialLanguageMode = "auto",
     -- Wahrscheinlichkeit, dass zusätzlich zum Emote
     -- ein Text ausgegeben wird.
     textChance = 30,

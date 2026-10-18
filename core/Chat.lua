@@ -16,33 +16,78 @@ local racialLanguageIDs = {
     Orc = 1, Troll = 14, Tauren = 3, Scourge = 33, Undead = 33, BloodElf = 10,
 }
 
-function addon.GetRacialLanguageID()
+local fallbackLanguageNames = {
+    Human = "Gemeinsprache", Dwarf = "Zwergisch", Gnome = "Gnomisch",
+    NightElf = "Darnassisch", Skyborne = "Darnassisch", Draenei = "Draenei",
+    Orc = "Orcisch", Troll = "Trollisch", Tauren = "Taur-ahe",
+    Scourge = "Gossensprache", Undead = "Gossensprache", BloodElf = "Thalassisch",
+}
+
+local function GetKnownLanguageByID(wanted)
+    if not wanted or type(GetNumLanguages) ~= "function" or type(GetLanguageByIndex) ~= "function" then
+        return nil, nil
+    end
+    for index = 1, GetNumLanguages() do
+        local name, languageID = GetLanguageByIndex(index)
+        if languageID == wanted then
+            return languageID, name
+        end
+    end
+    return nil, nil
+end
+
+function addon.GetRacialLanguageID(force)
     local race = addon.GetPlayerRaceToken()
     local wanted = racialLanguageIDs[race]
     if not wanted then
         return nil
     end
-    for index = 1, GetNumLanguages() do
-        local _, languageID = GetLanguageByIndex(index)
-        if languageID == wanted then
-            return languageID
-        end
+    local languageID = GetKnownLanguageByID(wanted)
+    if languageID then
+        return languageID
+    end
+    if force then
+        return wanted
     end
     return nil
 end
 
-function addon.GetRacialLanguageName()
-    local wanted = addon.GetRacialLanguageID()
+function addon.GetRacialLanguageName(force)
+    local race = addon.GetPlayerRaceToken()
+    local wanted = racialLanguageIDs[race]
     if not wanted then
         return "Standard"
     end
-    for index = 1, GetNumLanguages() do
-        local name, languageID = GetLanguageByIndex(index)
-        if languageID == wanted then
-            return name or tostring(languageID)
-        end
+    local _, name = GetKnownLanguageByID(wanted)
+    if name then
+        return name
     end
-    return tostring(wanted)
+    if force then
+        return fallbackLanguageNames[race] or ("Sprach-ID " .. tostring(wanted))
+    end
+    return "Standard"
+end
+
+function addon.GetRacialLanguageMode()
+    return addon.db and addon.db.racialLanguageMode or addon.defaults.racialLanguageMode
+end
+
+function addon.GetChatLanguageID(channel)
+    if channel ~= "SAY" and channel ~= "YELL" then
+        return nil
+    end
+    local mode = addon.GetRacialLanguageMode()
+    if mode == "off" then
+        return nil
+    end
+    return addon.GetRacialLanguageID(mode == "on")
+end
+
+function addon.GetRacialLanguageDebugInfo()
+    local race = addon.GetPlayerRaceToken() or "<nil>"
+    local wanted = racialLanguageIDs[race]
+    local knownID, knownName = GetKnownLanguageByID(wanted)
+    return race, wanted, knownID, knownName
 end
 
 local function GetGroupChannel()
@@ -135,10 +180,7 @@ function addon.SendText(text)
         return false
     end
 
-    local languageID = nil
-    if channel == "SAY" or channel == "YELL" then
-        languageID = addon.GetRacialLanguageID()
-    end
+    local languageID = addon.GetChatLanguageID(channel)
     C_ChatInfo.SendChatMessage(message, channel, languageID)
     return true
 end

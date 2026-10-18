@@ -52,6 +52,8 @@ Charakter gespeichert.
 | `/rc channel say\|group\|party\|raid\|instance\|auto` | Kanalmodus speichern. |
 | `/rc language [deDE\|enUS\|frFR]` | RP-Ausgabesprache anzeigen oder setzen. |
 | `/rc native on\|off` | Native WoW-Emotes zusätzlich ein- oder ausschalten. |
+| `/rc racelanguage [auto\|on\|off]` | Volkssprache für SAY/YELL anzeigen oder steuern. |
+| `/rc racelangdebug` | Erkannte Rasse, erwartete Sprach-ID und verfügbare Clientsprachen anzeigen. |
 | `/rc langdebug` | Diagnose der geladenen Sprachdaten anzeigen. |
 
 Befehle und Emote-Namen unterscheiden nicht zwischen Groß- und Kleinschreibung.
@@ -82,6 +84,7 @@ erhalten; beschädigte Werte werden mit einer Meldung repariert.
 | Einstellung | Standard | Beschreibung |
 | --- | ---: | --- |
 | `outputLanguage` | `deDE` | RP-Textdaten: `deDE`, `enUS` oder `frFR`; fehlende Pools fallen auf Deutsch zurück. |
+| `racialLanguageMode` | `auto` | `auto`: nur erkannte Volkssprache; `on`: bekannte Rassen-Sprach-ID erzwingen; `off`: Standardsprache. |
 | `textChance` | `30` | Ganze Zahl 0–100; 0 verhindert Text, 100 versucht bei jedem bereiten Emote einen Text. |
 | `cooldown` | `20` | Ganze Zahl 0–3600 Sekunden; 0 deaktiviert die Wartezeit. |
 | `emoteDelay` | `0.3` | Verzögerung bis zur Animation. |
@@ -91,6 +94,12 @@ erhalten; beschädigte Werte werden mit einer Meldung repariert.
 `/rc language` zeigt die aktive RP-Ausgabesprache, ein Argument wechselt sie.
 Fehlende Pools einer Sprache fallen auf Deutsch zurück. Die Volkssprache für
 SAY/YELL bleibt davon getrennt.
+
+Die Volkssprache wird mit `/rc racelanguage` gesteuert. `auto` verwendet die
+Rassensprache nur, wenn der Client sie als gelernt/verfügbar meldet. `on`
+verwendet die bekannte Sprach-ID der Rasse auch dann, wenn die Forever-API sie
+nicht sauber in der Sprachliste meldet. `off` sendet ohne erzwungene
+Volkssprache. `/rc racelangdebug` zeigt die Erkennung im laufenden Client.
 
 Cooldown wird vor Chance und Textauswahl geprüft. Der erste Text ist sofort
 möglich. Nach einem erfolgreichen Chat-API-Aufruf beginnt der Cooldown;
@@ -107,8 +116,8 @@ Ingame-Texteditor.
 Die Suche verwendet den ersten vorhandenen Emote-Pool in dieser Reihenfolge:
 
 1. Rasse und Klasse
-2. Klasse
-3. Rasse
+2. Rasse
+3. Klasse
 4. allgemeine Texte
 
 Innerhalb des Pools wird bei vorhandenem Ziel und Namen ein Eintrag aus `ziel`
@@ -212,7 +221,7 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 ## Kompatibilität
 
-- Die TOC weist `Interface: 16001` und Version `0.2.2` aus. Das ist keine
+- Die TOC weist `Interface: 16001` und Version `0.3.2` aus. Das ist keine
   Zusicherung für andere Clientversionen.
 - Der Add-on-Code bleibt Lua-5.1-kompatibel; der Testloader unterstützt auch 5.4.
 - Versand verwendet `C_ChatInfo.SendChatMessage`, ohne Legacy-Fallback.

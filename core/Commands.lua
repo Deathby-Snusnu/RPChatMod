@@ -32,6 +32,8 @@ local function ShowHelp()
     print("/rc channel say|yell|group|party|raid|instance|auto")
     print("/rc language deDE|enUS|frFR")
     print("/rc native on|off")
+    print("/rc racelanguage auto|on|off")
+    print("/rc racelangdebug")
     print("/rc langdebug")
 end
 
@@ -120,6 +122,39 @@ local function SetNativeEmotes(argument)
     end
 end
 
+
+local function SetRacialLanguage(argument)
+    local value = string.lower(argument or "")
+    if value == "" then
+        addon.Notify("Volkssprache: " .. addon.GetRacialLanguageMode() .. " | erkannt: " .. addon.GetRacialLanguageName(addon.GetRacialLanguageMode() == "on"))
+        return
+    end
+    if value ~= "auto" and value ~= "on" and value ~= "off" then
+        addon.Notify("Benutzung: /rc racelanguage auto|on|off")
+        return
+    end
+    addon.SetSetting("racialLanguageMode", value)
+    local force = value == "on"
+    addon.Notify("Volkssprache: " .. value .. " | erkannt: " .. addon.GetRacialLanguageName(force))
+end
+
+local function ShowRacialLanguageDebug()
+    local race, wanted, knownID, knownName = addon.GetRacialLanguageDebugInfo()
+    addon.Notify("Volkssprachen-Debug: Rasse=" .. tostring(race)
+        .. " | Modus=" .. tostring(addon.GetRacialLanguageMode()))
+    addon.Notify("Erwartete Sprach-ID=" .. tostring(wanted)
+        .. " | vom Client bekannt=" .. tostring(knownID)
+        .. " | Name=" .. tostring(knownName))
+    if type(GetNumLanguages) == "function" and type(GetLanguageByIndex) == "function" then
+        local available = {}
+        for index = 1, GetNumLanguages() do
+            local name, languageID = GetLanguageByIndex(index)
+            available[#available + 1] = tostring(name) .. "(" .. tostring(languageID) .. ")"
+        end
+        addon.Notify("Verfuegbare Sprachen: " .. (#available > 0 and table.concat(available, ", ") or "keine"))
+    end
+end
+
 local commandHandlers = {
     language = HandleLanguage,
     lang = HandleLanguage,
@@ -128,6 +163,9 @@ local commandHandlers = {
     cooldown = SetCooldown,
     channel = SetChannel,
     native = SetNativeEmotes,
+    racelanguage = SetRacialLanguage,
+    racelang = SetRacialLanguage,
+    racelangdebug = ShowRacialLanguageDebug,
 }
 
 
@@ -157,7 +195,8 @@ function addon.HandleCommand(message)
     if command == "status" and argument == "" then
         addon.Notify(string.format("Chance: %g%% | Cooldown: %gs | Kanal: %s | Ausgabe: %s",
             addon.db.textChance, addon.db.cooldown, addon.db.chatChannel, addon.GetOutputLanguage()))
-        addon.Notify("Volkssprache (SAY/YELL): " .. addon.GetRacialLanguageName())
+        local raceMode = addon.GetRacialLanguageMode()
+        addon.Notify("Volkssprache (SAY/YELL): " .. raceMode .. " | " .. addon.GetRacialLanguageName(raceMode == "on"))
         addon.Notify("Native WoW-Emotes: " .. (addon.db.nativeEmotes and "an" or "aus"))
         return
     end

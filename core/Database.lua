@@ -70,6 +70,13 @@ function addon.InitializeDatabase()
         db.chatChannel = nil
     end
     db.chatChannel = db.chatChannel or addon.defaults.chatChannel
+
+    local validRacialLanguageModes = { auto = true, on = true, off = true }
+    if db.racialLanguageMode ~= nil and not validRacialLanguageModes[db.racialLanguageMode] then
+        addon.Notify("Ungueltiger Volkssprachenmodus; auto wird verwendet.")
+        db.racialLanguageMode = nil
+    end
+    db.racialLanguageMode = db.racialLanguageMode or addon.defaults.racialLanguageMode
     -- Migration: ältere Versionen hatten native WoW-Emotes standardmäßig aktiv.
     -- Ein geänderter Default überschreibt bereits gespeicherte SavedVariables nicht,
     -- daher schalten wir sie für bestehende Charaktere genau einmal explizit aus.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2 - 2026-10-17
+- Volkssprache fuer SAY/YELL ist jetzt mit `/rc racelanguage auto|on|off` konfigurierbar.
+- `auto` nutzt nur vom Client gemeldete Sprachen; `on` kann die bekannte Rassen-Sprach-ID erzwingen.
+- `/rc racelangdebug` zeigt Rassentoken, erwartete Sprach-ID und die vom Client gemeldeten Sprachen.
+- `/rc status` zeigt Volkssprachenmodus und erkannte Sprache.
+- README-Poolprioritaet auf Rasse+Klasse -> Rasse -> Klasse -> Allgemein korrigiert.
+
 ## 0.3.1 - 2026-10-15
 - Regression behoben: Mit `*...*` markierte RP-Aktionen werden wieder ueber EMOTE (`/me`) statt ueber SAY/YELL/Gruppenchat gesendet.
 - Sternchen werden vor der Ausgabe entfernt.
