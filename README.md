@@ -10,6 +10,12 @@ eigenständig und benötigt keine gemeinsame Abhängigkeit mit anderen Add-ons.
 Die Animation wird auch dann geplant, wenn Chance, Cooldown oder ein fehlender
 Textpool die Textausgabe verhindern. Sie startet standardmäßig nach 0,3 Sekunden.
 
+## Dokumentation
+
+[Sammlungsübersicht](../README.md) · [Changelog](CHANGELOG.md) ·
+[Texteditor und Handbuch](../RPTextStudio/HANDBUCH.md) ·
+[Verpackung und gemeinsame Tests](../VERPACKUNG.md)
+
 ## Installation
 
 Kopiere den Ordner `RPChatMod` in das Add-on-Verzeichnis deines WoW-Clients:
@@ -49,7 +55,7 @@ Charakter gespeichert.
 | `/rc chance <0-100>` | Textchance als ganze Zahl setzen. |
 | `/rc cooldown <0-3600>` | Cooldown in ganzen Sekunden setzen. |
 | `/rc channel` | Aktuellen Kanal anzeigen. |
-| `/rc channel say\|group\|party\|raid\|instance\|auto` | Kanalmodus speichern. |
+| `/rc channel say\|yell\|group\|party\|raid\|instance\|auto` | Kanalmodus speichern. |
 | `/rc language [deDE\|enUS\|frFR]` | RP-Ausgabesprache anzeigen oder setzen. |
 | `/rc native on\|off` | Native WoW-Emotes zusätzlich ein- oder ausschalten. |
 | `/rc racelanguage [auto\|on\|off]` | Volkssprache für SAY/YELL anzeigen oder steuern. |
@@ -63,6 +69,7 @@ Dezimalwerte und zusätzliche Argumente werden abgelehnt, nicht begrenzt.
 ### Kanäle
 
 - `say`: immer `SAY`.
+- `yell`: immer `YELL`.
 - `group`: zuerst Instanzgruppe, dann Schlachtzug, dann Gruppe.
 - `party`: gezielt `PARTY`.
 - `raid`: gezielt `RAID`.
@@ -120,9 +127,12 @@ Die Suche verwendet den ersten vorhandenen Emote-Pool in dieser Reihenfolge:
 3. Klasse
 4. allgemeine Texte
 
-Innerhalb des Pools wird bei vorhandenem Ziel und Namen ein Eintrag aus `ziel`
-gewählt; andernfalls ein Eintrag aus `gruppe`. Gruppentexte benötigen keine
-Gruppe. Ein leerer höher priorisierter Pool führt nicht zur Suche in einem
+Zuerst wird die gewählte Ausgabesprache durchsucht, bei fehlendem Pool Deutsch.
+Innerhalb eines strukturierten Pools wird bei vorhandenem Zielnamen zuerst
+`ziel`, danach `gruppe` versucht. Danach können auch zielunabhängige Einträge
+aus `ziel` verwendet werden. Ohne Namen werden Einträge mit `%s`
+ausgeschlossen. Gruppentexte benötigen keine Gruppe. Ein vorhandener, aber
+unbrauchbarer höher priorisierter Pool führt nicht zur Suche in einem
 niedriger priorisierten Pool.
 
 `%s` wird literal durch den Zielnamen ersetzt; andere Prozentzeichen bleiben
@@ -164,6 +174,8 @@ initialisiert die DB beim Login. Textbestände und Auswahlprioritäten bleiben
 AddOn-spezifisch.
 Die parallel vorhandenen Dateien unter `data/` sind nicht in der TOC-
 Ladefolge enthalten; die Laufzeittexte liegen in den Locale-Dateien.
+Die TOC lädt außerdem `Expansion.lua` je Sprache mit zusätzlichen Texten;
+diese Dateien werden nicht von RP Text Studio bearbeitet.
 Die gemeinsamen Kernfunktionen heißen `BuildText`, `SendText`,
 `CooldownReady` und `StartCooldown`. `GetText` und `UpdateCooldown` bleiben
 als interne Aliase erhalten; die dokumentierten globalen
@@ -239,9 +251,10 @@ Dieses AddOn verwendet eine **geteilte Lizenzierung nach Dateityp**:
 - Die verbindliche Zuordnung einer Lua-Datei steht in ihrem `SPDX-License-Identifier`.
 
 Weitere Hinweise und der Markenhinweis stehen in [NOTICE](./NOTICE).
+
 ## Rassenspezifische soziale Interaktionen
 
-RPChatMod priorisiert weiterhin **Rasse+Klasse -> Klasse -> Rasse -> Allgemein**.
+RPChatMod priorisiert **Rasse+Klasse -> Rasse -> Klasse -> Allgemein**.
 Die sozialen Interaktionen `HELLO`, `WAVE`, `SALUTE`, `BOW`, `LAUGH`, `DANCE`,
 `SIT`, `SLEEP`, `THANK` und `FLIRT` besitzen Rassenpools. Unterstützt werden
 Menschen, Zwerge, Gnome, Nachtelfen, Himmelsgeborene, Draenei, Orcs, Trolle,

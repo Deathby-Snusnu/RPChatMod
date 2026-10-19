@@ -1,24 +1,41 @@
 # Changelog
 
-## 0.3.2 - 2026-10-17
+Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
+werden keine Eintraege oder Datierungen rekonstruiert.
+
+## [Unreleased]
+
+### Dokumentation
+
+- Widerspruechliche Poolprioritaet und veraltete TOC-Angabe korrigiert.
+- Ziel-/Gruppen-Fallback, Locale-Erweiterungen und gemeinsame Anleitungen
+  dokumentiert, ohne Laufzeitverhalten zu aendern.
+
+## [0.3.2] - 2026-10-17
+
+### Geaendert
+
 - Volkssprache fuer SAY/YELL ist jetzt mit `/rc racelanguage auto|on|off` konfigurierbar.
 - `auto` nutzt nur vom Client gemeldete Sprachen; `on` kann die bekannte Rassen-Sprach-ID erzwingen.
 - `/rc racelangdebug` zeigt Rassentoken, erwartete Sprach-ID und die vom Client gemeldeten Sprachen.
 - `/rc status` zeigt Volkssprachenmodus und erkannte Sprache.
 - README-Poolprioritaet auf Rasse+Klasse -> Rasse -> Klasse -> Allgemein korrigiert.
 
-## 0.3.1 - 2026-10-15
+## [0.3.1] - 2026-10-15
+
+### Behoben
+
 - Regression behoben: Mit `*...*` markierte RP-Aktionen werden wieder ueber EMOTE (`/me`) statt ueber SAY/YELL/Gruppenchat gesendet.
 - Sternchen werden vor der Ausgabe entfernt.
 - Fehlerhafte oder leere Emote-Markierungen werden abgefangen.
 
-## 0.3.0 - 2026-10-14
+## [0.3.0] - 2026-10-14
+
+### Geaendert
+
 - Vereinheitlichte Textprioritaet: Rasse+Klasse -> Rasse -> Klasse -> Allgemein.
 - Robuster ziel/gruppen-Fallback.
 - Erweiterter DE/EN/FR-Social-Textvorrat.
-
-Aenderungen an RPChatMod. Die TOC weist derzeit Version `0.2.2` aus; fuer
-nicht dokumentierte Zwischenversionen werden keine Eintraege rekonstruiert.
 
 ## [2026-10-11] Sprachwahl
 
