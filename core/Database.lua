@@ -77,6 +77,9 @@ function addon.InitializeDatabase()
         db.racialLanguageMode = nil
     end
     db.racialLanguageMode = db.racialLanguageMode or addon.defaults.racialLanguageMode
+    if db.groupLanguageMode ~= "on" and db.groupLanguageMode ~= "off" then
+        db.groupLanguageMode = addon.defaults.groupLanguageMode
+    end
     -- Migration: ältere Versionen hatten native WoW-Emotes standardmäßig aktiv.
     -- Ein geänderter Default überschreibt bereits gespeicherte SavedVariables nicht,
     -- daher schalten wir sie für bestehende Charaktere genau einmal explizit aus.

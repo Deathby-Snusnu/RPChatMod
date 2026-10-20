@@ -72,14 +72,32 @@ function addon.GetRacialLanguageMode()
     return addon.db and addon.db.racialLanguageMode or addon.defaults.racialLanguageMode
 end
 
+-- Die Sprache wird fuer JEDE Nachricht neu berechnet. Es gibt keinen
+-- persistenten Sprachwechsel, der nach dem Verlassen einer Gruppe haengen kann.
+function addon.GetGroupLanguageMode()
+    return addon.db and addon.db.groupLanguageMode or addon.defaults.groupLanguageMode
+end
+
+function addon.GetGroupLanguageID()
+    local faction = type(UnitFactionGroup) == "function" and UnitFactionGroup("player") or nil
+    if faction == "Alliance" then return 7 end  -- Common
+    if faction == "Horde" then return 1 end     -- Orcish
+    return nil
+end
+
 function addon.GetChatLanguageID(channel)
     if channel ~= "SAY" and channel ~= "YELL" then
-        return nil
+        return nil  -- Party/Raid/Instance nutzen ihre normale Clientsprache.
+    end
+    -- Gruppenstatus auch bei festem /rc channel say beruecksichtigen.
+    if addon.GetGroupLanguageMode() == "on" and type(IsInGroup) == "function"
+        and (IsInGroup() or (LE_PARTY_CATEGORY_INSTANCE and IsInGroup(LE_PARTY_CATEGORY_INSTANCE))) then
+        local factionID = addon.GetGroupLanguageID()
+        if factionID then return factionID end
+        return nil  -- Unbekannte Fraktion: Clientstandard statt Volkssprache.
     end
     local mode = addon.GetRacialLanguageMode()
-    if mode == "off" then
-        return nil
-    end
+    if mode == "off" then return nil end
     return addon.GetRacialLanguageID(mode == "on")
 end
 

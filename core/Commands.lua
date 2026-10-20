@@ -34,6 +34,8 @@ local function ShowHelp()
     print("/rc native on|off")
     print("/rc racelanguage auto|on|off")
     print("/rc racelangdebug")
+    print("/rc grouplanguage on|off")
+    print("/rc languagestatus")
     print("/rc langdebug")
 end
 
@@ -118,6 +120,7 @@ local function SetNativeEmotes(argument)
         addon.SetSetting("nativeEmotes", false)
         addon.Notify("Native WoW-Emotes: aus")
     else
+        addon.Notify("Gruppensprache (SAY/YELL): " .. addon.GetGroupLanguageMode())
         addon.Notify("Native WoW-Emotes: " .. (addon.db.nativeEmotes and "an" or "aus") .. ". Benutzung: /rc native on|off")
     end
 end
@@ -155,6 +158,29 @@ local function ShowRacialLanguageDebug()
     end
 end
 
+local function SetGroupLanguage(argument)
+    local value = string.lower(argument or "")
+    if value == "on" or value == "off" then
+        addon.SetSetting("groupLanguageMode", value)
+    elseif value ~= "" then
+        addon.Notify("Benutzung: /rc grouplanguage on|off")
+        return
+    end
+    addon.Notify("Gruppensprache fuer SAY/YELL: " .. addon.GetGroupLanguageMode())
+end
+
+local function ShowEffectiveLanguage()
+    local grouped = type(IsInGroup) == "function" and
+        (IsInGroup() or (LE_PARTY_CATEGORY_INSTANCE and IsInGroup(LE_PARTY_CATEGORY_INSTANCE)))
+    local channel = addon.GetChatChannel()
+    local id = channel and addon.GetChatLanguageID(channel) or nil
+    addon.Notify("Gruppe: " .. (grouped and "ja" or "nein")
+        .. " | Kanal: " .. tostring(channel)
+        .. " | Sprach-ID: " .. tostring(id or "Clientstandard"))
+    addon.Notify("Volkssprache: " .. addon.GetRacialLanguageMode()
+        .. " | Gruppensprache: " .. addon.GetGroupLanguageMode())
+end
+
 local commandHandlers = {
     language = HandleLanguage,
     lang = HandleLanguage,
@@ -166,6 +192,9 @@ local commandHandlers = {
     racelanguage = SetRacialLanguage,
     racelang = SetRacialLanguage,
     racelangdebug = ShowRacialLanguageDebug,
+    grouplanguage = SetGroupLanguage,
+    grouplang = SetGroupLanguage,
+    languagestatus = ShowEffectiveLanguage,
 }
 
 
@@ -197,6 +226,7 @@ function addon.HandleCommand(message)
             addon.db.textChance, addon.db.cooldown, addon.db.chatChannel, addon.GetOutputLanguage()))
         local raceMode = addon.GetRacialLanguageMode()
         addon.Notify("Volkssprache (SAY/YELL): " .. raceMode .. " | " .. addon.GetRacialLanguageName(raceMode == "on"))
+        addon.Notify("Gruppensprache (SAY/YELL): " .. addon.GetGroupLanguageMode())
         addon.Notify("Native WoW-Emotes: " .. (addon.db.nativeEmotes and "an" or "aus"))
         return
     end

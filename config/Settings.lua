@@ -15,6 +15,8 @@ addon.defaults = {
     -- on erzwingt die bekannte Sprach-ID der Rasse auch bei unvollstaendiger Client-Erkennung.
     -- off verwendet die normale Standardsprache.
     racialLanguageMode = "auto",
+    -- In Gruppen fuer /say und /yell Gemeinsprache/Orkisch verwenden.
+    groupLanguageMode = "on",
     -- Wahrscheinlichkeit, dass zusätzlich zum Emote
     -- ein Text ausgegeben wird.
     textChance = 30,

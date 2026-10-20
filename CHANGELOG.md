@@ -3,6 +3,16 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
+## [0.3.3] - 2026-10-20
+
+### Hinzugefuegt und behoben
+
+- `/rc grouplanguage on|off`: Bei Gruppenmitgliedschaft fuer RP-SAY/YELL Gemeinsprache (Allianz) oder Orkisch (Horde) verwenden.
+- Nach Verlassen der Gruppe wieder Volkssprache fuer die naechste RP-Nachricht; Sprache wird bei jedem Versand neu bestimmt.
+- `/rc languagestatus`: Diagnose fuer Gruppenzustand, Chatkanal und effektive Sprach-ID.
+- Standardwert `groupLanguageMode = "on"` mit Validierung gespeicherter Einstellungen.
+- Die im WoW-Chatfenster manuell eingestellte Sprache wird nicht umgeschaltet.
+
 ## [Unreleased]
 
 ### Dokumentation

@@ -59,6 +59,8 @@ Charakter gespeichert.
 | `/rc language [deDE\|enUS\|frFR]` | RP-Ausgabesprache anzeigen oder setzen. |
 | `/rc native on\|off` | Native WoW-Emotes zusätzlich ein- oder ausschalten. |
 | `/rc racelanguage [auto\|on\|off]` | Volkssprache für SAY/YELL anzeigen oder steuern. |
+| `/rc grouplanguage on\|off` | In Gruppen fuer RP-SAY/YELL die Fraktionssprache verwenden oder abschalten. |
+| `/rc languagestatus` | Effektive Sprach-ID, Gruppenzustand und Chatkanal anzeigen. |
 | `/rc racelangdebug` | Erkannte Rasse, erwartete Sprach-ID und verfügbare Clientsprachen anzeigen. |
 | `/rc langdebug` | Diagnose der geladenen Sprachdaten anzeigen. |
 
@@ -92,6 +94,7 @@ erhalten; beschädigte Werte werden mit einer Meldung repariert.
 | --- | ---: | --- |
 | `outputLanguage` | `deDE` | RP-Textdaten: `deDE`, `enUS` oder `frFR`; fehlende Pools fallen auf Deutsch zurück. |
 | `racialLanguageMode` | `auto` | `auto`: nur erkannte Volkssprache; `on`: bekannte Rassen-Sprach-ID erzwingen; `off`: Standardsprache. |
+| `groupLanguageMode` | `on` | In Gruppen RP-SAY/YELL auf Fraktionssprache umstellen; allein Volkssprache verwenden. |
 | `textChance` | `30` | Ganze Zahl 0–100; 0 verhindert Text, 100 versucht bei jedem bereiten Emote einen Text. |
 | `cooldown` | `20` | Ganze Zahl 0–3600 Sekunden; 0 deaktiviert die Wartezeit. |
 | `emoteDelay` | `0.3` | Verzögerung bis zur Animation. |
@@ -264,3 +267,19 @@ Die konfigurierbare RP-Ausgabesprache (deDE/enUS/frFR) ist von der
 **Volkssprache** getrennt. Bei `SAY` und `YELL` nutzt das Addon die dem Volk
 zugeordnete und auf dem Charakter verfügbare Sprache; Gruppenkanäle erhalten
 keine erzwungene Sprach-ID.
+
+### Automatische Volkssprache und Gruppensprache (ab 0.3.3)
+
+Bei `/rc grouplanguage on` wird fuer jede von RPChatMod gesendete
+`/say`- oder `/yell`-Nachricht der aktuelle Gruppenstatus geprueft.
+Allein wird die Volkssprache nach `/rc racelanguage auto|on|off`
+verwendet, in Gruppen Gemeinsprache (Allianz, ID 7) oder Orkisch
+(Horde, ID 1). Beim Verlassen einer Gruppe wird die naechste RP-Nachricht
+wieder in Volkssprache gesendet. `/rc grouplanguage off` deaktiviert
+die Gruppenregel. `/rc languagestatus` zeigt die aktuelle Auswahl.
+
+**Grenze:** Die WoW-Standardsprache des normalen Chat-Eingabefelds wird
+nicht umgeschaltet; die Regel betrifft ausschliesslich RPChatMod-Ausgaben.
+Die Sprachauswahl fuer `/me`/EMOTE ist davon nicht betroffen.
+`/rc language deDE|enUS|frFR` waehlt die Textvorlagen-Sprache,
+nicht die Volkssprache im WoW-Chat.
