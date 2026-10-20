@@ -59,7 +59,7 @@ Charakter gespeichert.
 | `/rc language [deDE\|enUS\|frFR]` | RP-Ausgabesprache anzeigen oder setzen. |
 | `/rc native on\|off` | Native WoW-Emotes zusätzlich ein- oder ausschalten. |
 | `/rc racelanguage [auto\|on\|off]` | Volkssprache für SAY/YELL anzeigen oder steuern. |
-| `/rc grouplanguage on\|off` | In Gruppen fuer RP-SAY/YELL die Fraktionssprache verwenden oder abschalten. |
+| `/rc grouplanguage on\|off` | In Gruppen für RP-SAY/YELL die Fraktionssprache verwenden oder abschalten. |
 | `/rc languagestatus` | Effektive Sprach-ID, Gruppenzustand und Chatkanal anzeigen. |
 | `/rc racelangdebug` | Erkannte Rasse, erwartete Sprach-ID und verfügbare Clientsprachen anzeigen. |
 | `/rc langdebug` | Diagnose der geladenen Sprachdaten anzeigen. |
@@ -236,12 +236,14 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 ## Kompatibilität
 
-- Die TOC weist `Interface: 16001` und Version `0.3.2` aus. Das ist keine
+- Die TOC weist `Interface: 16001` und Version `0.3.3` aus. Das ist keine
   Zusicherung für andere Clientversionen.
-- Der Add-on-Code bleibt Lua-5.1-kompatibel; der Testloader unterstützt auch 5.4.
+- Der Add-on-Code bleibt Lua-5.1-kompatibel; der Testloader unterstützt auch
+  5.4.
 - Versand verwendet `C_ChatInfo.SendChatMessage`, ohne Legacy-Fallback.
 - Sprachwahl erfolgt über sprachunabhängige IDs bekannter Volkssprachen.
-- WoWs Rassentoken `Scourge` wird auf die vorhandenen `Undead`-Textdaten normalisiert.
+- WoWs Rassentoken `Scourge` wird auf die vorhandenen `Undead`-Textdaten
+  normalisiert.
 - Texte sind nicht auf Paladine beschränkt.
 - Aufrufe vor `PLAYER_LOGIN` werden sicher mit einer Meldung abgelehnt.
 
@@ -264,22 +266,22 @@ Menschen, Zwerge, Gnome, Nachtelfen, Himmelsgeborene, Draenei, Orcs, Trolle,
 Tauren, Untote und Blutelfen.
 
 Die konfigurierbare RP-Ausgabesprache (deDE/enUS/frFR) ist von der
-**Volkssprache** getrennt. Bei `SAY` und `YELL` nutzt das Addon die dem Volk
+**Volkssprache** getrennt. Bei `SAY` und `YELL` nutzt das Add-on die dem Volk
 zugeordnete und auf dem Charakter verfügbare Sprache; Gruppenkanäle erhalten
 keine erzwungene Sprach-ID.
 
 ### Automatische Volkssprache und Gruppensprache (ab 0.3.3)
 
-Bei `/rc grouplanguage on` wird fuer jede von RPChatMod gesendete
-`/say`- oder `/yell`-Nachricht der aktuelle Gruppenstatus geprueft.
-Allein wird die Volkssprache nach `/rc racelanguage auto|on|off`
-verwendet, in Gruppen Gemeinsprache (Allianz, ID 7) oder Orkisch
-(Horde, ID 1). Beim Verlassen einer Gruppe wird die naechste RP-Nachricht
-wieder in Volkssprache gesendet. `/rc grouplanguage off` deaktiviert
-die Gruppenregel. `/rc languagestatus` zeigt die aktuelle Auswahl.
+Bei `/rc grouplanguage on` wird für jede von RPChatMod gesendete
+`/say`- oder `/yell`-Nachricht der aktuelle Gruppenstatus geprüft.
+Allein wird die Volkssprache nach `/rc racelanguage auto|on|off` verwendet,
+in Gruppen Gemeinsprache (Allianz, ID 7) oder Orkisch (Horde, ID 1).
+Beim Verlassen einer Gruppe wird die nächste RP-Nachricht wieder in
+Volkssprache gesendet. `/rc grouplanguage off` deaktiviert die Gruppenregel.
+`/rc languagestatus` zeigt die aktuelle Auswahl.
 
 **Grenze:** Die WoW-Standardsprache des normalen Chat-Eingabefelds wird
-nicht umgeschaltet; die Regel betrifft ausschliesslich RPChatMod-Ausgaben.
-Die Sprachauswahl fuer `/me`/EMOTE ist davon nicht betroffen.
-`/rc language deDE|enUS|frFR` waehlt die Textvorlagen-Sprache,
+nicht umgeschaltet; die Regel betrifft ausschließlich RPChatMod-Ausgaben.
+Die Sprachauswahl für `/me`/EMOTE ist davon nicht betroffen.
+`/rc language deDE|enUS|frFR` wählt die Textvorlagen-Sprache,
 nicht die Volkssprache im WoW-Chat.

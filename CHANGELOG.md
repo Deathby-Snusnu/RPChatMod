@@ -3,6 +3,14 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
+## [Unreleased]
+
+### Dokumentation
+
+- Widerspruechliche Poolprioritaet und veraltete TOC-Angabe korrigiert.
+- Ziel-/Gruppen-Fallback, Locale-Erweiterungen und gemeinsame Anleitungen
+  dokumentiert, ohne Laufzeitverhalten zu aendern.
+
 ## [0.3.3] - 2026-10-20
 
 ### Hinzugefuegt und behoben
@@ -12,14 +20,6 @@ werden keine Eintraege oder Datierungen rekonstruiert.
 - `/rc languagestatus`: Diagnose fuer Gruppenzustand, Chatkanal und effektive Sprach-ID.
 - Standardwert `groupLanguageMode = "on"` mit Validierung gespeicherter Einstellungen.
 - Die im WoW-Chatfenster manuell eingestellte Sprache wird nicht umgeschaltet.
-
-## [Unreleased]
-
-### Dokumentation
-
-- Widerspruechliche Poolprioritaet und veraltete TOC-Angabe korrigiert.
-- Ziel-/Gruppen-Fallback, Locale-Erweiterungen und gemeinsame Anleitungen
-  dokumentiert, ohne Laufzeitverhalten zu aendern.
 
 ## [0.3.2] - 2026-10-17
 
