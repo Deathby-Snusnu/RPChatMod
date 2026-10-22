@@ -201,7 +201,10 @@ addon.localeData.frFR.raceTexts = {
         },
 },
     ["Skyborne"] = {
-        HELLO = {ziel={"Le vent vous a porté jusqu'à moi, %s. Bienvenue."},gruppe={"Le vent a rassemblé de bonne compagnie."}},
+        HELLO = {ziel={
+            "Le vent vous a porté jusqu'à moi, %s. Bienvenue.",
+            "Entre ciel et terre, il reste de la place pour de nouvelles rencontres, %s.",
+        },gruppe={"Le vent a rassemblé de bonne compagnie."}},
         WAVE = {ziel={"Que le vent porte mon salut jusqu'à vous, %s."},gruppe={"Un salut venu du grand ciel !"}},
         SALUTE = {ziel={"Ciel libre au-dessus de vous, %s. Tout mon respect."},gruppe={"Ciel libre au-dessus de nous. Tout mon respect."}},
         BOW = {ziel={"Je m'incline devant votre chemin, %s. Que le vent vous porte."},gruppe={"Que le vent nous porte tous en sûreté."}},

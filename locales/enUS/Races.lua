@@ -201,7 +201,10 @@ addon.localeData.enUS.raceTexts = {
         },
 },
     ["Skyborne"] = {
-        HELLO = {ziel={"The wind has carried you to me, %s. Welcome."},gruppe={"The wind has gathered good company."}},
+        HELLO = {ziel={
+            "The wind has carried you to me, %s. Welcome.",
+            "Between heaven and earth there is room for new encounters, %s.",
+        },gruppe={"The wind has gathered good company."}},
         WAVE = {ziel={"May the wind carry my greeting to you, %s."},gruppe={"A greeting from open skies!"}},
         SALUTE = {ziel={"Open skies above you, %s. My respect."},gruppe={"Open skies above us. My respect to you all."}},
         BOW = {ziel={"I bow to your path, %s. May the wind carry you well."},gruppe={"May the wind carry us all safely."}},
