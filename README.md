@@ -12,9 +12,9 @@ Textpool die Textausgabe verhindern. Sie startet standardmäßig nach 0,3 Sekund
 
 ## Dokumentation
 
-[Sammlungsübersicht](../README.md) · [Changelog](CHANGELOG.md) ·
-[Texteditor und Handbuch](../RPTextStudio/HANDBUCH.md) ·
-[Verpackung und gemeinsame Tests](../VERPACKUNG.md)
+[Sammlungsübersicht](../../README.md) · [Changelog](CHANGELOG.md) ·
+[Texteditor und Handbuch](../../docs/RPTextStudio/HANDBUCH.md) ·
+[Verpackung und gemeinsame Tests](../../docs/VERPACKUNG.md)
 
 ## Installation
 
