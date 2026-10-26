@@ -26,8 +26,8 @@ Kopiere den Ordner `RPChatMod` in das Add-on-Verzeichnis deines WoW-Clients:
 
 Aktiviere das Add-on im Charakter-Auswahlbildschirm beziehungsweise lade es
 mit `/reload` neu. Die [TOC](RPChatMod.toc) bestimmt die Ladefolge.
-Das Installations-ZIP enthält Spieldateien, Dokumentation und Lizenz,
-aber keine Tests, Git- oder Editor-Dateien.
+Das Installations-ZIP enthält Laufzeitdateien und Lizenz-/Rechtehinweise,
+aber keine Entwicklungsdokumentation, Tests, Git- oder Editor-Dateien.
 
 ## Schnellstart
 
@@ -48,7 +48,9 @@ Charakter gespeichert.
 | Befehl | Funktion |
 | --- | --- |
 | `/rc` oder `/rc help` | Zeigt die Hilfe. |
-| `/rc list` | Listet die allgemeinen Emote-Textschlüssel auf. |
+| `/rc list` | Listet für den Charakter verwendbare Emote-Textschlüssel auf. |
+| `/rc list racial` | Listet die Schlüssel des aktuellen Volks auf. |
+| `/rc list all` | Listet Rassen- und klassenspezifische Schlüssel mit Herkunft auf. |
 | `/rc status` | Zeigt die aktuellen Einstellungen. |
 | `/rc hello`, `/rc wave`, `/rc salute`, `/rc bow`, `/rc laugh` | Plant die entsprechende Animation und versucht einen RP-Text. |
 | `/rc dance`, `/rc sit`, `/rc sleep`, `/rc thank`, `/rc flirt` | Plant die entsprechende Animation und versucht einen RP-Text. |
@@ -63,6 +65,9 @@ Charakter gespeichert.
 | `/rc languagestatus` | Effektive Sprach-ID, Gruppenzustand und Chatkanal anzeigen. |
 | `/rc racelangdebug` | Erkannte Rasse, erwartete Sprach-ID und verfügbare Clientsprachen anzeigen. |
 | `/rc langdebug` | Diagnose der geladenen Sprachdaten anzeigen. |
+
+Die Herkunfts- und Fallback-Regeln der drei Listenvarianten stehen im
+[Listen-Handbuch](../../docs/LISTEN-HANDBUCH.md).
 
 Befehle und Emote-Namen unterscheiden nicht zwischen Groß- und Kleinschreibung.
 Unbekannte Befehle werden als Emote-Namen behandelt. Ungültige Zahlen,

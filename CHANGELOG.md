@@ -3,13 +3,20 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
-## [Unreleased]
+## [0.4.0] - 2026-10-26
 
 ### Dokumentation
 
 - Widerspruechliche Poolprioritaet und veraltete TOC-Angabe korrigiert.
 - Ziel-/Gruppen-Fallback, Locale-Erweiterungen und gemeinsame Anleitungen
   dokumentiert, ohne Laufzeitverhalten zu aendern.
+
+### Hinzugefuegt
+
+- Dynamische Schluessellisten mit `/rc list`, `/rc list racial` und
+  `/rc list all` ergaenzt.
+- Weitere Begruessungstexte fuer Himmelsgeborene in Englisch und
+  Franzoesisch ergaenzt.
 
 ## [0.3.3] - 2026-10-20
 
