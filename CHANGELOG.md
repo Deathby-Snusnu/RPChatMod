@@ -3,6 +3,11 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
+## Aktueller Quellstand: 0.4.1 (unveroeffentlicht)
+
+- Versionsangabe aktualisiert und gemeinsame Dokumentationslinks fuer
+  einzelne AddOn-Checkouts erlaeutert.
+
 ## [0.4.0] - 2026-10-26
 
 ### Dokumentation

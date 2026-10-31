@@ -16,6 +16,10 @@ Textpool die Textausgabe verhindern. Sie startet standardmäßig nach 0,3 Sekund
 [Texteditor und Handbuch](../../docs/RPTextStudio/HANDBUCH.md) ·
 [Verpackung und gemeinsame Tests](../../docs/VERPACKUNG.md)
 
+Die gemeinsamen relativen Links setzen den vollständigen Sammlungs-Checkout
+voraus. Im einzelnen AddOn-Repository sind die Anleitungen über das
+[Sammlungsrepository](https://github.com/Deathby-Snusnu/RPAddOns) erreichbar.
+
 ## Installation
 
 Kopiere den Ordner `RPChatMod` in das Add-on-Verzeichnis deines WoW-Clients:
@@ -241,7 +245,7 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 ## Kompatibilität
 
-- Die TOC weist `Interface: 16001` und Version `0.3.3` aus. Das ist keine
+- Die TOC weist `Interface: 16001` und Version `0.4.1` aus. Das ist keine
   Zusicherung für andere Clientversionen.
 - Der Add-on-Code bleibt Lua-5.1-kompatibel; der Testloader unterstützt auch
   5.4.
