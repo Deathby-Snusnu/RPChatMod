@@ -80,17 +80,14 @@ function addon.InitializeDatabase()
     if db.groupLanguageMode ~= "on" and db.groupLanguageMode ~= "off" then
         db.groupLanguageMode = addon.defaults.groupLanguageMode
     end
-    -- Migration: ältere Versionen hatten native WoW-Emotes standardmäßig aktiv.
-    -- Ein geänderter Default überschreibt bereits gespeicherte SavedVariables nicht,
-    -- daher schalten wir sie für bestehende Charaktere genau einmal explizit aus.
-    if not db.nativeEmotesMigration1 then
-        db.nativeEmotes = false
-        db.nativeEmotesMigration1 = true
-    elseif db.nativeEmotes == nil then
+    -- v0.6.0: the client handles the native gesture by default.
+    -- Never overwrite a saved boolean (especially nativeEmotes=false).
+    -- The old migration marker may remain in SavedVariables, but cannot
+    -- force old or new characters to an unwanted state.
+    if type(db.nativeEmotes) ~= "boolean" then
         db.nativeEmotes = addon.defaults.nativeEmotes
-    else
-        db.nativeEmotes = db.nativeEmotes and true or false
     end
+    db.nativeEmotesMigration1 = true
 end
 
 function addon.SetSetting(key, value)
