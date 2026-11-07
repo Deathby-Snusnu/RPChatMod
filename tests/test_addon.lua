@@ -117,7 +117,7 @@ local function LoadAddon(savedValues, beforeLogin)
     local addon = {}
     local toc = assert(io.open(root .. "/RPChatMod.toc", "r"))
     for line in toc:lines() do
-        local file = line:match("^%s*(.-)%s*$")
+        local file = line:match("^%s*(.-)%s*$"):gsub("\\", "/")
         if file:match("%.lua$") then
             local chunk, loadError
             if _VERSION == "Lua 5.1" then
@@ -146,6 +146,7 @@ Test("TOC, Defaults, isolierter Namespace und öffentliche API", function()
     local addon, env, state = LoadAddon()
     Equal(addon.defaults.textChance, 30)
     Equal(addon.defaults.cooldown, 20)
+    Equal(addon.defaults.nativeEmotes, true)
     Equal(addon.defaults.emoteDelay, 0.3)
     Equal(addon.defaults.chatChannel, "SAY")
     Equal(rawget(env, "RPChatMod_Settings"), nil)
@@ -302,7 +303,8 @@ Test("Poolpriorität RaceClass/Class/Race/General ohne Klassenbeschränkung", fu
     local addon, _, state = LoadAddon()
     state.race, state.class = "Dwarf", "PALADIN"
     Equal(addon.GetTextPool("WAVE"), addon.raceClassTexts.Dwarf.PALADIN.WAVE)
-    Equal(addon.GetTextPool("BOW"), addon.classTexts.PALADIN.BOW)
+    Equal(addon.GetTextPool("BOW"), addon.raceTexts.Dwarf.BOW,
+        "race-specific speech takes priority over class speech")
     state.class = "UNKNOWN"
     Equal(addon.GetTextPool("BOW"), addon.raceTexts.Dwarf.BOW)
     state.race = "UNKNOWN"
@@ -322,15 +324,15 @@ Test("Scourge verwendet die vorhandenen Undead-Textdaten", function()
     Equal(addon.GetTextPool("WAVE"), addon.raceClassTexts.Undead.PALADIN.WAVE)
 end)
 
-Test("Zieltexte, Gruppentexte und kein Fallback aus einem leeren Pool", function()
+Test("Zieltexte, Gruppentexte und Fallback bei unbrauchbarem Spezialpool", function()
     local addon, _, state = LoadAddon()
     state.race = "UNKNOWN"
     state.targetExists, state.targetName = true, "A%name"
-    Equal(addon.GetText("HELLO"), "Hallo, A%name!")
+    Equal(addon.GetText("HELLO"), "Seid gegruesst, A%name.")
     state.targetExists = false
-    Equal(addon.GetText("HELLO"), "Hallo zusammen!")
+    Equal(addon.GetText("HELLO"), "Seid gegruesst, miteinander.")
     addon.raceTexts.UNKNOWN = { HELLO = {} }
-    Equal(addon.GetText("HELLO"), nil)
+    Equal(addon.GetText("HELLO"), "Seid gegruesst, miteinander.")
 end)
 
 Test("Literale Platzhalterersetzung und Textgrenzen", function()
@@ -355,10 +357,10 @@ end)
 Test("Strikte Slash-Grammatik, Hilfebefehle und Kanalabfrage", function()
     local addon, _, state = LoadAddon()
     addon.HandleCommand("")
-    Equal(#state.messages, 15)
+    Equal(#state.messages, 24)
     Equal(state.messages[2], "|cffc79c6eRP Chat Mod|r")
     Equal(state.messages[3], "/rc hello")
-    Equal(state.messages[15], "/rc channel say|group|party|raid|instance|auto")
+    Equal(state.messages[16], "/rc channel say|yell|group|party|raid|instance|auto")
     addon.HandleCommand("chance 100")
     addon.HandleCommand("  CHANCE 999  ")
     Equal(addon.db.textChance, 100)
@@ -403,6 +405,69 @@ Test("Fehlende Chat-API startet keinen Cooldown und verhindert keine Animation",
     Equal(addon.GetRemainingCooldown(), 0)
     Equal(#state.timers, 1)
     Equal(addon.TryText({}), false)
+end)
+
+
+Test("Vollständiges klassisches Emote-Sprachvokabular und keine doppelten /me", function()
+    local addon, env, state = LoadAddon({textChance = 100, cooldown = 0})
+    Equal(addon.db.nativeEmotes, true)
+    state.race = "UNKNOWN"
+    local total = 0
+    for key, pool in pairs(addon.localeData.deDE.generalTexts) do
+        total = total + 1
+        assert(type(key) == "string" and type(pool) == "table")
+        for _, lang in ipairs({"deDE", "enUS", "frFR"}) do
+            local locale = addon.localeData[lang]
+            assert(type(locale.generalTexts[key]) == "table", lang .. ": " .. key)
+            assert(addon.SetOutputLanguage(lang), "locale switch " .. lang)
+            local line = addon.BuildText(key)
+            assert(type(line) == "string" and line ~= ""
+                and #line <= 255, lang .. ": " .. key)
+            assert(not (line:sub(1,1) == "*" and line:sub(-1) == "*"),
+                lang .. " must never generate /me for " .. key)
+        end
+    end
+    Equal(total, 194, "20 existing and 174 expanded spoken keys")
+    addon.SetOutputLanguage("deDE")
+    Equal(addon.ResolveEmoteAlias("APPLAUSE"), "APPLAUD")
+    Equal(addon.ResolveEmoteAlias("THANKS"), "THANK")
+    Equal(addon.ResolveEmoteAlias("LIE"), "SLEEP")
+    state.targetExists, state.targetName = true, "ZIEL_SENTINEL_870"
+    assert(addon.BuildText("INSULT"):find("ZIEL_SENTINEL_870",1,true),
+        "targeted spoken line uses player-selected target")
+    Equal(addon.DoEmote("INSULT"), true)
+    Equal(state.sent[#state.sent][2], "SAY")
+    Equal(state.timers[#state.timers][1], 0.3)
+    state.timers[#state.timers][2]()
+    Equal(state.animations[#state.animations], "INSULT")
+    state.targetExists = false
+    addon.localeData.deDE.raceTexts.UNKNOWN = {
+        WAVE = {gruppe = {"*winkt und verbeugt sich*"}},
+    }
+    local spoken = addon.BuildText("WAVE")
+    assert(spoken and spoken:sub(1,1) ~= "*",
+        "old emote-only racial override falls back to spoken general text")
+end)
+
+Test("Ehemalige /me-Zeilen werden weder bei Emotes noch bei Bonustexten gesendet", function()
+    local addon, _, state = LoadAddon({textChance=100, cooldown=0})
+    state.race, state.class = "UNKNOWN", "UNKNOWN"
+    -- The original 0.5.0 pools still include star-marked /me lines.
+    local old = addon.localeData.deDE.generalTexts.APPLAUD
+    assert(old.gruppe[3]:sub(1,1) == "*")
+    for _ = 1, 8 do
+        Equal(addon.TryText("APPLAUD"), true)
+        Equal(state.sent[#state.sent][2], "SAY")
+        assert(not state.sent[#state.sent][1]:find("*", 1, true))
+    end
+    -- Old per-character configuration has priority over the new default.
+    local disabled, _, disabledState = LoadAddon({
+        nativeEmotes=false, textChance=100, cooldown=0,
+    })
+    Equal(disabled.db.nativeEmotes, false)
+    Equal(disabled.TryText("WAVE"), true)
+    Equal(#disabledState.timers, 0)
+    Equal(disabledState.sent[1][2], "SAY")
 end)
 
 local failures = 0

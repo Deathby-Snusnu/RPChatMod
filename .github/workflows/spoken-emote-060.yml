@@ -1,0 +1,20 @@
+name: RPChatMod 0.6.0 spoken emote catalog
+on:
+  push:
+  pull_request:
+jobs:
+  emote-dialogue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check 210 aliases, 194 pools and translations
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Install Lua 5.1 and Lua 5.4
+        run: sudo apt-get update && sudo apt-get install -y lua5.1 lua5.4
+      - name: Validate source in classic Lua 5.1
+        run: lua5.1 tests/test_addon.lua
+      - name: Validate source in Lua 5.4
+        run: lua5.4 tests/test_addon.lua

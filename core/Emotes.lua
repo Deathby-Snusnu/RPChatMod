@@ -8,6 +8,20 @@
 -- Animation und Ablauf eines RP-Emotes.
 local _, addon = ...
 
+local EMOTE_ALIASES = {
+    APPLAUSE = "APPLAUD", BRAVO = "APPLAUD", CLAP = "APPLAUD",
+    APOLOGIZE = "SORRY", MAD = "ANGRY", LOL = "LAUGH", ROFL = "LAUGH",
+    BYE = "FAREWELL", GOODBYE = "FAREWELL",
+    GREET = "HELLO", GREETINGS = "HELLO", HI = "HELLO",
+    THANKS = "THANK", TY = "THANK", THANKYOU = "THANK",
+    NOD = "YES", CONGRATULATE = "CONGRATS", CONGRATULATIONS = "CONGRATS",
+    LAY = "SLEEP", LIE = "SLEEP", LAYDOWN = "SLEEP", LIEDOWN = "SLEEP",
+
+}
+function addon.ResolveEmoteAlias(emote)
+    return EMOTE_ALIASES[emote] or emote
+end
+
 function addon.PlayEmote(emote)
     if not emote then
         return
@@ -48,13 +62,16 @@ function addon.DoEmote(emote)
         return false
     end
     emote = emote:upper()
+    local key = addon.ResolveEmoteAlias(emote)
     if addon.db.nativeEmotes then
+        -- The client performs the real emote (animation + standard emote line).
+        -- Addon speech is independent of the client's native message.
         addon.PlayEmote(emote)
     end
     if not IsTextAllowed() then
         return false
     end
-    local text = addon.BuildText(emote)
+    local text = addon.BuildText(key)
     if not text then
         print("|cffff0000RP Chat Mod:|r Kein Text für " .. emote .. " vorhanden.")
         return false

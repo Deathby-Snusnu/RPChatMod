@@ -1,27 +1,63 @@
 # RP Chat Mod
 
-## Neue manuelle RP-Aktionen (0.5.0)
+## RPChatMod 0.6.0: Sprache für klassische WoW-Emotes
 
-10 ergänzende Textaktionen sind in DE/EN/FR verfügbar:
-- `APPLAUD`
-- `SORRY`
-- `CHEER`
-- `WAIT`
-- `SHRUG`
-- `POINT`
-- `CHEERS`
-- `COMFORT`
-- `HUG`
-- `KNEEL`
+**210 klassische Emote-Befehlsnamen** werden über **194 individuelle
+RP-Textschlüssel und 20 Aliasnamen** abgedeckt. Davon wurden **174
+zusätzliche Schlüssel** in Deutsch, Englisch und Französisch eingeführt.
+Für jede neue Aktion gibt es zwei allgemeine gesprochene Varianten und
+zwei Varianten mit ausgewähltem Ziel. Bereits vorhandene rassen-, klassen-
+und volk/klassenspezifische Texte bleiben unangetastet.
 
-Die vorhandenen Fähigkeiten und Völkervarianten bleiben unverändert;
-die neuen Schlüssel sind ausdrücklich manuelle Rollenspielaktionen und
-werden nicht automatisch durch Spielereignisse ausgelöst.
+Beispiele: `/rc hello`, `/rc agree`, `/rc angry`,
+`/rc incoming`, `/rc fear`, `/rc pray`, `/rc cheer`,
+`/rc drink`, `/rc salute`, `/rc surrender`,
+`/rc laugh`.
 
+**Wichtig: keine doppelten /me-Emotes.** Das Spiel selbst gibt bei
+`DoEmote` die Standardhandlung aus. RPChatMod versucht dazu ausschließlich
+einen **gesprochenen Satz**, abhängig von Textchance und Cooldown.
+Ältere `*...*`-Beschreibungen in den Textdaten werden bei der
+RPChatMod-Textauswahl übersprungen; das gilt für allgemeine, Volks-,
+Klassen- und kombinierte Texte.
+
+Der **neue Standard** lautet `/rc native on`, sodass `/rc wave`
+sowohl das normale WoW-Winken als auch gegebenenfalls eine zusätzliche
+Sprechzeile auslöst. Zuvor gespeichertes `nativeEmotes = false` bleibt
+erhalten. Falls nach einem Update keine Animation erscheint, einmal
+`/rc native on` verwenden.
+
+**Nicht automatisch:** `/wave` allein wird weiterhin vom Spiel
+verarbeitet und löst keine zusätzliche RPChatMod-Nachricht aus.
+Für die Kombination aus WoW-Emote und zufälligem RP-Satz `/rc wave`
+verwenden oder diesen Befehl auf eine Aktionsleiste legen.
+
+### Textauswahl und Grenzen
+
+- Das WoW-Emote beziehungsweise die Animation ist unabhängig von
+  Textchance und Cooldown. Ein unterdrückter RP-Satz verhindert die
+  Spielanimation nicht.
+- Bei RPChatMod werden nur gesprochene Zeilen an den konfigurierten
+  SAY-, YELL- oder Gruppenkanal gesendet; **kein automatisches EMOTE**.
+- Der erste verwendbare Spezialtext gewinnt: Rasse + Klasse, Rasse,
+  Klasse, allgemeiner Text. Reine ältere `/me`-Pools werden übersprungen,
+  damit die allgemeine Sprachvariante einspringen kann.
+- Texte ohne Ziel verwenden den allgemeinen Pool. Mit Ziel stehen
+  zwei zusätzliche, adressierte Varianten zur Verfügung.
+- Die Dateien `SpokenEmotes01.lua` bis `SpokenEmotes05.lua` enthalten
+  voll qualifizierte `addon.localeData.<Sprache>.generalTexts.<SCHLUESSEL>`-
+  Tabellen. **RPTextStudio** kann diese als normale Textlisten unter
+  **Alle Textarten** erkennen und bearbeiten, ohne eine Änderung am
+  bestehenden Editor oder den persönlichen SavedVariables.
+- Welche nativen Emotes der **WoW-Forever-Client** tatsächlich als
+  Animation oder Standardtext unterstützt, hängt von seiner
+  Implementierung und Version ab. Der Katalog deckt die gelisteten
+  klassischen Befehlsnamen ab, nicht sämtliche später hinzugefügten
+  Retail-Emotes.
 
 ## Beschreibung
 
-RP Chat Mod ergänzt WoW-Emotes um zufällig ausgewählte Rollenspieltexte.
+RP Chat Mod ergänzt klassische WoW-Emotes um zufällig ausgewählte **gesprochene** Rollenspieltexte.
 Die Ausgabe kann Deutsch, Englisch oder Französisch sein; die Auswahl
 berücksichtigt Rasse, Klasse und ein anvisiertes Ziel. Das Add-on ist
 eigenständig und benötigt keine gemeinsame Abhängigkeit mit anderen Add-ons.
@@ -81,7 +117,7 @@ Charakter gespeichert.
 | `/rc channel` | Aktuellen Kanal anzeigen. |
 | `/rc channel say\|yell\|group\|party\|raid\|instance\|auto` | Kanalmodus speichern. |
 | `/rc language [deDE\|enUS\|frFR]` | RP-Ausgabesprache anzeigen oder setzen. |
-| `/rc native on\|off` | Native WoW-Emotes zusätzlich ein- oder ausschalten. |
+| `/rc native on\|off` | WoW-Animation/Standard-Emote bei `/rc` aktivieren oder deaktivieren. Standard bei neuen Charakteren: `on`. |
 | `/rc racelanguage [auto\|on\|off]` | Volkssprache für SAY/YELL anzeigen oder steuern. |
 | `/rc grouplanguage on\|off` | In Gruppen für RP-SAY/YELL die Fraktionssprache verwenden oder abschalten. |
 | `/rc languagestatus` | Effektive Sprach-ID, Gruppenzustand und Chatkanal anzeigen. |
@@ -106,8 +142,8 @@ Dezimalwerte und zusätzliche Argumente werden abgelehnt, nicht begrenzt.
 - `auto`: zuerst Instanzgruppe, dann Schlachtzug, dann Gruppe; andernfalls `SAY`.
 
 Ein nicht verfügbarer expliziter Gruppenkanal, auch `group` ohne Gruppe,
-bricht die Textausgabe mit einer Meldung ab. Nur `auto` darf auf SAY
-zurückfallen. Die Emote-Animation wird trotzdem geplant.
+bricht die zusätzliche Textausgabe mit einer Meldung ab. Nur `auto` darf auf SAY
+zurückfallen. Bei aktivem Native-Modus wird die WoW-Emote-Aktion trotzdem geplant.
 
 ## Einstellungen
 
@@ -126,7 +162,7 @@ erhalten; beschädigte Werte werden mit einer Meldung repariert.
 | `cooldown` | `20` | Ganze Zahl 0–3600 Sekunden; 0 deaktiviert die Wartezeit. |
 | `emoteDelay` | `0.3` | Verzögerung bis zur Animation. |
 | `chatChannel` | `SAY` | SAY, YELL, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO. |
-| `nativeEmotes` | `false` | Native WoW-Emote-Ausgaben zusätzlich zu RPChatMod-Texten. |
+| `nativeEmotes` | `true` | Native WoW-Emote-Aktion bei `/rc`; bestehende gespeicherte `false`-Werte bleiben unverändert. |
 
 `/rc language` zeigt die aktive RP-Ausgabesprache, ein Argument wechselt sie.
 Fehlende Pools einer Sprache fallen auf Deutsch zurück. Die Volkssprache für
@@ -180,9 +216,9 @@ RPChatMod/
 ├── config/Settings.lua
 ├── locales/
 │   ├── Init.lua
-│   ├── deDE/ (General.lua, Races.lua, Classes.lua, RaceClass.lua)
-│   ├── enUS/ (General.lua, Races.lua, Classes.lua, RaceClass.lua)
-│   ├── frFR/ (General.lua, Races.lua, Classes.lua, RaceClass.lua)
+│   ├── deDE/ (General.lua, SpokenEmotes01..05.lua, Races.lua, Classes.lua, RaceClass.lua)
+│   ├── enUS/ (General.lua, SpokenEmotes01..05.lua, Races.lua, Classes.lua, RaceClass.lua)
+│   ├── frFR/ (General.lua, SpokenEmotes01..05.lua, Races.lua, Classes.lua, RaceClass.lua)
 │   └── Finalize.lua
 ├── core/
 │   ├── Database.lua
@@ -309,6 +345,6 @@ Volkssprache gesendet. `/rc grouplanguage off` deaktiviert die Gruppenregel.
 
 **Grenze:** Die WoW-Standardsprache des normalen Chat-Eingabefelds wird
 nicht umgeschaltet; die Regel betrifft ausschließlich RPChatMod-Ausgaben.
-Die Sprachauswahl für `/me`/EMOTE ist davon nicht betroffen.
+Automatisch ausgewählte RPChatMod-Zeilen verwenden keine zusätzliche `/me`/EMOTE-Ausgabe.
 `/rc language deDE|enUS|frFR` wählt die Textvorlagen-Sprache,
 nicht die Volkssprache im WoW-Chat.

@@ -12,7 +12,11 @@ local function ChooseArray(pool, targetName)
     if type(pool) ~= "table" or #pool == 0 then return nil end
     local usable = {}
     for _, text in ipairs(pool) do
-        if type(text) == "string" and text ~= "" then
+        -- WoW already prints its own emote. RPChatMod sends spoken lines only.
+        -- Historical *...* pools remain on disk for compatibility but cannot
+        -- produce a second /me message through RPChatMod.
+        if type(text) == "string" and text ~= ""
+            and not (text:sub(1, 1) == "*" and text:sub(-1) == "*") then
             local needsTarget = text:find("%s", 1, true) ~= nil
             if not needsTarget or targetName then
                 usable[#usable + 1] = text
@@ -61,7 +65,26 @@ function addon.GetTextPool(emote)
 end
 
 function addon.BuildText(emote)
-    return ChooseStructured(addon.GetTextPool(emote), UnitExists("target") and UnitName("target") or nil)
+    local name = UnitExists("target") and UnitName("target") or nil
+    local race = addon.GetPlayerRaceToken()
+    local _, class = UnitClass("player")
+    local lang = addon.GetOutputLanguage()
+    -- Try specific speech pools first, but skip legacy pools containing only
+    -- *emote* descriptions. Do not override or rewrite user-authored files.
+    for _, language in ipairs(lang == "deDE" and {"deDE"} or {lang, "deDE"}) do
+        local data = addon.localeData[language]
+        if data then
+            local function Try(pool)
+                return ChooseStructured(pool, name)
+            end
+            local line = Try(addon.GetLocalePoolExact(language, "raceClassTexts", race, class, emote))
+                or Try(addon.GetLocalePoolExact(language, "raceTexts", race, emote))
+                or Try(addon.GetLocalePoolExact(language, "classTexts", class, emote))
+                or Try(addon.GetLocalePoolExact(language, "generalTexts", emote))
+            if line then return line end
+        end
+    end
+    return nil
 end
 
 addon.ChooseStructuredText = ChooseStructured
