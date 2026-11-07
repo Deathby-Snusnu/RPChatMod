@@ -1,5 +1,24 @@
 # RP Chat Mod
 
+## Neue manuelle RP-Aktionen (0.5.0)
+
+10 ergänzende Textaktionen sind in DE/EN/FR verfügbar:
+- `APPLAUD`
+- `SORRY`
+- `CHEER`
+- `WAIT`
+- `SHRUG`
+- `POINT`
+- `CHEERS`
+- `COMFORT`
+- `HUG`
+- `KNEEL`
+
+Die vorhandenen Fähigkeiten und Völkervarianten bleiben unverändert;
+die neuen Schlüssel sind ausdrücklich manuelle Rollenspielaktionen und
+werden nicht automatisch durch Spielereignisse ausgelöst.
+
+
 ## Beschreibung
 
 RP Chat Mod ergänzt WoW-Emotes um zufällig ausgewählte Rollenspieltexte.
@@ -244,7 +263,7 @@ Mock-Tests ersetzen keinen Test im WoW-Client.
 
 ## Kompatibilität
 
-- Die TOC weist `Interface: 16001` und Version `0.4.1` aus. Das ist keine
+- Die TOC weist `Interface: 16001` und Version `0.5.0` aus. Das ist keine
   Zusicherung für andere Clientversionen.
 - Der Add-on-Code bleibt Lua-5.1-kompatibel; der Testloader unterstützt auch
   5.4.
