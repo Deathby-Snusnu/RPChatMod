@@ -1,0 +1,38 @@
+-- SPDX-License-Identifier: CC-BY-SA-4.0
+-- Spoken RP follow-ups. Never /me: the WoW client supplies its own emote.
+local _, addon = ...
+local texts = addon.localeData.enUS.generalTexts
+texts.AGREE = { gruppe = { "For once, we are in agreement.", "That argument stands on its own feet." }, ziel = { "%s, you have my agreement." } }
+texts.AMAZE = { gruppe = { "Well, that has left me speechless.", "By the stars, how is that possible?" }, ziel = { "%s, you truly astonish me." } }
+texts.ANGRY = { gruppe = { "My patience has officially left the room.", "Do not attempt that again." }, ziel = { "%s, you are testing the very edge of my patience." } }
+texts.ATTACKTARGET = { gruppe = { "Weapons ready! The target is clear.", "No speeches now, keep your eyes on the enemy!" }, ziel = { "On %s! Hold the line!" } }
+texts.BARK = { gruppe = { "Woof! I trust that was clear enough.", "A dog often understands more than a councillor." }, ziel = { "%s, was that clear enough for you?" } }
+texts.BASHFUL = { gruppe = { "A little less attention would be lovely.", "I am a hero, not the evening's entertainment." }, ziel = { "%s, you are making me blush." } }
+texts.BECKON = { gruppe = { "Come closer, we can speak better here.", "Don't worry, I have bitten nobody today." }, ziel = { "%s, come over and join us!" } }
+texts.BEG = { gruppe = { "A little help would work wonders.", "I dislike asking twice, but I could make an exception." }, ziel = { "%s, have a little mercy?" } }
+texts.BELCH = { gruppe = { "Excuse me. Dinner evidently had something to say.", "A good roast sometimes gets the last word." }, ziel = { "%s, I hope you won't hold that against me." } }
+texts.BITE = { gruppe = { "Not every threat requires a blade.", "I still have teeth and remarkably little patience." }, ziel = { "%s, keep clear of my teeth." } }
+texts.BLEED = { gruppe = { "Just a scratch. An exceptionally stubborn one.", "Who said heroes never bleed?" }, ziel = { "%s, a bandage would be welcome now." } }
+texts.BLINK = { gruppe = { "Did I just see that correctly?", "My eyes are demanding an explanation." }, ziel = { "%s, please do that again for my eyes." } }
+texts.BLOW = { gruppe = { "A kiss sent travelling needs a fair wind.", "May the breeze carry a friendly token." }, ziel = { "%s, this blown kiss is for you." } }
+texts.BLUSH = { gruppe = { "Well, that was profoundly unexpected.", "My cheeks are speaking faster than I can." }, ziel = { "%s, you are not making it easy to reply." } }
+texts.BOGGLE = { gruppe = { "Several suitable words have escaped me.", "My mind would like a short break." }, ziel = { "%s, please explain what is happening." } }
+texts.BONK = { gruppe = { "Sometimes a little reminder needs emphasis.", "That was a lesson, not a declaration of war." }, ziel = { "%s, remember that gentle warning." } }
+texts.BORED = { gruppe = { "Would someone please switch the adventure back on?", "I have inspected more interesting stones." }, ziel = { "%s, do you happen to have a better idea?" } }
+texts.BOUNCE = { gruppe = { "No chair can hold me today.", "My feet appear to have plans of their own." }, ziel = { "%s, come along, move a little!" } }
+texts.BRB = { gruppe = { "A brief detour. I'll be right back.", "Save my seat and keep the soup warm." }, ziel = { "%s, I shall return in a moment." } }
+texts.CACKLE = { gruppe = { "Ha! This grows more entertaining by the moment.", "Perhaps I ought to enjoy this less." }, ziel = { "%s, you brought this upon yourself!" } }
+texts.CALM = { gruppe = { "Easy. Haste gains us nothing.", "A clear head is a dependable weapon." }, ziel = { "%s, take a breath first." } }
+texts.CHARGE = { gruppe = { "Forward! The road will not open itself.", "The brave have no reverse gear." }, ziel = { "With me, %s! Here we go!" } }
+texts.CHEW = { gruppe = { "This ration deserves a careful inspection.", "Hasty chewing misses half the flavour." }, ziel = { "%s, would you like a piece?" } }
+texts.CHICKEN = { gruppe = { "Cluck! That was clearly a tactical retreat.", "It takes no chicken to recognize danger." }, ziel = { "%s, will you cluck or act?" } }
+texts.CHUCKLE = { gruppe = { "That was better than I expected.", "A little laughter can rescue a long day." }, ziel = { "%s, you know how to cheer me up." } }
+texts.COLD = { gruppe = { "Does anybody have a second pair of socks?", "Even my thoughts are starting to freeze." }, ziel = { "%s, do you know somewhere warmer?" } }
+texts.CONFUSED = { gruppe = { "The map and reality appear to disagree.", "I'm not lost. I'm considering alternatives." }, ziel = { "%s, could you explain the connection?" } }
+texts.CONGRATS = { gruppe = { "You have earned this through hard work!", "Today we may count our victories." }, ziel = { "%s, my heartfelt congratulations!" } }
+texts.COUGH = { gruppe = { "That dust really should have stayed outside.", "Excuse me, the air is particularly uncooperative today." }, ziel = { "%s, might you spare a little water?" } }
+texts.COWER = { gruppe = { "A small step backward might be wise.", "Courage and recklessness are not the same." }, ziel = { "%s, come behind this wall instead." } }
+texts.CRACK = { gruppe = { "The fingers are ready. The rest must follow.", "Time to get moving again." }, ziel = { "%s, ready for another round?" } }
+texts.CRINGE = { gruppe = { "That could have been handled more gracefully.", "I shall pretend I saw nothing." }, ziel = { "%s, please tell me that wasn't your plan." } }
+texts.CRY = { gruppe = { "Sometimes words are simply too small.", "Even tears deserve room to fall." }, ziel = { "%s, forgive me. I need a moment." } }
+texts.CURIOUS = { gruppe = { "That looks like an interesting story.", "I would love to know how that works." }, ziel = { "%s, tell me more about it." } }
