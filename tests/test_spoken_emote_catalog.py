@@ -45,9 +45,13 @@ class SpokenEmoteTests(unittest.TestCase):
                 file = ROOT / "locales" / lang / ("SpokenEmotes" + volume + ".lua")
                 src = file.read_text(encoding="utf-8")
                 for line in src.splitlines():
-                    if not line.startswith("texts."):
+                    prefix = f"addon.localeData.{lang}.generalTexts."
+                    if not line.startswith(prefix):
                         continue
-                    match = re.match(r"texts\.([A-Z][A-Z0-9_]*)\s*=\s*\{", line)
+                    match = re.match(
+                        re.escape(prefix) + r"([A-Z][A-Z0-9_]*)\s*=\s*\{",
+                        line,
+                    )
                     self.assertIsNotNone(match, (lang, volume, line))
                     key = match.group(1)
                     newly.append(key)
@@ -81,7 +85,10 @@ class SpokenEmoteTests(unittest.TestCase):
         for num in VOLUMES:
             src = (ROOT / "locales" / "deDE" /
                    ("SpokenEmotes" + num + ".lua")).read_text(encoding="utf-8")
-            keys.update(re.findall(r"(?m)^texts\.([A-Z][A-Z0-9_]*)\s*=", src))
+            keys.update(re.findall(
+                r"(?m)^addon\.localeData\.deDE\.generalTexts\.([A-Z][A-Z0-9_]*)\s*=",
+                src
+            ))
         aliases = (ROOT / "core" / "Emotes.lua").read_text(encoding="utf-8")
         # Every listed classic emote token has a dedicated pool or is mapped
         # onto an equivalent token (e.g. APPLAUSE -> APPLAUD).
