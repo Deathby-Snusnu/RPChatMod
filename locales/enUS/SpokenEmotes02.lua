@@ -1,0 +1,38 @@
+-- SPDX-License-Identifier: CC-BY-SA-4.0
+-- Spoken follow-up lines to native WoW emote tokens, never extra /me.
+local _, addon = ...
+local texts = addon.localeData.enUS.generalTexts
+texts.CURTSEY = { gruppe = { "Good manners survive the longest journeys.", "A courteous gesture opens many doors." }, ziel = { "%s, a courteous gesture opens many doors.", "%s: Good manners survive the longest journeys." } }
+texts.DISAPPOINTED = { gruppe = { "That is not quite how I imagined it.", "A promise should be more than a pleasing sound." }, ziel = { "%s, a promise should be more than a pleasing sound.", "%s: That is not quite how I imagined it." } }
+texts.DOH = { gruppe = { "By the ancestors, how did I miss that?", "My brilliant idea arrived too late." }, ziel = { "%s, my brilliant idea arrived too late.", "%s: By the ancestors, how did I miss that?" } }
+texts.DOOM = { gruppe = { "That sounds like an ending with little applause.", "I have a dreadful feeling about this." }, ziel = { "%s, i have a dreadful feeling about this.", "%s: That sounds like an ending with little applause." } }
+texts.DROOL = { gruppe = { "That smell beats every argument.", "Who has hidden that delicious food?" }, ziel = { "%s, who has hidden that delicious food?", "%s: That smell beats every argument." } }
+texts.DUCK = { gruppe = { "Heads down, right now!", "Questions can wait until we reach the next wall." }, ziel = { "%s, questions can wait until we reach the next wall.", "%s: Heads down, right now!" } }
+texts.EAT = { gruppe = { "A full stomach makes the world kinder.", "I intend to remember this roast." }, ziel = { "%s, i intend to remember this roast.", "%s: A full stomach makes the world kinder." } }
+texts.EYE = { gruppe = { "I'll keep an eye on that, just in case.", "Some answers stand right in front of us." }, ziel = { "%s, some answers stand right in front of us.", "%s: I'll keep an eye on that, just in case." } }
+texts.FAREWELL = { gruppe = { "May your roads be safe and your camps warm.", "We'll meet again at the next crossroads." }, ziel = { "%s, we'll meet again at the next crossroads.", "%s: May your roads be safe and your camps warm." } }
+texts.FEAST = { gruppe = { "A fine feast calls for hungry friends.", "Nobody is saving room for tomorrow's dessert." }, ziel = { "%s, nobody is saving room for tomorrow's dessert.", "%s: A fine feast calls for hungry friends." } }
+texts.FEAR = { gruppe = { "Some shadows do not deserve curiosity.", "Stay close to me. Something is wrong here." }, ziel = { "%s, stay close to me. Something is wrong here.", "%s: Some shadows do not deserve curiosity." } }
+texts.FIDGET = { gruppe = { "My hands have run out of patience.", "Waiting can be surprisingly exhausting." }, ziel = { "%s, waiting can be surprisingly exhausting.", "%s: My hands have run out of patience." } }
+texts.FLAP = { gruppe = { "Wings would be extremely useful right now.", "Perhaps I should learn to land first." }, ziel = { "%s, perhaps I should learn to land first.", "%s: Wings would be extremely useful right now." } }
+texts.FLEE = { gruppe = { "Retreat is an underrated art!", "Anyone wishing to live longer should run now." }, ziel = { "%s, anyone wishing to live longer should run now.", "%s: Retreat is an underrated art!" } }
+texts.FLEX = { gruppe = { "These muscles weren't built by reading books.", "A little showing off ought to be allowed." }, ziel = { "%s, a little showing off ought to be allowed.", "%s: These muscles weren't built by reading books." } }
+texts.FLOP = { gruppe = { "Gravity has won for today.", "The ground invited me very persuasively." }, ziel = { "%s, the ground invited me very persuasively.", "%s: Gravity has won for today." } }
+texts.FOLLOWME = { gruppe = { "Follow me. I know at least one road.", "Stay together. The path is narrow." }, ziel = { "%s, stay together. The path is narrow.", "%s: Follow me. I know at least one road." } }
+texts.FOOD = { gruppe = { "Courage alone makes a poor meal.", "Does anyone have a crust of bread to spare?" }, ziel = { "%s, does anyone have a crust of bread to spare?", "%s: Courage alone makes a poor meal." } }
+texts.FROWN = { gruppe = { "I don't like the look of this at all.", "Bad news deserves a very long look." }, ziel = { "%s, bad news deserves a very long look.", "%s: I don't like the look of this at all." } }
+texts.GASP = { gruppe = { "By all the powers, that was unexpected!", "I shall need a moment to understand that." }, ziel = { "%s, i shall need a moment to understand that.", "%s: By all the powers, that was unexpected!" } }
+texts.GAZE = { gruppe = { "Some things deserve a second look.", "There's a whole story waiting out there." }, ziel = { "%s, there's a whole story waiting out there.", "%s: Some things deserve a second look." } }
+texts.GLAD = { gruppe = { "Today is a fine day for a reunion.", "It's lovely when the world answers kindly." }, ziel = { "%s, it's lovely when the world answers kindly.", "%s: Today is a fine day for a reunion." } }
+texts.GLARE = { gruppe = { "One look ought to be warning enough.", "Consider the next step carefully." }, ziel = { "%s, consider the next step carefully.", "%s: One look ought to be warning enough." } }
+texts.GLOAT = { gruppe = { "I hate to boast. But that was magnificent.", "Permit me this small moment of triumph." }, ziel = { "%s, permit me this small moment of triumph.", "%s: I hate to boast. But that was magnificent." } }
+texts.GOLFCLAP = { gruppe = { "A remarkably restrained applause seems appropriate.", "Well, that was certainly an attempt." }, ziel = { "%s, well, that was certainly an attempt.", "%s: A remarkably restrained applause seems appropriate." } }
+texts.GRIN = { gruppe = { "I've just had a particularly delightful idea.", "This grin reveals absolutely nothing." }, ziel = { "%s, this grin reveals absolutely nothing.", "%s: I've just had a particularly delightful idea." } }
+texts.GROAN = { gruppe = { "This will be a very long day.", "Can we at least count the bad ideas?" }, ziel = { "%s, can we at least count the bad ideas?", "%s: This will be a very long day." } }
+texts.GROVEL = { gruppe = { "My dignity is going rather cheaply today.", "If humility helps, I shall start at once." }, ziel = { "%s, if humility helps, I shall start at once.", "%s: My dignity is going rather cheaply today." } }
+texts.GUFFAW = { gruppe = { "That was the finest joke since the last battle!", "I'll be laughing about that for days." }, ziel = { "%s, i'll be laughing about that for days.", "%s: That was the finest joke since the last battle!" } }
+texts.HAPPY = { gruppe = { "Life has given us a fine moment.", "Let's not let this day pass unnoticed." }, ziel = { "%s, let's not let this day pass unnoticed.", "%s: Life has given us a fine moment." } }
+texts.HEALME = { gruppe = { "I'm wounded, not carved from stone!", "A healer would be worth their weight in gold here." }, ziel = { "%s, a healer would be worth their weight in gold here.", "%s: I'm wounded, not carved from stone!" } }
+texts.HELPME = { gruppe = { "I could genuinely use some help here!", "Anyone with free hands, step forward." }, ziel = { "%s, anyone with free hands, step forward.", "%s: I could genuinely use some help here!" } }
+texts.HUNGRY = { gruppe = { "My thoughts are turning entirely to food.", "A hot stew would be a great victory." }, ziel = { "%s, a hot stew would be a great victory.", "%s: My thoughts are turning entirely to food." } }
+texts.IMPATIENT = { gruppe = { "My patience has taken a holiday.", "If we wait much longer, grass will grow here." }, ziel = { "%s, if we wait much longer, grass will grow here.", "%s: My patience has taken a holiday." } }
