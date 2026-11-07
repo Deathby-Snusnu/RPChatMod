@@ -303,7 +303,8 @@ Test("Poolpriorität RaceClass/Class/Race/General ohne Klassenbeschränkung", fu
     local addon, _, state = LoadAddon()
     state.race, state.class = "Dwarf", "PALADIN"
     Equal(addon.GetTextPool("WAVE"), addon.raceClassTexts.Dwarf.PALADIN.WAVE)
-    Equal(addon.GetTextPool("BOW"), addon.classTexts.PALADIN.BOW)
+    Equal(addon.GetTextPool("BOW"), addon.raceTexts.Dwarf.BOW,
+        "race-specific speech takes priority over class speech")
     state.class = "UNKNOWN"
     Equal(addon.GetTextPool("BOW"), addon.raceTexts.Dwarf.BOW)
     state.race = "UNKNOWN"
@@ -327,11 +328,11 @@ Test("Zieltexte, Gruppentexte und Fallback bei unbrauchbarem Spezialpool", funct
     local addon, _, state = LoadAddon()
     state.race = "UNKNOWN"
     state.targetExists, state.targetName = true, "A%name"
-    Equal(addon.GetText("HELLO"), "Hallo, A%name!")
+    Equal(addon.GetText("HELLO"), "Seid gegruesst, A%name.")
     state.targetExists = false
-    Equal(addon.GetText("HELLO"), "Hallo zusammen!")
+    Equal(addon.GetText("HELLO"), "Seid gegruesst, miteinander.")
     addon.raceTexts.UNKNOWN = { HELLO = {} }
-    Equal(addon.GetText("HELLO"), "Hallo zusammen!")
+    Equal(addon.GetText("HELLO"), "Seid gegruesst, miteinander.")
 end)
 
 Test("Literale Platzhalterersetzung und Textgrenzen", function()
@@ -356,10 +357,10 @@ end)
 Test("Strikte Slash-Grammatik, Hilfebefehle und Kanalabfrage", function()
     local addon, _, state = LoadAddon()
     addon.HandleCommand("")
-    Equal(#state.messages, 15)
+    Equal(#state.messages, 24)
     Equal(state.messages[2], "|cffc79c6eRP Chat Mod|r")
     Equal(state.messages[3], "/rc hello")
-    Equal(state.messages[15], "/rc channel say|group|party|raid|instance|auto")
+    Equal(state.messages[16], "/rc channel say|yell|group|party|raid|instance|auto")
     addon.HandleCommand("chance 100")
     addon.HandleCommand("  CHANCE 999  ")
     Equal(addon.db.textChance, 100)
