@@ -124,17 +124,17 @@ class SpokenEmoteTests(unittest.TestCase):
         general = (ROOT / "locales" / "deDE" / "General.lua").read_text(
             encoding="utf-8"
         )
-        keys = set(re.findall(r"\\b([A-Z][A-Z0-9_]*)\\s*=\\s*\\{", general))
+        keys = set(re.findall(r"\b([A-Z][A-Z0-9_]*)\s*=\s*\{", general))
         for num in VOLUMES:
             source = (ROOT / "locales" / "deDE" /
                       f"SpokenEmotes{num}.lua").read_text(encoding="utf-8")
             keys.update(re.findall(
-                r"(?m)^addon\\.localeData\\.deDE\\.generalTexts\\."
-                r"([A-Z][A-Z0-9_]*)\\s*=", source
+                r"(?m)^addon\.localeData\.deDE\.generalTexts\."
+                r"([A-Z][A-Z0-9_]*)\s*=", source
             ))
         aliases_file = (ROOT / "core" / "Emotes.lua").read_text(encoding="utf-8")
         aliases = dict(re.findall(
-            r'([A-Z][A-Z0-9_]*)\\s*=\\s*"([A-Z_]+)"',
+            r'([A-Z][A-Z0-9_]*)\s*=\s*"([A-Z_]+)"',
             aliases_file.split("function addon.ResolveEmoteAlias")[0],
         ))
         for name, canonical in {
