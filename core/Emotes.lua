@@ -15,7 +15,7 @@ local EMOTE_ALIASES = {
     GREET = "HELLO", GREETINGS = "HELLO", HI = "HELLO",
     THANKS = "THANK", TY = "THANK", THANKYOU = "THANK",
     NOD = "YES", CONGRATULATE = "CONGRATS", CONGRATULATIONS = "CONGRATS",
-    LAY = "SLEEP", LAYDOWN = "SLEEP", LIEDOWN = "SLEEP",
+    LAY = "SLEEP", LIE = "SLEEP", LAYDOWN = "SLEEP", LIEDOWN = "SLEEP",
 
 }
 function addon.ResolveEmoteAlias(emote)
