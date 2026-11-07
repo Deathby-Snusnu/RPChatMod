@@ -3,7 +3,19 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
-## Aktueller Quellstand: 0.6.0 (unveröffentlicht)
+## Aktueller Quellstand: 0.6.1 (unveröffentlicht)
+
+- Chefkoch-Emote-Liste (175 Einträge) abgeglichen: 172 zuvor abgedeckt, die
+  Kurzformen `CURT`, `SHIV` und `YAY` als zusätzliche Aliasse ergänzt.
+- Diese drei Abkürzungen benutzen `CURTSEY`, `SHIVER` und `HAPPY`
+  als native WoW-Emote-Tokens und deren vorhandene gesprochene Texte.
+  Die Zahl von 194 eigenständigen RP-Textpools bleibt unverändert.
+- Abgleichs- und Laufzeittests für alle 175 Einträge, Aliasauflösung,
+  Native-Emotes ohne doppeltes /me sowie Versionsangaben ergänzt.
+- Persönliche Texte, bisherige Emote-Daten und gespeicherte
+  `nativeEmotes`-Einstellungen bleiben erhalten.
+
+## Historischer Quellstand: 0.6.0 (unveröffentlicht)
 
 - Breite klassische WoW-Emote-Abdeckung: **210 dokumentierte Emote-Befehlsnamen** mit **194 unterschiedlichen RP-Pools** und Aliasnamen; **174 neue Emote-Schlüssel** in Deutsch, Englisch und Französisch.
 - Je neuem Schlüssel zwei eigenständige allgemeine Sprechzeilen und zwei adressierte Zielvarianten. Alte Volks-, Klassen-, Volks/Klassen- und allgemeine Textsammlungen bleiben gespeichert.
