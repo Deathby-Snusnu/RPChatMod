@@ -16,7 +16,7 @@ local EMOTE_ALIASES = {
     THANKS = "THANK", TY = "THANK", THANKYOU = "THANK",
     NOD = "YES", CONGRATULATE = "CONGRATS", CONGRATULATIONS = "CONGRATS",
     LAY = "SLEEP", LAYDOWN = "SLEEP", LIEDOWN = "SLEEP",
-    HAIL = "SALUTE", HUG = "HUG",
+
 }
 function addon.ResolveEmoteAlias(emote)
     return EMOTE_ALIASES[emote] or emote
