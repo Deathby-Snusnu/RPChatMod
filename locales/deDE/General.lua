@@ -201,4 +201,15 @@ addon.localeData.deDE.generalTexts = {
         },
     },
 
+    -- Zehn weitere universelle RP-Emotes mit /say und /me
+    APPLAUD = { gruppe = { "Ein wohlverdienter Applaus!", "Manche Taten brauchen keinen langen Kommentar.", "*klatscht begeistert in die Hände.*", "*nickt anerkennend und applaudiert.*" }, ziel = { "%s, das habt Ihr Euch redlich verdient!" } },
+    SORRY = { gruppe = { "Manchmal reicht ein Wort. Dieses hier ist überfällig: Verzeiht.", "Es tut mir leid. Ich werde es besser machen.", "*senkt den Blick und neigt entschuldigend den Kopf.*", "*legt eine Hand auf die Brust und bittet um Nachsicht.*" }, ziel = { "%s, ich bitte Euch um Verzeihung." } },
+    CHEER = { gruppe = { "Darauf können wir stolz sein!", "Ein Hoch auf die, die nicht aufgegeben haben!", "*reißt jubelnd beide Arme in die Höhe.*", "*stößt einen begeisterten Freudenruf aus.*" }, ziel = { "Gut gemacht, %s! Weiter so!" } },
+    WAIT = { gruppe = { "Einen Augenblick noch. Nicht jeder Weg muss im Laufschritt beginnen.", "Wer wartet, hört manchmal mehr als der Eilige.", "*hebt die offene Hand als Zeichen zum Innehalten.*", "*tritt beiseite und überprüft die Umgebung.*" }, ziel = { "Wartet bitte kurz, %s." } },
+    SHRUG = { gruppe = { "Nun ja. Nicht jedes Rätsel muss heute gelöst werden.", "Manchmal ist ein Schulterzucken die klügste Antwort.", "*hebt fragend beide Schultern.*", "*zieht die Augenbrauen hoch und breitet die Hände aus.*" }, ziel = { "%s, was soll ich dazu sagen?" } },
+    POINT = { gruppe = { "Da drüben! Seht Ihr es auch?", "Der Weg führt eindeutig in diese Richtung.", "*deutet entschlossen auf einen Punkt am Horizont.*", "*zeichnet mit dem Finger eine Richtung in die Luft.*" }, ziel = { "%s, dort entlang!" } },
+    CHEERS = { gruppe = { "Auf die Heimkehr und auf die Geschichten dazwischen!", "Ein guter Trinkspruch braucht gute Gesellschaft.", "*hebt den Becher und grinst in die Runde.*", "*stößt mit den Gefährten an.*" }, ziel = { "Zum Wohl, %s! Auf Euch!" } },
+    COMFORT = { gruppe = { "Es muss nicht gleich alles wieder gut sein.", "Ich kann die Last nicht wegreden, aber ein Stück mittragen.", "*setzt sich still neben einen erschöpften Gefährten.*", "*legt behutsam eine Hand auf die Schulter.*" }, ziel = { "%s, Ihr müsst das nicht allein tragen." } },
+    HUG = { gruppe = { "Manchmal ist eine Umarmung die ganze Antwort.", "Kommt her. Für einen Moment ist die Welt klein genug.", "*öffnet einladend beide Arme.*", "*umarmt einen vertrauten Gefährten herzlich.*" }, ziel = { "%s, lasst Euch drücken." } },
+    KNEEL = { gruppe = { "Respekt zeigt sich am deutlichsten ohne große Worte.", "Für diesen Augenblick knie ich aus freiem Willen.", "*geht auf ein Knie und neigt den Kopf.*", "*stützt sich kurz auf den Boden und verharrt in einer ruhigen Geste.*" }, ziel = { "Vor Euch, %s, neige ich mein Haupt." } },
 }

@@ -3,7 +3,13 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
-## Aktueller Quellstand: 0.4.1 (unveroeffentlicht)
+## Aktueller Quellstand: 0.5.0 (unveröffentlicht)
+
+- Zehn zusätzliche soziale Textschlüssel in DE/EN/FR ergänzt: Applaus, Entschuldigung, Jubeln, Warten, Schulterzucken, Deuten, Anstoßen, Trösten, Umarmen und Knien.
+- Jeder neue Schlüssel enthält gesprochene Texte, /me-Emotes und eine zielbezogene Variante. Bisherige zehn Grundaktionen bleiben erhalten, jetzt 20 allgemeine RP-Emotes.
+- CI-Regressionstest für Sprachparität und Versionsgleichheit ergänzt. Bestehende Rassen-, Klassen- und persönliche Texte bleiben unberührt.
+
+## Historischer Quellstand: 0.4.1 (unveröffentlicht)
 
 - Versionsangabe aktualisiert und gemeinsame Dokumentationslinks fuer
   einzelne AddOn-Checkouts erlaeutert.
