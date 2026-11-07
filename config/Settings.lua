@@ -30,7 +30,8 @@ addon.defaults = {
     -- SAY, YELL, GROUP, PARTY, RAID, INSTANCE_CHAT oder AUTO.
     chatChannel = "SAY",
 
-    -- Native WoW-Emotes erzeugen zusaetzlich eigene Standardtexte.
-    -- Standardmaessig aus, damit nur RPChatMod-Texte erscheinen.
-    nativeEmotes = false,
+    -- The client handles the animation and standard emote output;
+    -- RPChatMod adds only spoken text, never a second /me.
+    -- Existing per-character "nativeEmotes = false" settings are preserved.
+    nativeEmotes = true,
 }

@@ -2,7 +2,7 @@
 ## Title: RP Chat Mod
 ## Notes: Rassen- und klassenabhängige RP-Emotes
 ## Author: Hannes
-## Version: 0.5.0
+## Version: 0.6.0
 ## SavedVariablesPerCharacter: RPChatMod_CharacterDB
 
 config\Settings.lua
