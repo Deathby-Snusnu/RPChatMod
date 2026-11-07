@@ -44,6 +44,11 @@ verwenden oder diesen Befehl auf eine Aktionsleiste legen.
   damit die allgemeine Sprachvariante einspringen kann.
 - Texte ohne Ziel verwenden den allgemeinen Pool. Mit Ziel stehen
   zwei zusätzliche, adressierte Varianten zur Verfügung.
+- Die Dateien `SpokenEmotes01.lua` bis `SpokenEmotes05.lua` enthalten
+  voll qualifizierte `addon.localeData.<Sprache>.generalTexts.<SCHLUESSEL>`-
+  Tabellen. **RPTextStudio** kann diese als normale Textlisten unter
+  **Alle Textarten** erkennen und bearbeiten, ohne eine Änderung am
+  bestehenden Editor oder den persönlichen SavedVariables.
 - Welche nativen Emotes der **WoW-Forever-Client** tatsächlich als
   Animation oder Standardtext unterstützt, hängt von seiner
   Implementierung und Version ab. Der Katalog deckt die gelisteten
