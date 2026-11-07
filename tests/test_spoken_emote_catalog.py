@@ -37,7 +37,7 @@ class SpokenEmoteTests(unittest.TestCase):
                 encoding="utf-8"
             )
             base = re.findall(
-                r"(?m)^\s+([A-Z][A-Z0-9_]*)\s*=\s*\{", general
+                r"\b([A-Z][A-Z0-9_]*)\s*=\s*\{", general
             )
             self.assertEqual(len(base), 20)
             newly = []
@@ -77,7 +77,7 @@ class SpokenEmoteTests(unittest.TestCase):
         general = (ROOT / "locales" / "deDE" / "General.lua").read_text(
             encoding="utf-8"
         )
-        keys = set(re.findall(r"(?m)^\s+([A-Z][A-Z0-9_]*)\s*=\s*\{", general))
+        keys = set(re.findall(r"\b([A-Z][A-Z0-9_]*)\s*=\s*\{", general))
         for num in VOLUMES:
             src = (ROOT / "locales" / "deDE" /
                    ("SpokenEmotes" + num + ".lua")).read_text(encoding="utf-8")
