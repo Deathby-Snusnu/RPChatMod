@@ -117,7 +117,7 @@ local function LoadAddon(savedValues, beforeLogin)
     local addon = {}
     local toc = assert(io.open(root .. "/RPChatMod.toc", "r"))
     for line in toc:lines() do
-        local file = line:match("^%s*(.-)%s*$")
+        local file = line:match("^%s*(.-)%s*$"):gsub("\\", "/")
         if file:match("%.lua$") then
             local chunk, loadError
             if _VERSION == "Lua 5.1" then
