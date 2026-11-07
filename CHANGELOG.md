@@ -3,7 +3,16 @@
 Aenderungen an RPChatMod. Fuer nicht dokumentierte Zwischenversionen
 werden keine Eintraege oder Datierungen rekonstruiert.
 
-## Aktueller Quellstand: 0.5.0 (unveröffentlicht)
+## Aktueller Quellstand: 0.6.0 (unveröffentlicht)
+
+- Breite klassische WoW-Emote-Abdeckung: **210 dokumentierte Emote-Befehlsnamen** mit **194 unterschiedlichen RP-Pools** und Aliasnamen; **174 neue Emote-Schlüssel** in Deutsch, Englisch und Französisch.
+- Je neuem Schlüssel zwei eigenständige allgemeine Sprechzeilen und zwei adressierte Zielvarianten. Alte Volks-, Klassen-, Volks/Klassen- und allgemeine Textsammlungen bleiben gespeichert.
+- WoW übernimmt die native Emote-/Animationsausgabe. RPChatMod erzeugt für `/rc` nur noch einen möglichen gesprochenen Satz; alte `*...*`-Beschreibungen werden bei der Textauswahl übersprungen, damit keine doppelten /me-Zeilen entstehen.
+- Neue Standardoption `nativeEmotes=true`. Charaktere mit bestehendem `nativeEmotes=false` behalten diese Einstellung und können `/rc native on` verwenden.
+- Sprach-Fallback auf den nächsten geeigneten Pool, wenn ein höherpriorisierter älterer Pool ausschließlich beschreibende Emotes enthält.
+- Regressionstests für 194 Textpools, 210 klassische Emote-Befehlsnamen, alle drei Sprachen, No-/me-Verhalten, Aliasse, gespeicherte Einstellungen und native Auslösung in Lua 5.1/5.4.
+
+## Historischer Quellstand: 0.5.0 (unveröffentlicht)
 
 - Zehn zusätzliche soziale Textschlüssel in DE/EN/FR ergänzt: Applaus, Entschuldigung, Jubeln, Warten, Schulterzucken, Deuten, Anstoßen, Trösten, Umarmen und Knien.
 - Jeder neue Schlüssel enthält gesprochene Texte, /me-Emotes und eine zielbezogene Variante. Bisherige zehn Grundaktionen bleiben erhalten, jetzt 20 allgemeine RP-Emotes.
