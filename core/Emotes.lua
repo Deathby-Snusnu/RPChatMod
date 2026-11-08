@@ -16,11 +16,20 @@ local EMOTE_ALIASES = {
     THANKS = "THANK", TY = "THANK", THANKYOU = "THANK",
     NOD = "YES", CONGRATULATE = "CONGRATS", CONGRATULATIONS = "CONGRATS",
     LAY = "SLEEP", LIE = "SLEEP", LAYDOWN = "SLEEP", LIEDOWN = "SLEEP",
+    -- Alternate commands from the historical German Chefkoch emote list.
+    CURT = "CURTSEY", SHIV = "SHIVER", YAY = "HAPPY",
 
 }
 function addon.ResolveEmoteAlias(emote)
     return EMOTE_ALIASES[emote] or emote
 end
+
+-- The WoW client does not consistently support short forms such as /curt
+-- and /shiv. Send the established native token when invoking DoEmote, while
+-- keeping the requested shortcut available via /rc.
+local NATIVE_EMOTE_ALIASES = {
+    CURT = "CURTSEY", SHIV = "SHIVER", YAY = "HAPPY",
+}
 
 function addon.PlayEmote(emote)
     if not emote then
@@ -66,7 +75,7 @@ function addon.DoEmote(emote)
     if addon.db.nativeEmotes then
         -- The client performs the real emote (animation + standard emote line).
         -- Addon speech is independent of the client's native message.
-        addon.PlayEmote(emote)
+        addon.PlayEmote(NATIVE_EMOTE_ALIASES[emote] or emote)
     end
     if not IsTextAllowed() then
         return false

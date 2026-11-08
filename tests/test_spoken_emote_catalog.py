@@ -29,6 +29,25 @@ VETO VOLUNTEER WHINE WHISTLE WICKED WICKEDLY WORK WRATH YAWN
 """.split()
 
 
+# The 175 emotes supplied by the user (TheRealChefkoch source list).
+CHEFKOCH_LIST = """
+BLOOD BLOW BLUSH BOGGLE BONK BORED BOUNCE BOW BRB BURP BYE CACKLE
+CALM CAT CATTY CHEER CHEW CHICKEN CHUCKLE CLAP COLD COMFORT CONFUSED CONGRATS
+CONGRATULATE COUGH COWER CRACK CRINGE CRY CUDDLE CURIOUS CURT CURTSEY DANCE DISAPPOINTED
+DOH DOOM DRINK DROOL DUCK EAT EYE FAREWELL FART FEAR FEAST FIDGET
+FLAP FLEX FOOD FROWN GASP GAZE GIGGLE GLAD GLARE GLOAT GOODBYE GREET
+GREETINGS GRIN GROAN GROVEL GUFFAW HAIL HAPPY HELLO HI HUG HUNGRY IMPATIENT
+INSULT INTRODUCE JK KISS KNEEL KNUCKLES LAVISH LAY LAYDOWN LICK LIE LIEDOWN
+LISTEN MAD MASSAGE MOAN MOCK MOON MOURN NO NOD NOSEPICK PANIC PEER
+PEON PEST PICK PLEAD POINT POKE PONDER POUNCE PRAISE PRAY PURR PUZZLED
+QUESTION RAISE RDY READY REAR ROAR RUDE SALUTE SCRATCH SEXY SHAKE SHIMMY
+SHINDIG SHIV SHIVER SHOO SHRUG SHY SIGH SIT SLAP SLEEP SMELL SMIRK
+SNARL SNICKER SNIFF SNUB SOB SOOTHE SORRY SPIT SPOON STARE STINK STRONG
+STRUT SURPRISED SURRENDER TALK TALKEX TALKQ TAP TAUNT TEASE THANK THANKS THIRSTY
+THREAT TICKLE THREATEN TIRED TY VETO VICTORY VOLUNTEER WAVE WEEP WELCOME WHINE
+WHISTLE WICKED WICKEDLY WORK WRATH YAWN YAY
+""".split()
+
 class SpokenEmoteTests(unittest.TestCase):
     def test_194_keys_and_same_locales(self):
         all_locales = []
@@ -99,9 +118,38 @@ class SpokenEmoteTests(unittest.TestCase):
             with self.subTest(token=token):
                 self.assertIn(alias_pairs.get(token, token), keys)
 
+    def test_all_175_chefkoch_tokens_are_supported(self):
+        self.assertEqual(len(CHEFKOCH_LIST), 175)
+        self.assertEqual(len(set(CHEFKOCH_LIST)), 175)
+        general = (ROOT / "locales" / "deDE" / "General.lua").read_text(
+            encoding="utf-8"
+        )
+        keys = set(re.findall(r"\b([A-Z][A-Z0-9_]*)\s*=\s*\{", general))
+        for num in VOLUMES:
+            source = (ROOT / "locales" / "deDE" /
+                      f"SpokenEmotes{num}.lua").read_text(encoding="utf-8")
+            keys.update(re.findall(
+                r"(?m)^addon\.localeData\.deDE\.generalTexts\."
+                r"([A-Z][A-Z0-9_]*)\s*=", source
+            ))
+        aliases_file = (ROOT / "core" / "Emotes.lua").read_text(encoding="utf-8")
+        aliases = dict(re.findall(
+            r'([A-Z][A-Z0-9_]*)\s*=\s*"([A-Z_]+)"',
+            aliases_file.split("function addon.ResolveEmoteAlias")[0],
+        ))
+        for name, canonical in {
+            "CURT": "CURTSEY", "SHIV": "SHIVER", "YAY": "HAPPY"
+        }.items():
+            self.assertEqual(aliases[name], canonical)
+            self.assertIn(canonical, keys)
+        for token in CHEFKOCH_LIST:
+            with self.subTest(token=token):
+                self.assertIn(aliases.get(token, token), keys)
+
+
     def test_toc_loads_every_volume_and_native_spoken_default(self):
         toc = (ROOT / "RPChatMod.toc").read_text(encoding="utf-8")
-        self.assertIn("## Version: 0.6.0", toc)
+        self.assertIn("## Version: 0.6.1", toc)
         files = [ln.strip().replace("\\", "/") for ln in toc.splitlines()
                  if ln.strip() and not ln.startswith("#")]
         self.assertEqual(len(files), len(set(files)))

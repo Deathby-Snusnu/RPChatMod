@@ -1,4 +1,4 @@
-name: RPChatMod 0.6.0 spoken emote catalog
+name: RPChatMod spoken emote catalog
 on:
   push:
   pull_request:
@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Check 210 aliases, 194 pools and translations
+      - name: Check 210 classic tokens, 175 Chefkoch names and 194 pools
         run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Install Lua 5.1 and Lua 5.4
         run: sudo apt-get update && sudo apt-get install -y lua5.1 lua5.4

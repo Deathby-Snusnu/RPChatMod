@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 KEYS = ["APPLAUD","SORRY","CHEER","WAIT","SHRUG","POINT","CHEERS","COMFORT","HUG","KNEEL"]
 EXPECTED = 20
-VERSION = "0.6.0"
+VERSION = "0.6.1"
 
 
 class RpActionCoverage(unittest.TestCase):

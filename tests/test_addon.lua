@@ -470,6 +470,32 @@ Test("Ehemalige /me-Zeilen werden weder bei Emotes noch bei Bonustexten gesendet
     Equal(disabledState.sent[1][2], "SAY")
 end)
 
+Test("175 Chefkoch-Emotes mit nativen sicheren Aliasnamen", function()
+    local addon, env, state = LoadAddon({
+        textChance=100, cooldown=0, nativeEmotes=true,
+    })
+    state.race = "UNKNOWN"
+    for shortcut, canonical in pairs({
+        CURT="CURTSEY", SHIV="SHIVER", YAY="HAPPY",
+    }) do
+        Equal(addon.ResolveEmoteAlias(shortcut), canonical)
+        assert(addon.GetTextPool(canonical), "Spoken pool: " .. canonical)
+        Equal(addon.TryText(shortcut), true)
+        Equal(state.sent[#state.sent][2], "SAY")
+        local spoken = state.sent[#state.sent][1]
+        assert(spoken:sub(1,1) ~= "*" and spoken ~= "")
+        local timer = state.timers[#state.timers]
+        timer[2]()
+        Equal(state.animations[#state.animations], canonical,
+            "known native token for " .. shortcut)
+    end
+    local off, _, stateOff = LoadAddon({
+        nativeEmotes=false, textChance=100, cooldown=0,
+    })
+    Equal(off.TryText("SHIV"), true)
+    Equal(#stateOff.timers, 0, "saved native-emote-off is preserved")
+end)
+
 local failures = 0
 for _, test in ipairs(tests) do
     local success, testError = pcall(test[2])

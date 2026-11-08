@@ -1,13 +1,22 @@
 # RP Chat Mod
 
-## RPChatMod 0.6.0: Sprache für klassische WoW-Emotes
+## RPChatMod 0.6.1: Sprache für klassische WoW-Emotes
 
-**210 klassische Emote-Befehlsnamen** werden über **194 individuelle
-RP-Textschlüssel und 20 Aliasnamen** abgedeckt. Davon wurden **174
+**210 klassische Emote-Befehlsnamen** und **drei zusätzliche historische
+Kurzformen** werden über **194 individuelle RP-Textschlüssel** und Aliasse
+abgedeckt. Davon wurden **174
 zusätzliche Schlüssel** in Deutsch, Englisch und Französisch eingeführt.
 Für jede neue Aktion gibt es zwei allgemeine gesprochene Varianten und
 zwei Varianten mit ausgewähltem Ziel. Bereits vorhandene rassen-, klassen-
 und volk/klassenspezifische Texte bleiben unangetastet.
+
+**Abgleich mit der Chefkoch-Liste:** Die 175 vom Benutzer gesammelten
+Emote-Befehle sind berücksichtigt. Die bisher fehlenden Varianten
+`/rc curt`, `/rc shiv` und `/rc yay` verwenden die vorhandenen
+Sprechpools `CURTSEY`, `SHIVER` und `HAPPY`. Für das native
+Spiel-Emote werden deren übliche Kommandonamen verwendet.
+Das betrifft nur die Kurzform im AddOn; ob der WoW-Forever-Client alle
+drei Gesten ausführt, muss im Spiel geprüft werden.
 
 Beispiele: `/rc hello`, `/rc agree`, `/rc angry`,
 `/rc incoming`, `/rc fear`, `/rc pray`, `/rc cheer`,
