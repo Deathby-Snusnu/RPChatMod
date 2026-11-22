@@ -397,6 +397,19 @@ Test("Vor Login sicher und beschädigte Datenbank repariert", function()
     Equal(repaired.db.cooldown, 20)
 end)
 
+Test("Gespeicherter Buff-Dank bleibt gesperrt", function()
+    local saved = { buffThanksEnabled = true }
+    local addon, _, state = LoadAddon(saved, true)
+    state.login()
+    Equal(addon.db.buffThanksEnabled, false)
+    addon.HandleCommand("buffthanks on")
+    Equal(addon.db.buffThanksEnabled, false)
+    for _, frame in ipairs(state.frames) do
+        Equal(frame.events.COMBAT_LOG_EVENT_UNFILTERED, nil,
+            "Buff-Dank darf geschütztes Kampflog-Ereignis nicht registrieren")
+    end
+end)
+
 Test("Fehlende Chat-API startet keinen Cooldown und verhindert keine Animation", function()
     local addon, env, state = LoadAddon({ textChance = 100, cooldown = 20 })
     state.time = 0
