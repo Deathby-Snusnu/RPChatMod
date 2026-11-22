@@ -93,6 +93,8 @@ function addon.InitializeDatabase()
     if not addon.ValidNumber(db.buffThanksChance, 100) then
         db.buffThanksChance = addon.defaults.buffThanksChance
     end
+    -- Disable previously enabled auto-buff behavior on restricted clients.
+    db.buffThanksEnabled = false
     db.nativeEmotesMigration1 = true
 end
 
