@@ -87,6 +87,12 @@ function addon.InitializeDatabase()
     if type(db.nativeEmotes) ~= "boolean" then
         db.nativeEmotes = addon.defaults.nativeEmotes
     end
+    if type(db.buffThanksEnabled) ~= "boolean" then
+        db.buffThanksEnabled = addon.defaults.buffThanksEnabled
+    end
+    if not addon.ValidNumber(db.buffThanksChance, 100) then
+        db.buffThanksChance = addon.defaults.buffThanksChance
+    end
     db.nativeEmotesMigration1 = true
 end
 
