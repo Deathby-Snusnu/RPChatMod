@@ -34,6 +34,41 @@ local thanks = {
 -- Optional flavor pools. Generic text remains available for all races/classes.
 -- Keep the text independent of the caster's class or the type of buff.
 local raceThanks = {
+    Human = {
+        deDE = { "Sturmwind schuldet Euch einen Dank, %s!", "Euer Beistand verdient ein ehrliches Danke, %s." },
+        enUS = { "Stormwind owes you thanks, %s!", "Your help deserves a heartfelt thank you, %s." },
+        frFR = { "Hurlevent vous doit des remerciements, %s !", "Votre aide mérite de sincères remerciements, %s." },
+    },
+    Draenei = {
+        deDE = { "Das Licht begleite Eure Schritte, %s. Danke.", "Eure Güte wird nicht vergessen, %s." },
+        enUS = { "May the Light guide your steps, %s. Thank you.", "Your kindness will be remembered, %s." },
+        frFR = { "Que la Lumière guide vos pas, %s. Merci.", "Votre bonté restera gravée dans ma mémoire, %s." },
+    },
+    Orc = {
+        deDE = { "Eine starke Tat, %s. Ich ehre Euch dafür.", "Eure Hilfe stärkt unseren Weg, %s." },
+        enUS = { "A strong deed, %s. You have my respect.", "Your aid strengthens our path, %s." },
+        frFR = { "Un acte digne de respect, %s.", "Votre aide renforce notre route, %s." },
+    },
+    Troll = {
+        deDE = { "Die Loa mögen Euch wohlgesonnen sein, %s!", "Guter Zauber, %s! Das vergesse ich nicht." },
+        enUS = { "May the loa smile on you, %s!", "Good magic, %s! I won't forget it." },
+        frFR = { "Que les loa vous sourient, %s !", "Belle magie, %s ! Je ne l'oublierai pas." },
+    },
+    Tauren = {
+        deDE = { "Die Erdenmutter segne Euren Weg, %s.", "Euer Beistand wärmt das Herz, %s." },
+        enUS = { "May the Earth Mother bless your path, %s.", "Your aid warms the heart, %s." },
+        frFR = { "Que la Terre-Mère bénisse votre chemin, %s.", "Votre aide réchauffe le cœur, %s." },
+    },
+    Undead = {
+        deDE = { "Ich bin schwer zu beeindrucken, %s. Danke.", "Noch nicht völlig zerfallen. Dank Euch, %s." },
+        enUS = { "I'm not easily impressed, %s. Thank you.", "Not entirely falling apart. Thanks to you, %s." },
+        frFR = { "Je ne suis pas facile à impressionner, %s. Merci.", "Pas encore en morceaux. Grâce à vous, %s." },
+    },
+    BloodElf = {
+        deDE = { "Eine vortreffliche Geste, %s. Mein Dank.", "Eure Magie besitzt Stil, %s." },
+        enUS = { "An exquisite gesture, %s. My thanks.", "Your magic has style, %s." },
+        frFR = { "Un geste exquis, %s. Tous mes remerciements.", "Votre magie a du style, %s." },
+    },
     Dwarf = {
         deDE = { "Das geht auf meine Rechnung, %s!", "Bei meinem Barte, %s! Habt Dank!", "Euer Beistand ist mehr wert als ein Fass Starkbier, %s." },
         enUS = { "The next round is on me, %s!", "By my beard, %s! Many thanks!", "Your help is worth more than a barrel of stout, %s." },
@@ -56,6 +91,16 @@ local raceThanks = {
     },
 }
 local classThanks = {
+    ROGUE = {
+        deDE = { "Ihr habt nichts gesehen, %s. Aber ich danke Euch.", "Unauffällig und hilfreich. Ganz mein Stil, %s." },
+        enUS = { "You saw nothing, %s. But thank you.", "Quiet and effective. Just my style, %s." },
+        frFR = { "Vous n'avez rien vu, %s. Mais merci.", "Discret et efficace. Tout mon style, %s." },
+    },
+    SHAMAN = {
+        deDE = { "Die Elemente mögen Eure Schritte schützen, %s.", "Eure Hilfe klingt wie ein guter Ruf im Wind, %s." },
+        enUS = { "May the elements guard your steps, %s.", "Your aid sounds like a kind call upon the wind, %s." },
+        frFR = { "Que les éléments protègent vos pas, %s.", "Votre aide résonne tel un appel porté par le vent, %s." },
+    },
     PALADIN = {
         deDE = { "Euer Beistand ist ein Licht in dunkler Stunde, %s.", "Möge das Licht Eure Güte vergelten, %s." },
         enUS = { "Your aid is a light in a dark hour, %s.", "May the Light repay your kindness, %s." },
