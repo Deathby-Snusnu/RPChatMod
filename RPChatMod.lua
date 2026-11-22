@@ -18,6 +18,7 @@ eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:SetScript("OnEvent", function()
     addon.InitializeDatabase()
     addon.ready = true
-    addon.StartBuffThanksListener()
+    -- Buff listener deliberately NOT started: Forever restricts COMBAT_LOG_EVENT_UNFILTERED.
+    -- Keep manual RP features available without invoking protected events.
     print("|cffc79c6eRP Chat Mod|r geladen. Befehl: |cffffd100/rc|r")
 end)
