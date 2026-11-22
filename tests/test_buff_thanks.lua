@@ -36,4 +36,34 @@ now = now + 301
 addon.db.buffThanksEnabled = false
 assert(buff("SPELL_AURA_APPLIED", "Player-2-Friend", "Friend") == false)
 assert(#sent == 2)
+
+-- Exercise the localized race/class flavor without relying on the random seed.
+addon.GetPlayerRaceToken = function() return "Dwarf" end
+_G.UnitClass = function() return "Paladin", "PALADIN" end
+addon.db.buffThanksEnabled = true
+now = now + 400
+local originalRandom = math.random
+math.random = function(upper) return 1 end -- chance, race pick and first sentence
+assert(buff("SPELL_AURA_APPLIED", "Player-4-Ally", "Ally") == true)
+assert(sent[#sent]:find("Das geht auf meine Rechnung", 1, true))
+
+addon.GetPlayerRaceToken = function() return "Human" end
+math.random = function(upper) return 50 end -- chance, class pool and first-or-middle sentence
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-5-Cleric", "Cleric") == true)
+assert(sent[#sent]:find("Beistand", 1, true) or sent[#sent]:find("Licht", 1, true))
+
+addon.GetPlayerRaceToken = function() return "Dwarf" end
+addon.GetOutputLanguage = function() return "enUS" end
+math.random = function(upper) return 1 end
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-6-Allied", "Allied") == true)
+assert(sent[#sent]:find("round", 1, true))
+
+addon.GetOutputLanguage = function() return "frFR" end
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-7-Ami", "Ami") == true)
+assert(sent[#sent]:find("tournée", 1, true))
+
+math.random = originalRandom
 print("BuffThanks regression tests: OK")
