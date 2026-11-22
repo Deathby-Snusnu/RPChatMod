@@ -18,5 +18,6 @@ eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:SetScript("OnEvent", function()
     addon.InitializeDatabase()
     addon.ready = true
+    addon.StartBuffThanksListener()
     print("|cffc79c6eRP Chat Mod|r geladen. Befehl: |cffffd100/rc|r")
 end)

@@ -126,6 +126,7 @@ local function ShowHelp()
     print("/rc channel say|yell|group|party|raid|instance|auto")
     print("/rc language deDE|enUS|frFR")
     print("/rc native on|off")
+    print("/rc buffthanks on|off|status|chance 0-100")
     print("/rc <emote> = WoW-Emote + gesprochener RP-Satz (kein /me)")
     print("/rc racelanguage auto|on|off")
     print("/rc racelangdebug")
@@ -276,6 +277,28 @@ local function ShowEffectiveLanguage()
         .. " | Gruppensprache: " .. addon.GetGroupLanguageMode())
 end
 
+local function SetBuffThanks(argument)
+    local value = string.lower(argument or "")
+    if value == "on" then
+        addon.SetSetting("buffThanksEnabled", true)
+    elseif value == "off" then
+        addon.SetSetting("buffThanksEnabled", false)
+    elseif value:match("^chance%s+%d+$") then
+        local number = tonumber(value:match("%d+$"))
+        if not addon.ValidNumber(number, 100) then
+            addon.Notify("Benutzung: /rc buffthanks chance 0-100")
+            return
+        end
+        addon.SetSetting("buffThanksChance", number)
+    elseif value ~= "" and value ~= "status" then
+        addon.Notify("Benutzung: /rc buffthanks on|off|status|chance 0-100")
+        return
+    end
+    addon.Notify("Buff-Dank: " .. (addon.db.buffThanksEnabled and "an" or "aus")
+        .. " | Chance: " .. tostring(addon.db.buffThanksChance) .. "%"
+        .. " | nur neue Fremd-Buffs, nur ausserhalb des Kampfes")
+end
+
 local commandHandlers = {
     language = HandleLanguage,
     lang = HandleLanguage,
@@ -284,6 +307,7 @@ local commandHandlers = {
     cooldown = SetCooldown,
     channel = SetChannel,
     native = SetNativeEmotes,
+    buffthanks = SetBuffThanks,
     racelanguage = SetRacialLanguage,
     racelang = SetRacialLanguage,
     racelangdebug = ShowRacialLanguageDebug,
@@ -320,6 +344,7 @@ function addon.HandleCommand(message)
         addon.Notify("Volkssprache (SAY/YELL): " .. raceMode .. " | " .. addon.GetRacialLanguageName(raceMode == "on"))
         addon.Notify("Gruppensprache (SAY/YELL): " .. addon.GetGroupLanguageMode())
         addon.Notify("Native WoW-Emotes: " .. (addon.db.nativeEmotes and "an" or "aus"))
+        addon.Notify("Buff-Dank: " .. (addon.db.buffThanksEnabled and "an" or "aus") .. " (" .. addon.db.buffThanksChance .. "%)")
         return
     end
     local handler = commandHandlers[command]

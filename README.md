@@ -1,5 +1,32 @@
 # RP Chat Mod
 
+## RPChatMod 0.6.2: Automatischer Buff-Dank (opt-in)
+
+RPChatMod kann optional auf **neu angewendete hilfreiche Buffs** reagieren, die ein anderer Spieler auf den eigenen Charakter wirkt. Dabei wird `COMBAT_LOG_EVENT_UNFILTERED` mit `SPELL_AURA_APPLIED` und dem Aura-Typ `BUFF` ausgewertet. Nur wenn die Ziel-GUID dem eigenen Spieler entspricht und die Quelle eine andere Spieler-GUID hat, kann ein Dank ausgelöst werden. **Der Forever-Client muss diese API wie erwartet bereitstellen; ein Ingame-Test steht noch aus.**
+
+```text
+/rc buffthanks on
+/rc buffthanks chance 35
+/rc buffthanks status
+/rc buffthanks off
+```
+
+- **Voreinstellung: aus**, Chance nach Aktivierung 35 %, pro Charakter gespeichert.
+- **Kein Selbst-Dank**, keine gegnerischen Debuffs, kein Dank bei bloßer Buff-Aktualisierung (`SPELL_AURA_REFRESH`) und nicht während des Kampfes (falls `InCombatLockdown` verfügbar ist).
+- **Anti-Spam:** frühestens alle 90 Sekunden insgesamt, frühestens alle 300 Sekunden je Buffgeber, zusätzlich der bestehende RPChatMod-Text-Cooldown.
+- Drei Sprachvarianten (`deDE`, `enUS`, `frFR`), zufällige gesprochene Sätze, Anrede mit dem Namen des Buffgebers. Die Ausgabe folgt dem eingestellten RPChatMod-Chatkanal. Keine automatische Emote-Animation und keine doppelten `/me`-Zeilen.
+- **Bewusste Grenzen:** Es wird nicht auf eine bestimmte Liste von Buff-Zaubern eingeschränkt. Ein durch den Client als Buff gemeldeter Spielereffekt kann die Bedankung auslösen. Die Erkennung setzt die korrekte Quelle und Ziel-GUID in der Combat-Log-API voraus. Der Code führt keinen Buff durch und kann den erfolgreichen Cast nicht anderweitig bestätigen.
+
+### Ingame-Test vor der Veröffentlichung
+
+1. Mit `/rc buffthanks on` und `/rc buffthanks chance 100` aktivieren, `/rc channel say` einstellen. Einen zweiten Spieler außerhalb des Kampfes einen neuen Buff wirken lassen; **genau ein** Dank ist möglich.
+2. Eigene Buffs, eine Erneuerung (`SPELL_AURA_REFRESH`) und einen Debuff prüfen: **kein** Dank.
+3. Zweiten Buff innerhalb von 90 Sekunden und erneuten Buff vom gleichen Spieler innerhalb von 300 Sekunden prüfen: **kein** zusätzlicher Dank.
+4. Nach Ende der Sperre mit verschiedenen Charakteren (Zwerg, Gnom, Nachtelf) und den drei Sprachen testen, dass Name, RP-Text und Sprach-/Chatkanal korrekt sind.
+5. Einstellung deaktivieren und mit `/reload` erneut laden: der gespeicherte Zustand muss erhalten bleiben.
+6. Auf dem WoW-Forever-Client kontrollieren, ob `CombatLogGetCurrentEventInfo` die erwartete Event-Signatur liefert. Falls sie abweicht, darf das Feature nicht freigeschaltet werden, bevor die Erkennung angepasst wurde.
+
+
 ## RPChatMod 0.6.1: Sprache für klassische WoW-Emotes
 
 **210 klassische Emote-Befehlsnamen** und **drei zusätzliche historische
