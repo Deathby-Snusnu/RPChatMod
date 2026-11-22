@@ -1,5 +1,12 @@
 # RP Chat Mod
 
+## Sicherheitshinweis: Buff-Dank derzeit deaktiviert
+
+Auf WoW Forever kann die Registrierung von `COMBAT_LOG_EVENT_UNFILTERED` durch Drittanbieter-AddOns als geschützte Aktion geblockt werden. Daher startet RPChatMod **keinen automatischen Buff-Listener** mehr. Vorher aktivierte `buffThanksEnabled`-Einstellungen werden beim Login deaktiviert und `/rc buffthanks on` schaltet sie nicht wieder ein. Das verhindert die bekannte Listener-Registrierung beim Login, solange keine unterstützte und regelkonforme API bestätigt ist. Normale manuelle `/rc`-RP-Texte und Emotes bleiben erhalten. Für Buff-Dank kann stattdessen `/rc thank` manuell verwendet werden.
+
+Der nachfolgend beschriebene automatische Buff-Dank bleibt als nicht einsatzfähiger Prototyp dokumentiert; er ist **kein verfügbares Feature** auf dem betroffenen Client.
+
+
 ## Charakterabhängiger Buff-Dank (Erweiterung von 0.6.2)
 
 Die optionale automatische Bedankung wählt ihre gesprochenen RP-Texte jetzt aus drei Stilen: **Volk (45 %)**, **Klasse (bis 35 %)** und allgemeine Texte. Wenn es für eine Rasse oder Klasse noch keine Spezialtexte gibt, greift die Auswahl automatisch auf verfügbare Texte zurück.
