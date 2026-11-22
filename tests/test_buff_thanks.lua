@@ -48,7 +48,7 @@ assert(buff("SPELL_AURA_APPLIED", "Player-4-Ally", "Ally") == true)
 assert(sent[#sent]:find("Das geht auf meine Rechnung", 1, true))
 
 addon.GetPlayerRaceToken = function() return "Human" end
-math.random = function(upper) return 50 end -- chance, class pool and first-or-middle sentence
+math.random = function(upper) return upper == 100 and 50 or 1 end -- chance, class pool, first sentence
 now = now + 400
 assert(buff("SPELL_AURA_APPLIED", "Player-5-Cleric", "Cleric") == true)
 assert(sent[#sent]:find("Beistand", 1, true) or sent[#sent]:find("Licht", 1, true))
