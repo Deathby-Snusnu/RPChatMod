@@ -34,4 +34,7 @@ addon.defaults = {
     -- RPChatMod adds only spoken text, never a second /me.
     -- Existing per-character "nativeEmotes = false" settings are preserved.
     nativeEmotes = true,
+    -- Opt-in: thank another player for a newly applied helpful aura.
+    buffThanksEnabled = false,
+    buffThanksChance = 35,
 }
