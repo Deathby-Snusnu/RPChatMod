@@ -144,6 +144,14 @@ local function ChooseThanksPool(language)
     local classPool = classThanks[class] and classThanks[class][language]
     -- Rotate across race, class, and generic texts instead of locking one style.
     local roll = math.random(100)
+    if racePool and not classPool then
+        if roll <= 80 then return racePool end
+        return thanks[language] or thanks.deDE
+    end
+    if classPool and not racePool then
+        if roll <= 80 then return classPool end
+        return thanks[language] or thanks.deDE
+    end
     if roll <= 45 and racePool then return racePool end
     if roll <= 80 and classPool then return classPool end
     if racePool and roll <= 80 then return racePool end

@@ -78,5 +78,65 @@ now = now + 400
 assert(buff("SPELL_AURA_APPLIED", "Player-9-ShamanFriend", "ShamanFriend") == true)
 assert(sent[#sent]:find("elements", 1, true))
 
+-- Exercise the race/class/generic boundaries and fallback redistribution.
+addon.GetOutputLanguage = function() return "enUS" end
+addon.GetPlayerRaceToken = function() return "Human" end
+_G.UnitClass = function() return "Paladin", "PALADIN" end
+local function setRoll(roll)
+    local randomCall = 0
+    math.random = function(upper)
+        randomCall = randomCall + 1
+        if randomCall == 1 then return 1 end
+        if upper == 100 then return roll end
+        return 1
+    end
+end
+
+setRoll(45)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-10-Race45", "Race") == true)
+assert(sent[#sent]:find("Stormwind", 1, true))
+setRoll(46)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-11-Class46", "Class") == true)
+assert(sent[#sent]:find("light", 1, true))
+setRoll(80)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-12-Class80", "Class") == true)
+assert(sent[#sent]:find("light", 1, true))
+setRoll(81)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-13-Generic81", "Generic") == true)
+assert(sent[#sent]:find("Many thanks", 1, true))
+
+addon.GetPlayerRaceToken = function() return "Human" end
+_G.UnitClass = function() return "Unknown", "UNKNOWN" end
+setRoll(80)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-14-RaceOnly", "Race") == true)
+assert(sent[#sent]:find("Stormwind", 1, true))
+setRoll(81)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-15-RaceFallback", "Race") == true)
+assert(sent[#sent]:find("Many thanks", 1, true))
+
+addon.GetPlayerRaceToken = function() return "Unknown" end
+_G.UnitClass = function() return "Paladin", "PALADIN" end
+setRoll(1)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-16-ClassOnly", "Class") == true)
+assert(sent[#sent]:find("light", 1, true))
+setRoll(81)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-17-ClassFallback", "Class") == true)
+assert(sent[#sent]:find("Many thanks", 1, true))
+
+addon.GetPlayerRaceToken = function() return "Unknown" end
+_G.UnitClass = function() return "Unknown", "UNKNOWN" end
+setRoll(45)
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-18-NoPools", "Generic") == true)
+assert(sent[#sent]:find("Many thanks", 1, true))
+
 math.random = originalRandom
 print("BuffThanks regression tests: OK")
