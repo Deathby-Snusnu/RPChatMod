@@ -65,5 +65,18 @@ now = now + 400
 assert(buff("SPELL_AURA_APPLIED", "Player-7-Ami", "Ami") == true)
 assert(sent[#sent]:find("tournée", 1, true))
 
+-- Verify classes without standalone class AddOns also receive distinct lines.
+addon.GetPlayerRaceToken = function() return "Human" end
+addon.GetOutputLanguage = function() return "enUS" end
+_G.UnitClass = function() return "Rogue", "ROGUE" end
+math.random = function(upper) return upper == 100 and 50 or 1 end
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-8-RogueFriend", "RogueFriend") == true)
+assert(sent[#sent]:find("saw nothing", 1, true))
+_G.UnitClass = function() return "Shaman", "SHAMAN" end
+now = now + 400
+assert(buff("SPELL_AURA_APPLIED", "Player-9-ShamanFriend", "ShamanFriend") == true)
+assert(sent[#sent]:find("elements", 1, true))
+
 math.random = originalRandom
 print("BuffThanks regression tests: OK")
