@@ -278,25 +278,15 @@ local function ShowEffectiveLanguage()
 end
 
 local function SetBuffThanks(argument)
-    local value = string.lower(argument or "")
-    if value == "on" then
-        addon.SetSetting("buffThanksEnabled", true)
-    elseif value == "off" then
+    -- WoW Forever restricts COMBAT_LOG_EVENT_UNFILTERED for third-party addons.
+    -- This toggle must not promise automatic behavior or register forbidden events.
+    if string.lower(argument or "") == "on" then
         addon.SetSetting("buffThanksEnabled", false)
-    elseif value:match("^chance%s+%d+$") then
-        local number = tonumber(value:match("%d+$"))
-        if not addon.ValidNumber(number, 100) then
-            addon.Notify("Benutzung: /rc buffthanks chance 0-100")
-            return
-        end
-        addon.SetSetting("buffThanksChance", number)
-    elseif value ~= "" and value ~= "status" then
-        addon.Notify("Benutzung: /rc buffthanks on|off|status|chance 0-100")
+        addon.Notify("Automatischer Buff-Dank ist in diesem Client deaktiviert (geschuetztes Kampflog-Ereignis).")
         return
     end
-    addon.Notify("Buff-Dank: " .. (addon.db.buffThanksEnabled and "an" or "aus")
-        .. " | Chance: " .. tostring(addon.db.buffThanksChance) .. "%"
-        .. " | nur neue Fremd-Buffs, nur ausserhalb des Kampfes")
+    if string.lower(argument or "") == "off" then addon.SetSetting("buffThanksEnabled", false) end
+    addon.Notify("Automatischer Buff-Dank: nicht verfuegbar. Manuelle RP-Emotes bleiben aktiv.")
 end
 
 local commandHandlers = {
