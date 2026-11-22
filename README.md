@@ -4,7 +4,7 @@
 
 Die optionale automatische Bedankung wählt ihre gesprochenen RP-Texte jetzt aus drei Stilen: **Volk (45 %)**, **Klasse (bis 35 %)** und allgemeine Texte. Wenn es für eine Rasse oder Klasse noch keine Spezialtexte gibt, greift die Auswahl automatisch auf verfügbare Texte zurück.
 
-Individuelle Textstile sind zunächst für **Zwerge, Gnome, Nachtelfen und Himmelsgeborene** sowie **Paladine, Jäger, Magier, Hexenmeister, Druiden, Priester und Krieger** in `deDE`, `enUS` und `frFR` enthalten. Quelle für die Stilwahl sind stets Volk und Klasse **des eigenen Charakters**, nicht des Buffgebers. Der Buffgeber wird mit Namen angesprochen. Alle Texte sind neu formuliert und ergänzen die bisherigen generischen Dankeszeilen.
+Individuelle Textstile sind zunächst für **Menschen, Zwerge, Gnome, Nachtelfen, Himmelsgeborene, Draenei, Orks, Trolle, Tauren, Untote und Blutelfen** sowie **Paladine, Jäger, Magier, Hexenmeister, Druiden, Priester, Krieger, Schurken und Schamanen** in `deDE`, `enUS` und `frFR` enthalten. Quelle für die Stilwahl sind stets Volk und Klasse **des eigenen Charakters**, nicht des Buffgebers. Der Buffgeber wird mit Namen angesprochen. Alle Texte sind neu formuliert und ergänzen die bisherigen generischen Dankeszeilen.
 
 Die bisherigen Einstellungen, Sperrzeiten, Chatkanäle und gespeicherten Charakterdaten bleiben unverändert. Die Erweiterung ändert ausschließlich die Textauswahl, nicht die Combat-Log-Erkennung. Ein Ingame-Test auf WoW Forever ist weiterhin erforderlich.
 
