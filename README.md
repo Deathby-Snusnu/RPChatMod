@@ -1,5 +1,20 @@
 # RP Chat Mod
 
+## 0.6.3: Sozialer Sprachschatz für alle Völker und Klassen
+
+Neue, rein **manuell** ausgelöste Begrüßungs-, Dankes- und Abschiedstexte in `deDE`, `enUS` und `frFR`:
+
+- `/rc thank`: 11 volksspezifische Erweiterungen mit Zielsatz und allgemeinem Gruppensatz.
+- `/rc farewell`: 9 klassenspezifische Abschiedspools, jeweils mit zwei gesprochenen Varianten.
+- Besonderer Stil für **Gnom/Magier (Knisperix)**, **Zwerg/Jäger (Biergar)** und **Zwerg/Paladin (Bromli)** bei `/rc hello`, `/rc thank` und `/rc farewell`.
+- Die `SocialVoices.lua`-Ergänzungen werden *nach* den jeweiligen Basistexttabellen geladen und hängen neue Sätze an, ohne vorhandene Einträge zu ersetzen. Die drei Sprachdateien enthalten identische Schlüsselabdeckung.
+- Die Auswahl folgt weiterhin der bestehenden Priorität **Volk+Klasse, Volk, Klasse, Allgemein**. Deshalb bekommen die drei ausgewählten Charakterkombinationen einen besonders markanten Stil; für alle anderen greifen die ergänzten Volks-/Klassenpools.
+- Beim bestehenden nativen Emote-Verhalten werden nur **gesprochene** Zusatzzeilen ausgegeben, keine weiteren `/me`-Zeilen. Die Ausgabechance und der Cooldown ändern sich nicht.
+- **Keinerlei automatisches Chatten, kein neuer Event-Listener, keine geschützten API-Aufrufe.** Automatische Buff-Bedankungen bleiben weiterhin deaktiviert.
+
+Die musikalischen Einflüsse dienen als Inspiration für eigenständige Texte; es sind keine Liedtextzitate enthalten. Die neuen Erweiterungen sind im Quellcode in `locales/<Sprache>/SocialVoices.lua` organisiert. Die automatische Erkennung dieser neuen additiven Lua-Dateiform durch RPTextStudio ist **nicht nachgewiesen**; der sichere AddOn-Updater muss sie anhand der TOC übernehmen. Vor einem Release sind die GitHub-CI-Prüfungen und ein Ingame-Test nötig.
+
+
 ## Sicherheitshinweis: Buff-Dank derzeit deaktiviert
 
 Auf WoW Forever kann die Registrierung von `COMBAT_LOG_EVENT_UNFILTERED` durch Drittanbieter-AddOns als geschützte Aktion geblockt werden. Daher startet RPChatMod **keinen automatischen Buff-Listener** mehr. Vorher aktivierte `buffThanksEnabled`-Einstellungen werden beim Login deaktiviert und `/rc buffthanks on` schaltet sie nicht wieder ein. Das verhindert die bekannte Listener-Registrierung beim Login, solange keine unterstützte und regelkonforme API bestätigt ist. Normale manuelle `/rc`-RP-Texte und Emotes bleiben erhalten. Für Buff-Dank kann stattdessen `/rc thank` manuell verwendet werden.

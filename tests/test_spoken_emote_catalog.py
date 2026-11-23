@@ -149,7 +149,7 @@ class SpokenEmoteTests(unittest.TestCase):
 
     def test_toc_loads_every_volume_and_native_spoken_default(self):
         toc = (ROOT / "RPChatMod.toc").read_text(encoding="utf-8")
-        self.assertIn("## Version: 0.6.2", toc)
+        self.assertIn("## Version: 0.6.3", toc)
         files = [ln.strip().replace("\\", "/") for ln in toc.splitlines()
                  if ln.strip() and not ln.startswith("#")]
         self.assertEqual(len(files), len(set(files)))
