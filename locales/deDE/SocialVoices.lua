@@ -56,6 +56,6 @@ extend(locale.raceClassTexts.Dwarf.HUNTER, "THANK", { "Habt Dank, %s! Mein Begle
 extend(locale.raceClassTexts.Dwarf.HUNTER, "FAREWELL", {}, { "Die Fährte ruft. Wenn Ihr Schnarchen hört, war's mein Begleiter.", "Ich ziehe weiter. Der Weg wird nicht kürzer, wenn man ihn anstarrt." })
 locale.raceClassTexts.Dwarf = locale.raceClassTexts.Dwarf or {}
 locale.raceClassTexts.Dwarf.PALADIN = locale.raceClassTexts.Dwarf.PALADIN or {}
-extend(locale.raceClassTexts.Dwarf.PALADIN, "HELLO", {}, { "Stein, Stahl und Licht! Hat jemand den Morgen gesehen?", "Grüßt Euch! Ich bringe Segen, Hammer und mächtigen Durst." })
+extend(locale.raceClassTexts.Dwarf.PALADIN, "HELLO", { "Stein, Stahl und Licht! Hat jemand den Morgen gesehen?", "Grüßt Euch! Ich bringe Segen, Hammer und mächtigen Durst." }, { "Stein, Stahl und Licht! Hat jemand den Morgen gesehen?", "Grüßt Euch! Ich bringe Segen, Hammer und mächtigen Durst." })
 extend(locale.raceClassTexts.Dwarf.PALADIN, "THANK", { "Habt Dank, %s! Möge das Licht Euren Krug niemals leeren." }, { "Das war ein wahrer Segen. Und das sage ich als Fachmann!" })
 extend(locale.raceClassTexts.Dwarf.PALADIN, "FAREWELL", {}, { "Das Licht ruft. Oder die Schenke. Ich prüfe beides.", "Bleibt standhaft! Und lasst mir noch einen Humpen übrig." })
