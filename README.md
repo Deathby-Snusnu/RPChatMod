@@ -1,5 +1,19 @@
 # RP Chat Mod
 
+## RPChatMod 0.6.5: Schurken und Schamanen (Textwelle 3, Entwurf)
+
+Bis eigene Repositories `SchurkenRP` und `SchamanenRP` angelegt und mit Zauberereignissen abgesichert sind, verbessert diese Stufe die **manuellen sozialen Texte** in RPChatMod, ohne zusätzliche Fähigkeiten abzufangen.
+
+- Je Klasse (`ROGUE` und `SHAMAN`) neue Sprachpools für `WAVE`, `THANK`, `SIT`, `LAUGH` und `SALUTE`. Die zielgerichteten Varianten verwenden ausschließlich `%s`, die Gruppensätze nie.
+- Sechs zusätzliche Völker/Klassen-Profile mit individuellen `HELLO`- und `THANK`-Texten: Gnom/Schurke, Mensch/Schurke, Untoter/Schurke, Ork/Schamane, Tauren/Schamane und Troll/Schamane.
+- Alle neuen Texte sind eigenständig verfasst und in `deDE`, `enUS` und `frFR` vorhanden.
+- Bestehende Textvarianten und die bisherigen `SocialVoices.lua`-Einträge bleiben erhalten. Die Erweiterungen werden über den bestehenden `extend`-Helfer angehängt.
+- Kein neues Event-Hooking, kein automatisches Zauber-RP, keine zusätzlichen `/me`-Duplikate und keine Wiederaktivierung des deaktivierten Buff-Listeners.
+- Der Test `tests/test_rogue_shaman_voices.py` sichert Schlüssel, Zielplatzhalter, drei Sprachen, Race/Class-Kombinationen und Ladeeintrag ab.
+
+**Fahrplan für eigenständige Klassen-AddOns:** Als Nächstes sollen `SchurkenRP` und `SchamanenRP` ihre eigenen Repositories und die aus anderen Klassen-AddOns bekannte Architektur erhalten. Diese beiden Repositories existieren derzeit noch nicht und wurden in diesem PR ausdrücklich nicht angelegt. Zauberkeys, Clientkompatibilität, RPTextStudio-Erkennung und sichere Eventbehandlung müssen vor einem Ingame-Release separat geprüft werden.
+
+
 ## 0.6.4: Alle 11 Völker und alle neun klassischen Klassen (zweite Textwelle)
 
 Die drei bestehenden `SocialVoices.lua`-Dateien wurden *additiv* erweitert, ohne vorhandene persönliche Texte, Einstellungen, Cooldowns oder die native Emote-Ausgabe zu verändern.
