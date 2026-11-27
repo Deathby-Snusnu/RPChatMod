@@ -63,7 +63,7 @@ class SocialVoiceTests(unittest.TestCase):
                     for key in ("HELLO", "FAREWELL"):
                         self.assertIn(
                             f'extend(locale.raceClassTexts.{race}.{klass}, "{key}"',
-                            source,
+                            source.partition("-- Wave 2:")[2],
                         )
                 self.assertNotIn("StartBuffThanksListener()", source)
                 self.assertNotIn("C_ChatInfo.SendChatMessage", source)
