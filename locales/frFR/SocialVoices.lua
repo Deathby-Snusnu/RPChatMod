@@ -117,3 +117,41 @@ locale.raceClassTexts.BloodElf = locale.raceClassTexts.BloodElf or {}
 locale.raceClassTexts.BloodElf.PRIEST = locale.raceClassTexts.BloodElf.PRIEST or {}
 extend(locale.raceClassTexts.BloodElf.PRIEST, "HELLO", { "Bienvenue, %s. Qu'une douce lumière vous trouve." }, {})
 extend(locale.raceClassTexts.BloodElf.PRIEST, "FAREWELL", {}, { "La Lumière demeure. Je dois poursuivre ma route." })
+
+-- Wave 3: rogue and shaman-specific manual social actions.
+extend(locale.classTexts.ROGUE, "WAVE", { "%s, nous ne nous sommes pas vus. Compris ?" }, { "Un bref salut depuis les ombres suffira.", "Même saluer discrètement demande du talent." })
+extend(locale.classTexts.ROGUE, "THANK", { "Merci, %s. Cette faveur reste entre nous." }, { "Un bon alibi ne s'oublie pas.", "Une faveur réussie ne laisse aucune trace." })
+extend(locale.classTexts.ROGUE, "SIT", { "Asseyez-vous, %s. D'ici, on surveille les deux portes." }, { "La place contre le mur est encore libre.", "Une chaise vide en dit plus qu'une bourse pleine." })
+extend(locale.classTexts.ROGUE, "LAUGH", { "%s, c'est presque aussi bon qu'un tour de passe-passe réussi." }, { "Je ris doucement. Les gardes n'ont pas besoin de tout entendre.", "Cette plaisanterie n'a pas besoin d'alibi." })
+extend(locale.classTexts.ROGUE, "SALUTE", { "Respect, %s. Vous avez l'œil vif." }, { "Un salut silencieux est parfois le plus sincère.", "Qui protège ses amis mérite le respect." })
+extend(locale.classTexts.SHAMAN, "WAVE", { "Que les quatre vents vous saluent, %s." }, { "Salutations du feu, de l'eau, de l'air et de la terre.", "Que le vent emporte notre amitié." })
+extend(locale.classTexts.SHAMAN, "THANK", { "Que les éléments vous remercient, %s." }, { "Votre aide a renforcé l'équilibre.", "Je vous dois plus qu'un abri au sec." })
+extend(locale.classTexts.SHAMAN, "SIT", { "Asseyez-vous, %s. La terre nous porte tous deux." }, { "Même la tempête a besoin d'un instant de calme.", "J'écoute le sol. Il a beaucoup à raconter." })
+extend(locale.classTexts.SHAMAN, "LAUGH", { "Même le tonnerre rit avec vous, %s." }, { "Le vent porte votre rire au loin.", "Quand les pierres ricanent, la plaisanterie est bonne." })
+extend(locale.classTexts.SHAMAN, "SALUTE", { "Les ancêtres honorent votre chemin, %s." }, { "Mon respect va aux vivants comme aux esprits.", "Que le feu et l'eau vous témoignent leur respect." })
+
+-- Distinct race/class combinations, without replacing existing lines.
+locale.raceClassTexts.Gnome = locale.raceClassTexts.Gnome or {}
+locale.raceClassTexts.Gnome.ROGUE = locale.raceClassTexts.Gnome.ROGUE or {}
+extend(locale.raceClassTexts.Gnome.ROGUE, "HELLO", { "Bonjour, %s ! Mon crochet est optimisé par l'ingénierie." }, {})
+extend(locale.raceClassTexts.Gnome.ROGUE, "THANK", {}, { "Si ça clique, c'est la serrure ou le prototype." })
+locale.raceClassTexts.Human = locale.raceClassTexts.Human or {}
+locale.raceClassTexts.Human.ROGUE = locale.raceClassTexts.Human.ROGUE or {}
+extend(locale.raceClassTexts.Human.ROGUE, "HELLO", { "Bonsoir, %s. Les gardes ne me connaissent pas." }, {})
+extend(locale.raceClassTexts.Human.ROGUE, "THANK", {}, { "Certains secrets valent plus que l'argent." })
+locale.raceClassTexts.Undead = locale.raceClassTexts.Undead or {}
+locale.raceClassTexts.Undead.ROGUE = locale.raceClassTexts.Undead.ROGUE or {}
+extend(locale.raceClassTexts.Undead.ROGUE, "HELLO", { "Bonjour, %s. Mes os ne claquent que face au vent." }, {})
+extend(locale.raceClassTexts.Undead.ROGUE, "THANK", {}, { "Je disparais sans bruit, si mes articulations coopèrent." })
+locale.raceClassTexts.Orc = locale.raceClassTexts.Orc or {}
+locale.raceClassTexts.Orc.SHAMAN = locale.raceClassTexts.Orc.SHAMAN or {}
+extend(locale.raceClassTexts.Orc.SHAMAN, "HELLO", { "Les ancêtres vous saluent, %s. Entendez-vous les tambours ?" }, {})
+extend(locale.raceClassTexts.Orc.SHAMAN, "THANK", {}, { "Le vent porte des voix. J'écoute." })
+locale.raceClassTexts.Tauren = locale.raceClassTexts.Tauren or {}
+locale.raceClassTexts.Tauren.SHAMAN = locale.raceClassTexts.Tauren.SHAMAN or {}
+extend(locale.raceClassTexts.Tauren.SHAMAN, "HELLO", { "Que la Terre-Mère bénisse votre route, %s." }, {})
+extend(locale.raceClassTexts.Tauren.SHAMAN, "THANK", {}, { "Même dans le silence, la terre parle." })
+locale.raceClassTexts.Troll = locale.raceClassTexts.Troll or {}
+locale.raceClassTexts.Troll.SHAMAN = locale.raceClassTexts.Troll.SHAMAN or {}
+extend(locale.raceClassTexts.Troll.SHAMAN, "HELLO", { "Les loa vous saluent, %s. J'espère que c'est amical." }, {})
+extend(locale.raceClassTexts.Troll.SHAMAN, "THANK", {}, { "Les loa ont parlé. Je préfère éviter les questions." })
