@@ -88,7 +88,7 @@ extend(locale.raceClassTexts.Dwarf.PALADIN, "FAREWELL", {}, { "The Light calls. 
 locale.raceClassTexts.Dwarf = locale.raceClassTexts.Dwarf or {}
 locale.raceClassTexts.Dwarf.HUNTER = locale.raceClassTexts.Dwarf.HUNTER or {}
 extend(locale.raceClassTexts.Dwarf.HUNTER, "HELLO", { "Well met, %s! My companion is inspecting your boots." }, {})
-extend(locale.raceClassTexts.Dwarf.HUNTER, "FAREWELL", {}, { "The trail calls. If you hear snoring, it's my companion." })
+extend(locale.raceClassTexts.Dwarf.HUNTER, "FAREWELL", {}, { "My companion has found fresh tracks. Farewell, and keep your boots dry!" })
 locale.raceClassTexts.Gnome = locale.raceClassTexts.Gnome or {}
 locale.raceClassTexts.Gnome.MAGE = locale.raceClassTexts.Gnome.MAGE or {}
 extend(locale.raceClassTexts.Gnome.MAGE, "HELLO", { "Greetings, %s! The crackling is part of the plan." }, {})
