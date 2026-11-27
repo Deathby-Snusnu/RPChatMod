@@ -15,7 +15,7 @@ COMBINATIONS = (("Gnome", "MAGE"), ("Dwarf", "HUNTER"), ("Dwarf", "PALADIN"))
 class SocialVoiceTests(unittest.TestCase):
     def test_all_languages_registered_after_base_tables(self):
         toc = (ROOT / "RPChatMod.toc").read_text(encoding="utf-8")
-        self.assertIn("## Version: 0.6.3", toc)
+        self.assertIn("## Version: 0.6.4", toc)
         for language in LOCALES:
             base = f"locales\\{language}\\RaceClass.lua"
             extras = f"locales\\{language}\\SocialVoices.lua"
