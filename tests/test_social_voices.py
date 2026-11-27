@@ -10,12 +10,16 @@ RACES = ("Dwarf", "Gnome", "Human", "NightElf", "Skyborne", "Draenei",
 CLASSES = ("WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN",
            "MAGE", "WARLOCK", "DRUID")
 COMBINATIONS = (("Gnome", "MAGE"), ("Dwarf", "HUNTER"), ("Dwarf", "PALADIN"))
+WAVE2_COMBINATIONS = (("Dwarf", "PALADIN"), ("Dwarf", "HUNTER"),
+    ("Gnome", "MAGE"), ("Gnome", "WARLOCK"), ("NightElf", "DRUID"),
+    ("Human", "WARRIOR"), ("Troll", "SHAMAN"), ("Undead", "ROGUE"),
+    ("BloodElf", "PRIEST"))
 
 
 class SocialVoiceTests(unittest.TestCase):
     def test_all_languages_registered_after_base_tables(self):
         toc = (ROOT / "RPChatMod.toc").read_text(encoding="utf-8")
-        self.assertIn("## Version: 0.6.3", toc)
+        self.assertIn("## Version: 0.6.4", toc)
         for language in LOCALES:
             base = f"locales\\{language}\\RaceClass.lua"
             extras = f"locales\\{language}\\SocialVoices.lua"
@@ -44,6 +48,25 @@ class SocialVoiceTests(unittest.TestCase):
                 # Three locales and no accidental substitution of text targets.
                 self.assertIn("%s", source)
                 self.assertNotIn("Neuer RP-Text", source)
+
+    def test_wave2_races_classes_and_combinations(self):
+        for language in LOCALES:
+            with self.subTest(language=language):
+                source = (ROOT / "locales" / language / "SocialVoices.lua").read_text(
+                    encoding="utf-8"
+                )
+                for race in RACES:
+                    self.assertIn(f'extend(locale.raceTexts.{race}, "HELLO"', source)
+                for klass in CLASSES:
+                    self.assertIn(f'extend(locale.classTexts.{klass}, "CHEER"', source)
+                for race, klass in WAVE2_COMBINATIONS:
+                    for key in ("HELLO", "FAREWELL"):
+                        self.assertIn(
+                            f'extend(locale.raceClassTexts.{race}.{klass}, "{key}"',
+                            source.partition("-- Wave 2:")[2],
+                        )
+                self.assertNotIn("StartBuffThanksListener()", source)
+                self.assertNotIn("C_ChatInfo.SendChatMessage", source)
 
     def test_new_social_lines_are_speech_not_duplicate_native_emotes(self):
         for language in LOCALES:

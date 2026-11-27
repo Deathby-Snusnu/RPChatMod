@@ -1,5 +1,18 @@
 # RP Chat Mod
 
+## 0.6.4: Alle 11 Völker und alle neun klassischen Klassen (zweite Textwelle)
+
+Die drei bestehenden `SocialVoices.lua`-Dateien wurden *additiv* erweitert, ohne vorhandene persönliche Texte, Einstellungen, Cooldowns oder die native Emote-Ausgabe zu verändern.
+
+- `/rc hello`: für **alle 11 Völker** je eine zusätzliche adressierte und eine allgemeine gesprochene Begrüßung pro Sprache.
+- `/rc cheer`: für **alle neun klassischen Klassen** je eine neue charakteristische, gesprochene Jubelvariante pro Sprache. Das Spiel führt sein natives Cheer-Emote weiterhin aus, ohne automatisch eine zweite `/me`-Zeile zu erzeugen.
+- Neun charakteristische Volk/Klassen-Kombinationen erhalten zusätzliche `HELLO`- und `FAREWELL`-Zeilen: Zwerg/Paladin, Zwerg/Jäger, Gnom/Magier, Gnom/Hexer, Nachtelf/Druide, Mensch/Krieger, Troll/Schamane, Untoter/Schurke und Blutelf/Priester.
+- Drei Sprachen: `deDE`, `enUS` und `frFR`. Kein Liedtext übernommen. Für weitere Kombinationen bleiben die bisherigen Rasse-, Klassen- und generischen Texte verfügbar.
+- Die automatische Buff-Bedankung bleibt **deaktiviert**; kein neues Kampflog-Ereignis, keine automatische Chatnachricht und kein Eingriff in geschützte UI-Funktionen.
+
+Die Quellversion der TOC ist `0.6.4`, ein Update ist erst nach CI, Review und Merge verfügbar. Der sichere Installer in RPTextStudio muss die veränderten Locale-Dateien übernehmen. Die Ingame-Freigabe erfolgt mit `/rc hello`, `/rc cheer`, `/rc farewell` und `/rc thank` auf mehreren Völkern und Klassen.
+
+
 ## 0.6.3: Sozialer Sprachschatz für alle Völker und Klassen
 
 Neue, rein **manuell** ausgelöste Begrüßungs-, Dankes- und Abschiedstexte in `deDE`, `enUS` und `frFR`:
