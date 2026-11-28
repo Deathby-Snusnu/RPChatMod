@@ -19,7 +19,7 @@ WAVE2_COMBINATIONS = (("Dwarf", "PALADIN"), ("Dwarf", "HUNTER"),
 class SocialVoiceTests(unittest.TestCase):
     def test_all_languages_registered_after_base_tables(self):
         toc = (ROOT / "RPChatMod.toc").read_text(encoding="utf-8")
-        self.assertIn("## Version: 0.6.5", toc)
+        self.assertIn("## Version: 0.6.6", toc)
         for language in LOCALES:
             base = f"locales\\{language}\\RaceClass.lua"
             extras = f"locales\\{language}\\SocialVoices.lua"
