@@ -155,3 +155,60 @@ locale.raceClassTexts.Troll = locale.raceClassTexts.Troll or {}
 locale.raceClassTexts.Troll.SHAMAN = locale.raceClassTexts.Troll.SHAMAN or {}
 extend(locale.raceClassTexts.Troll.SHAMAN, "HELLO", { "Les loa vous saluent, %s. J'espère que c'est amical." }, {})
 extend(locale.raceClassTexts.Troll.SHAMAN, "THANK", {}, { "Les loa ont parlé. Je préfère éviter les questions." })
+
+-- Wave 4: additional original race/class dialogue in three locales.
+locale.raceClassTexts.Dwarf = locale.raceClassTexts.Dwarf or {}
+locale.raceClassTexts.Dwarf.PRIEST = locale.raceClassTexts.Dwarf.PRIEST or {}
+extend(locale.raceClassTexts.Dwarf.PRIEST, "HELLO", { "Salutations, %s. Même la plus vieille pierre a parfois besoin d'une prière." }, {})
+extend(locale.raceClassTexts.Dwarf.PRIEST, "THANK", { "Merci, %s. Votre bonté vaut plus qu'un chariot de minerai." }, {})
+extend(locale.raceClassTexts.Dwarf.PRIEST, "FAREWELL", {}, { "Les ancêtres veillent tandis que je poursuis mon chemin." })
+locale.raceClassTexts.Gnome = locale.raceClassTexts.Gnome or {}
+locale.raceClassTexts.Gnome.WARRIOR = locale.raceClassTexts.Gnome.WARRIOR or {}
+extend(locale.raceClassTexts.Gnome.WARRIOR, "HELLO", { "Bonjour, %s ! Mon bouclier a été calculé pour une stabilité maximale." }, {})
+extend(locale.raceClassTexts.Gnome.WARRIOR, "THANK", { "Merci, %s. Vous m'épargnez bien des réparations compliquées." }, {})
+extend(locale.raceClassTexts.Gnome.WARRIOR, "FAREWELL", {}, { "Je pars. Si ça cliquette, c'est l'armure. Sans doute." })
+locale.raceClassTexts.Human = locale.raceClassTexts.Human or {}
+locale.raceClassTexts.Human.PALADIN = locale.raceClassTexts.Human.PALADIN or {}
+extend(locale.raceClassTexts.Human.PALADIN, "HELLO", { "Bienvenue, %s. Un serment ne vaut que par les actes qui le suivent." }, {})
+extend(locale.raceClassTexts.Human.PALADIN, "THANK", { "Merci, %s. Vous avez fait plus que tous les beaux discours." }, {})
+extend(locale.raceClassTexts.Human.PALADIN, "FAREWELL", {}, { "La garde change. Mon devoir demeure." })
+locale.raceClassTexts.NightElf = locale.raceClassTexts.NightElf or {}
+locale.raceClassTexts.NightElf.HUNTER = locale.raceClassTexts.NightElf.HUNTER or {}
+extend(locale.raceClassTexts.NightElf.HUNTER, "HELLO", { "Les étoiles d'Élune vous ont guidé ici, %s. Les traces sont fraîches." }, {})
+extend(locale.raceClassTexts.NightElf.HUNTER, "THANK", { "Merci, %s. Même la forêt se souviendra de votre aide." }, {})
+extend(locale.raceClassTexts.NightElf.HUNTER, "FAREWELL", {}, { "Je suis la piste sauvage où la lune effleure les feuilles." })
+locale.raceClassTexts.Skyborne = locale.raceClassTexts.Skyborne or {}
+locale.raceClassTexts.Skyborne.DRUID = locale.raceClassTexts.Skyborne.DRUID or {}
+extend(locale.raceClassTexts.Skyborne.DRUID, "HELLO", { "Les vents des hauteurs vous saluent, %s. La terre sent la pluie ici." }, {})
+extend(locale.raceClassTexts.Skyborne.DRUID, "THANK", { "Merci, %s. Votre aide accorde le ciel et les racines." }, {})
+extend(locale.raceClassTexts.Skyborne.DRUID, "FAREWELL", {}, { "Le vent me rappelle vers les cimes. Prenez soin de vous." })
+locale.raceClassTexts.Draenei = locale.raceClassTexts.Draenei or {}
+locale.raceClassTexts.Draenei.SHAMAN = locale.raceClassTexts.Draenei.SHAMAN or {}
+extend(locale.raceClassTexts.Draenei.SHAMAN, "HELLO", { "Bienvenue, %s. Les éléments parlent avec douceur aujourd'hui." }, {})
+extend(locale.raceClassTexts.Draenei.SHAMAN, "THANK", { "Votre aide honore les esprits et moi-même, %s." }, {})
+extend(locale.raceClassTexts.Draenei.SHAMAN, "FAREWELL", {}, { "La terre attend mon écoute. Je dois lui répondre." })
+locale.raceClassTexts.Orc = locale.raceClassTexts.Orc or {}
+locale.raceClassTexts.Orc.WARRIOR = locale.raceClassTexts.Orc.WARRIOR or {}
+extend(locale.raceClassTexts.Orc.WARRIOR, "HELLO", { "Force et honneur, %s. Notre parole est notre première arme." }, {})
+extend(locale.raceClassTexts.Orc.WARRIOR, "THANK", { "Vous êtes resté à nos côtés, %s. Je ne l'oublierai pas." }, {})
+extend(locale.raceClassTexts.Orc.WARRIOR, "FAREWELL", {}, { "Je marche vers la prochaine bataille, pas vers la prochaine querelle." })
+locale.raceClassTexts.Troll = locale.raceClassTexts.Troll or {}
+locale.raceClassTexts.Troll.ROGUE = locale.raceClassTexts.Troll.ROGUE or {}
+extend(locale.raceClassTexts.Troll.ROGUE, "HELLO", { "Hé, %s ! Pas besoin de compter vos poches. Pas encore." }, {})
+extend(locale.raceClassTexts.Troll.ROGUE, "THANK", { "Merci, %s. Les loa et moi garderons le secret." }, {})
+extend(locale.raceClassTexts.Troll.ROGUE, "FAREWELL", {}, { "Je suis déjà parti. Si vous me voyez encore, c'est voulu." })
+locale.raceClassTexts.Tauren = locale.raceClassTexts.Tauren or {}
+locale.raceClassTexts.Tauren.DRUID = locale.raceClassTexts.Tauren.DRUID or {}
+extend(locale.raceClassTexts.Tauren.DRUID, "HELLO", { "La Terre-Mère vous accueille, %s. Écoutez les herbes." }, {})
+extend(locale.raceClassTexts.Tauren.DRUID, "THANK", { "Votre aide fait grandir mon espoir, %s." }, {})
+extend(locale.raceClassTexts.Tauren.DRUID, "FAREWELL", {}, { "Je suis le cycle des saisons. Nous nous reverrons." })
+locale.raceClassTexts.Undead = locale.raceClassTexts.Undead or {}
+locale.raceClassTexts.Undead.PRIEST = locale.raceClassTexts.Undead.PRIEST or {}
+extend(locale.raceClassTexts.Undead.PRIEST, "HELLO", { "Salutations, %s. Mes bénédictions viennent avec des mains bien froides." }, {})
+extend(locale.raceClassTexts.Undead.PRIEST, "THANK", { "Merci, %s. Même un cœur silencieux reconnaît la sincérité." }, {})
+extend(locale.raceClassTexts.Undead.PRIEST, "FAREWELL", {}, { "Je pars. Les bougies brûlent mieux quand je suis loin." })
+locale.raceClassTexts.BloodElf = locale.raceClassTexts.BloodElf or {}
+locale.raceClassTexts.BloodElf.MAGE = locale.raceClassTexts.BloodElf.MAGE or {}
+extend(locale.raceClassTexts.BloodElf.MAGE, "HELLO", { "Bienvenue, %s. Prenez garde aux lignes d'alignement arcanique." }, {})
+extend(locale.raceClassTexts.BloodElf.MAGE, "THANK", { "Une aide excellente, %s. Mes calculs le confirment." }, {})
+extend(locale.raceClassTexts.BloodElf.MAGE, "FAREWELL", {}, { "Le portail n'attend pas les bonnes manières. Je dois partir." })
