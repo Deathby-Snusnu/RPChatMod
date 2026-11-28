@@ -15,7 +15,7 @@ COMBOS = (
 class RogueShamanVoiceTests(unittest.TestCase):
     def test_existing_locale_files_are_loaded(self):
         toc = (ROOT / "RPChatMod.toc").read_text(encoding="utf-8")
-        self.assertIn("## Version: 0.6.5", toc)
+        self.assertIn("## Version: 0.6.6", toc)
         for lang in LANGUAGES:
             self.assertIn(f"locales\\{lang}\\SocialVoices.lua", toc)
 

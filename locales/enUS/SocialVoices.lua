@@ -155,3 +155,60 @@ locale.raceClassTexts.Troll = locale.raceClassTexts.Troll or {}
 locale.raceClassTexts.Troll.SHAMAN = locale.raceClassTexts.Troll.SHAMAN or {}
 extend(locale.raceClassTexts.Troll.SHAMAN, "HELLO", { "The loa greet you, %s. I hope that was friendly." }, {})
 extend(locale.raceClassTexts.Troll.SHAMAN, "THANK", {}, { "The loa have spoken. I prefer not to ask questions." })
+
+-- Wave 4: additional original race/class dialogue in three locales.
+locale.raceClassTexts.Dwarf = locale.raceClassTexts.Dwarf or {}
+locale.raceClassTexts.Dwarf.PRIEST = locale.raceClassTexts.Dwarf.PRIEST or {}
+extend(locale.raceClassTexts.Dwarf.PRIEST, "HELLO", { "Well met, %s. Even the oldest stone sometimes needs a prayer." }, {})
+extend(locale.raceClassTexts.Dwarf.PRIEST, "THANK", { "Thank you, %s. Your kindness outweighs a cart of ore." }, {})
+extend(locale.raceClassTexts.Dwarf.PRIEST, "FAREWELL", {}, { "The ancestors keep watch as I take the next step." })
+locale.raceClassTexts.Gnome = locale.raceClassTexts.Gnome or {}
+locale.raceClassTexts.Gnome.WARRIOR = locale.raceClassTexts.Gnome.WARRIOR or {}
+extend(locale.raceClassTexts.Gnome.WARRIOR, "HELLO", { "Greetings, %s! My shield was engineered for maximum stability." }, {})
+extend(locale.raceClassTexts.Gnome.WARRIOR, "THANK", { "Thanks, %s. You've spared me some elaborate repairs." }, {})
+extend(locale.raceClassTexts.Gnome.WARRIOR, "FAREWELL", {}, { "I'm off. If something rattles, it's the armor. Probably." })
+locale.raceClassTexts.Human = locale.raceClassTexts.Human or {}
+locale.raceClassTexts.Human.PALADIN = locale.raceClassTexts.Human.PALADIN or {}
+extend(locale.raceClassTexts.Human.PALADIN, "HELLO", { "Welcome, %s. An oath is only as strong as the deeds behind it." }, {})
+extend(locale.raceClassTexts.Human.PALADIN, "THANK", { "My thanks, %s. You have done more than any grand speech." }, {})
+extend(locale.raceClassTexts.Human.PALADIN, "FAREWELL", {}, { "The watch changes. My duty does not." })
+locale.raceClassTexts.NightElf = locale.raceClassTexts.NightElf or {}
+locale.raceClassTexts.NightElf.HUNTER = locale.raceClassTexts.NightElf.HUNTER or {}
+extend(locale.raceClassTexts.NightElf.HUNTER, "HELLO", { "Elune's stars have led you here, %s. The tracks are fresh." }, {})
+extend(locale.raceClassTexts.NightElf.HUNTER, "THANK", { "Thank you, %s. Even the forest will remember such help." }, {})
+extend(locale.raceClassTexts.NightElf.HUNTER, "FAREWELL", {}, { "I follow the wild path where moonlight brushes the leaves." })
+locale.raceClassTexts.Skyborne = locale.raceClassTexts.Skyborne or {}
+locale.raceClassTexts.Skyborne.DRUID = locale.raceClassTexts.Skyborne.DRUID or {}
+extend(locale.raceClassTexts.Skyborne.DRUID, "HELLO", { "The high winds greet you, %s. The earth smells of rain down here." }, {})
+extend(locale.raceClassTexts.Skyborne.DRUID, "THANK", { "Thanks, %s. Your help brings sky and roots into harmony." }, {})
+extend(locale.raceClassTexts.Skyborne.DRUID, "FAREWELL", {}, { "The wind calls me back to the treetops. Stay safe." })
+locale.raceClassTexts.Draenei = locale.raceClassTexts.Draenei or {}
+locale.raceClassTexts.Draenei.SHAMAN = locale.raceClassTexts.Draenei.SHAMAN or {}
+extend(locale.raceClassTexts.Draenei.SHAMAN, "HELLO", { "Welcome, %s. The elements speak kindly today." }, {})
+extend(locale.raceClassTexts.Draenei.SHAMAN, "THANK", { "Your aid honors both the spirits and me, %s." }, {})
+extend(locale.raceClassTexts.Draenei.SHAMAN, "FAREWELL", {}, { "The earth awaits my attention. I must answer." })
+locale.raceClassTexts.Orc = locale.raceClassTexts.Orc or {}
+locale.raceClassTexts.Orc.WARRIOR = locale.raceClassTexts.Orc.WARRIOR or {}
+extend(locale.raceClassTexts.Orc.WARRIOR, "HELLO", { "Strength and honor, %s. Our word is our first weapon." }, {})
+extend(locale.raceClassTexts.Orc.WARRIOR, "THANK", { "You stood firmly with us, %s. I will not forget." }, {})
+extend(locale.raceClassTexts.Orc.WARRIOR, "FAREWELL", {}, { "I march toward the next battle, not the next quarrel." })
+locale.raceClassTexts.Troll = locale.raceClassTexts.Troll or {}
+locale.raceClassTexts.Troll.ROGUE = locale.raceClassTexts.Troll.ROGUE or {}
+extend(locale.raceClassTexts.Troll.ROGUE, "HELLO", { "Hey, %s! No need to count your pockets. Yet." }, {})
+extend(locale.raceClassTexts.Troll.ROGUE, "THANK", { "Thanks, %s. The loa and I will keep this quiet." }, {})
+extend(locale.raceClassTexts.Troll.ROGUE, "FAREWELL", {}, { "I'm already gone. If you still see me, that's deliberate." })
+locale.raceClassTexts.Tauren = locale.raceClassTexts.Tauren or {}
+locale.raceClassTexts.Tauren.DRUID = locale.raceClassTexts.Tauren.DRUID or {}
+extend(locale.raceClassTexts.Tauren.DRUID, "HELLO", { "The Earth Mother welcomes you, %s. Listen to the grass." }, {})
+extend(locale.raceClassTexts.Tauren.DRUID, "THANK", { "Your help makes my hope grow, %s." }, {})
+extend(locale.raceClassTexts.Tauren.DRUID, "FAREWELL", {}, { "I follow the turning seasons. We shall meet again." })
+locale.raceClassTexts.Undead = locale.raceClassTexts.Undead or {}
+locale.raceClassTexts.Undead.PRIEST = locale.raceClassTexts.Undead.PRIEST or {}
+extend(locale.raceClassTexts.Undead.PRIEST, "HELLO", { "Greetings, %s. My blessings come with rather cold hands." }, {})
+extend(locale.raceClassTexts.Undead.PRIEST, "THANK", { "Thanks, %s. Even a silent heart can recognize sincerity." }, {})
+extend(locale.raceClassTexts.Undead.PRIEST, "FAREWELL", {}, { "I must go. Candles burn better when I'm not beside them." })
+locale.raceClassTexts.BloodElf = locale.raceClassTexts.BloodElf or {}
+locale.raceClassTexts.BloodElf.MAGE = locale.raceClassTexts.BloodElf.MAGE or {}
+extend(locale.raceClassTexts.BloodElf.MAGE, "HELLO", { "Welcome, %s. Please mind the arcane alignment lines." }, {})
+extend(locale.raceClassTexts.BloodElf.MAGE, "THANK", { "Excellent assistance, %s. My calculations confirm it." }, {})
+extend(locale.raceClassTexts.BloodElf.MAGE, "FAREWELL", {}, { "The portal does not wait for good manners. I must leave." })
