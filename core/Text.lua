@@ -47,6 +47,36 @@ local function ChooseStructured(pool, targetName)
     return ChooseArray(pool.ziel, targetName)
 end
 
+local rogueShamanSocialActions = {
+    WAVE = true,
+    THANK = true,
+    SIT = true,
+    LAUGH = true,
+    SALUTE = true,
+}
+
+local function CombineStructured(primary, secondary)
+    local combined = { ziel = {}, gruppe = {} }
+    for _, pool in ipairs({ primary, secondary }) do
+        if type(pool) == "table" then
+            if #pool > 0 then
+                for _, text in ipairs(pool) do
+                    combined.gruppe[#combined.gruppe + 1] = text
+                end
+            else
+                for _, kind in ipairs({ "ziel", "gruppe" }) do
+                    if type(pool[kind]) == "table" then
+                        for _, text in ipairs(pool[kind]) do
+                            combined[kind][#combined[kind] + 1] = text
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return combined
+end
+
 function addon.GetTextPool(emote)
     local race = addon.GetPlayerRaceToken()
     local _, class = UnitClass("player")
@@ -77,9 +107,17 @@ function addon.BuildText(emote)
             local function Try(pool)
                 return ChooseStructured(pool, name)
             end
-            local line = Try(addon.GetLocalePoolExact(language, "raceClassTexts", race, class, emote))
-                or Try(addon.GetLocalePoolExact(language, "raceTexts", race, emote))
-                or Try(addon.GetLocalePoolExact(language, "classTexts", class, emote))
+            local raceClassPool = addon.GetLocalePoolExact(language, "raceClassTexts", race, class, emote)
+            local racePool = addon.GetLocalePoolExact(language, "raceTexts", race, emote)
+            local classPool = addon.GetLocalePoolExact(language, "classTexts", class, emote)
+            local specificPool = raceClassPool or racePool
+            if specificPool and classPool
+                and (class == "ROGUE" or class == "SHAMAN")
+                and rogueShamanSocialActions[emote] then
+                specificPool = CombineStructured(specificPool, classPool)
+            end
+            local line = Try(specificPool)
+                or Try(classPool)
                 or Try(addon.GetLocalePoolExact(language, "generalTexts", emote))
             if line then return line end
         end
