@@ -314,6 +314,29 @@ Test("Poolpriorität RaceClass/Class/Race/General ohne Klassenbeschränkung", fu
     Equal(addon.GetTextPool("UNBEKANNT"), nil)
 end)
 
+Test("Rogue-Social-Text bleibt neben dem Rassentext erreichbar", function()
+    local addon, env, state = LoadAddon()
+    state.race, state.class = "Human", "ROGUE"
+    state.targetExists = false
+    addon.SetOutputLanguage("deDE")
+    addon.localeData.deDE.raceClassTexts.Human.ROGUE.WAVE = nil
+    addon.localeData.deDE.raceTexts.Human.WAVE = {
+        gruppe = { "RACE_SENTINEL" },
+    }
+    addon.localeData.deDE.classTexts.ROGUE.WAVE = {
+        gruppe = { "CLASS_SENTINEL" },
+    }
+
+    local originalRandom = env.math.random
+    env.math.random = function(minimum, maximum) return maximum or minimum end
+    Equal(addon.BuildText("WAVE"), "CLASS_SENTINEL",
+        "class-specific voice remains reachable")
+    env.math.random = function() return 1 end
+    Equal(addon.BuildText("WAVE"), "RACE_SENTINEL",
+        "existing race voice remains available")
+    env.math.random = originalRandom
+end)
+
 Test("Scourge verwendet die vorhandenen Undead-Textdaten", function()
     local addon, _, state = LoadAddon()
     state.race, state.class = "Scourge", "UNKNOWN"

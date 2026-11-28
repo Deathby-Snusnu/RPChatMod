@@ -117,3 +117,41 @@ locale.raceClassTexts.BloodElf = locale.raceClassTexts.BloodElf or {}
 locale.raceClassTexts.BloodElf.PRIEST = locale.raceClassTexts.BloodElf.PRIEST or {}
 extend(locale.raceClassTexts.BloodElf.PRIEST, "HELLO", { "Welcome, %s. May a gentle light find you." }, {})
 extend(locale.raceClassTexts.BloodElf.PRIEST, "FAREWELL", {}, { "The Light remains. I must move on." })
+
+-- Wave 3: rogue and shaman-specific manual social actions.
+extend(locale.classTexts.ROGUE, "WAVE", { "%s, we never saw each other. Understood?" }, { "A brief greeting from the shadows will do.", "Even waving discreetly takes practice." })
+extend(locale.classTexts.ROGUE, "THANK", { "Thank you, %s. This favor stays between us." }, { "A good alibi is not forgotten.", "A fine favor leaves no tracks." })
+extend(locale.classTexts.ROGUE, "SIT", { "Sit, %s. From here we can watch both doors." }, { "The seat against the wall is still free.", "An empty chair reveals more than a full purse." })
+extend(locale.classTexts.ROGUE, "LAUGH", { "%s, that is almost as good as a flawless sleight of hand." }, { "I laugh quietly. The guards need not hear everything.", "That joke needs no alibi." })
+extend(locale.classTexts.ROGUE, "SALUTE", { "Respect, %s. You have sharp eyes." }, { "A silent greeting can be the sincerest.", "Anyone who protects friends deserves respect." })
+extend(locale.classTexts.SHAMAN, "WAVE", { "May the four winds greet you, %s." }, { "Greetings from fire, water, air and earth.", "May the wind carry friendship onward." })
+extend(locale.classTexts.SHAMAN, "THANK", { "May the elements thank you, %s." }, { "Your aid has strengthened the balance.", "I owe you more than a dry shelter." })
+extend(locale.classTexts.SHAMAN, "SIT", { "Sit, %s. The earth holds us both." }, { "Even a storm needs a quiet moment.", "I listen to the ground. It has many stories." })
+extend(locale.classTexts.SHAMAN, "LAUGH", { "Even thunder laughs with you, %s." }, { "The wind carries your laughter far.", "When the stones chuckle, the joke was good." })
+extend(locale.classTexts.SHAMAN, "SALUTE", { "The ancestors honor your path, %s." }, { "My respect goes to the living and the spirits.", "May fire and water alike show you respect." })
+
+-- Distinct race/class combinations, without replacing existing lines.
+locale.raceClassTexts.Gnome = locale.raceClassTexts.Gnome or {}
+locale.raceClassTexts.Gnome.ROGUE = locale.raceClassTexts.Gnome.ROGUE or {}
+extend(locale.raceClassTexts.Gnome.ROGUE, "HELLO", { "Greetings, %s! My lockpick is mechanically optimized." }, {})
+extend(locale.raceClassTexts.Gnome.ROGUE, "THANK", {}, { "If it clicks, it was either the lock or the prototype." })
+locale.raceClassTexts.Human = locale.raceClassTexts.Human or {}
+locale.raceClassTexts.Human.ROGUE = locale.raceClassTexts.Human.ROGUE or {}
+extend(locale.raceClassTexts.Human.ROGUE, "HELLO", { "Good evening, %s. The guards don't know me." }, {})
+extend(locale.raceClassTexts.Human.ROGUE, "THANK", {}, { "Some secrets are worth more than silver." })
+locale.raceClassTexts.Undead = locale.raceClassTexts.Undead or {}
+locale.raceClassTexts.Undead.ROGUE = locale.raceClassTexts.Undead.ROGUE or {}
+extend(locale.raceClassTexts.Undead.ROGUE, "HELLO", { "Hello, %s. My bones only rattle in a headwind." }, {})
+extend(locale.raceClassTexts.Undead.ROGUE, "THANK", {}, { "I vanish quietly, provided the joints cooperate." })
+locale.raceClassTexts.Orc = locale.raceClassTexts.Orc or {}
+locale.raceClassTexts.Orc.SHAMAN = locale.raceClassTexts.Orc.SHAMAN or {}
+extend(locale.raceClassTexts.Orc.SHAMAN, "HELLO", { "The ancestors greet you, %s. Hear the drums?" }, {})
+extend(locale.raceClassTexts.Orc.SHAMAN, "THANK", {}, { "The wind carries voices. I listen." })
+locale.raceClassTexts.Tauren = locale.raceClassTexts.Tauren or {}
+locale.raceClassTexts.Tauren.SHAMAN = locale.raceClassTexts.Tauren.SHAMAN or {}
+extend(locale.raceClassTexts.Tauren.SHAMAN, "HELLO", { "May the Earth Mother bless your path, %s." }, {})
+extend(locale.raceClassTexts.Tauren.SHAMAN, "THANK", {}, { "Even in silence, the earth speaks." })
+locale.raceClassTexts.Troll = locale.raceClassTexts.Troll or {}
+locale.raceClassTexts.Troll.SHAMAN = locale.raceClassTexts.Troll.SHAMAN or {}
+extend(locale.raceClassTexts.Troll.SHAMAN, "HELLO", { "The loa greet you, %s. I hope that was friendly." }, {})
+extend(locale.raceClassTexts.Troll.SHAMAN, "THANK", {}, { "The loa have spoken. I prefer not to ask questions." })
