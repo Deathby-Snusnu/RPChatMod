@@ -1,5 +1,30 @@
 # RP Chat Mod
 
+## 0.6.6: Elf neue Volk-Klassen-Profile (Textwelle 4, Entwurf)
+
+Dieser Entwicklungsstand setzt die sprachliche Individualisierung **aller elf vorhandenen Völker und aller neun klassischen Klassen** fort. Elf zusätzliche *ausgewählte* Volk-Klassen-Kombinationen erhalten je einen neuen persönlichen Begrüßungs- und Dankessatz (`%s`) sowie einen neutralen Abschied in **deDE, enUS und frFR**:
+
+| Volk | Klasse |
+| --- | --- |
+| Zwerg | Priester |
+| Gnom | Krieger |
+| Mensch | Paladin |
+| Nachtelf | Jäger |
+| Himmelsgeborene | Druide |
+| Draenei | Schamane |
+| Ork | Krieger |
+| Troll | Schurke |
+| Tauren | Druide |
+| Untoter | Priester |
+| Blutelf | Magier |
+
+Die Sätze werden mit dem vorhandenen `extend`-Helfer an die **bestehenden** Pools in `locales/<Sprache>/SocialVoices.lua` angehängt. Es wird keine bestehende Formulierung gelöscht. `/rc hello`, `/rc thank` und `/rc farewell` bleiben manuelle Auslöser. Zusätzliche Volk/Klassen-Profile haben in der bisherigen Auswahl Vorrang vor den allgemeineren Rassen- und Klassenpools.
+
+Die elf Profile sind **keine Behauptung**, dass jede denkbare Kombination aus allen elf Völkern und allen neun Klassen im Forever-Client spielbar ist. Für andere Kombinationen greifen weiterhin die vorhandenen, viel umfangreicheren Rasse-, Klassen- und allgemeinen Pools. Die Validierung der im Client tatsächlich spielbaren Volk/Klassen-Kombinationen sowie die Integration zukünftiger eigenständiger Schurken- und Schamanen-AddOns bleiben Teil des folgenden Fahrplans.
+
+Der neue Test `tests/test_race_class_wave4.py` sichert alle drei Sprachversionen, das Schlüssel- und Zielplatzhalterformat, die Ladeeinträge und die maximale Nachrichtenlänge ab. Keine automatische Chat-Ausgabe, keine Veränderung an geschützten WoW-APIs und keine Aktivierung des deaktivierten Buff-Listeners. Das Update soll erst nach erfolgreicher CI, Review und Ingame-Test veröffentlicht werden.
+
+
 ## RPChatMod 0.6.5: Schurken und Schamanen (Textwelle 3, Entwurf)
 
 Bis eigene Repositories `SchurkenRP` und `SchamanenRP` angelegt und mit Zauberereignissen abgesichert sind, verbessert diese Stufe die **manuellen sozialen Texte** in RPChatMod, ohne zusätzliche Fähigkeiten abzufangen.
